@@ -1,7 +1,7 @@
 library(dplyr)
 library(plyr) #ddply
 #------ read data frame
-db=read.csv('OutputTable.csv')
+db=read.csv('../OutputTable.csv')
 #------ sort submissions
 db=db[order(db$UserID,db$ProblemID,db$SubmissionNumber),]
 dim(db)
@@ -16,7 +16,8 @@ View(db)
                        countOfSubmissions = length(SubmissionNumber),
                        countOfVideoAndForumEvents = (sum(NVideoEvents, na.rm = T) + sum(NForumEvents,na.rm = T)),
                        totalTimeSpent = TimeStamp[length(TimeStamp)] - TimeStamp[1],
-                       avgTimeSpentPrSubmission = totalTimeSpent/countOfSubmissions)
+                       avgTimeSpentPrSubmission = totalTimeSpent/countOfSubmissions,
+                       increasePerSubmission= totalGradeDelta/countOfSubmissions)
 #------ remove cases with only one attempt
   #agg.features=filter(agg.features,CountofSubmissions>1); dim(agg.features)
 #------ save feature file
