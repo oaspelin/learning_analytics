@@ -29,3 +29,12 @@ ctrl <- trainControl(method = "repeatedcv", repeats =3)
 m1_train = train(bestGrade ~ .,data=ft.train[-(1:3)], method="lm",trControl=ctrl)
 summary(m1_train)
 summary(m1_train)$r.squared
+
+#svmLinear, very slow
+svmFit <- train(bestGrade ~.,
+                data=ft.train[-(1:3)],
+                method= "svmLinear",
+                tuneLength=15,
+                trControl=ctrl,
+                metric ="RMSE",
+                preProc= c("center", "scale"))
