@@ -4,10 +4,8 @@ library(caret)
 library(corrplot)
 
 ft = read.csv("features.csv")
-View(ft)
-ft<-subset(ft, select=-c(X, ProblemID))
-# only neaded if some values are N/A
-# ft[is.na(ft)]=0
+
+
 
 #see if any features correlate with eachother, these can be removed (skip 3 first columns)
 correlation_matrix<- cor(ft)
