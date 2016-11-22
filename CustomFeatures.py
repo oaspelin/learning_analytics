@@ -16,10 +16,13 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 		DurationOfVideoActivity = TimeStamps[-1] - TimeStamps[0]
 		AverageVideoTimeDiffs = sum(TimeStampDiffs)/max(1,len(TimeStampDiffs))
 		
+		NumberOfVideoPlays = len([x for x in VideoEvents['EventType'] if x == 'Video.Play'])
+		
 		# Append features to dictionary
 		Features.update({
 			'DurationOfVideoActivity' : DurationOfVideoActivity,
-			'AverageVideoTimeDiffs' : AverageVideoTimeDiffs
+			'AverageVideoTimeDiffs' : AverageVideoTimeDiffs,
+			'NumberOfVideoPlays' : NumberOfVideoPlays
 		})
 
 	# Features for forum events
