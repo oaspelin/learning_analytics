@@ -9,7 +9,7 @@ View(db)
 #------- aggregate by UserID and ProblemID ---------
   length(unique(db$UserID))
   agg.features = ddply(db,
-                       .(UserID,ProblemID),
+                       .(ProblemID,UserID),
                        summarise,
                        totalGradeDelta = Grade[length(Grade)]-Grade[1],
                        bestGrade = max(Grade),
