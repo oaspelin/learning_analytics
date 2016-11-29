@@ -5,7 +5,7 @@ library(plyr) #ddply
 #======================================================================== 
 
   #------ read features extracted from train set, using your python script
-  db=read.csv('OutputTable.csv', stringsAsFactors = F)
+  db=read.csv('../OutputTable2.csv', stringsAsFactors = F)
   
   #------ sort submissions
   db=db[order(db$UserID,db$ProblemID,db$SubmissionNumber),]
@@ -36,8 +36,12 @@ library(plyr) #ddply
   #----- Try different methods, model parameters, feature sets and find the best classifier 
   #----- Use AUC as model evaluation metric
   library(caret)
-  paramGrid <- expand.grid(mtry = c(1,2,3))
-  fs=c('TimeSinceLast','SubmissionNumber')
+  fs=c('TimeSinceLast','SubmissionNumber')#,'NumberOfVideoPlays', 'NumberOfThreadViews', 'DurationOfVideoActivity', 'AverageVideoTimeDiffs')
+  tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
+  interval<-1
+  range<-c((tune-interval):(tune+interval))
+  paramGrid <- expand.grid(mtry = range)
+  
   ctrl= trainControl(method = 'cv', summaryFunction=twoClassSummary ,classProbs = TRUE)
   model=train(x=db.train[,fs],
                y=db.train$improved,
@@ -48,9 +52,21 @@ library(plyr) #ddply
                preProc = c("center", "scale"))
   print(model);   plot(model)  
   
+  #svmLinear
+  svmFit <- train(x=db.train[,fs],
+                  y=db.train$improved,
+                  method= "svmLinear",
+                  metric ="ROC",
+                  trControl=ctrl,
+                  tuneLength = 15,
+                  preProc= c("center", "scale"))
+  print(svmFit);   plot(svmFit) 
+  
 #----- check generalizability of your model on new data
   preds= predict(model, newdata=db.test);
+  predsSVM= predict(svmFit, newdata=db.test);
   table(preds)
+  table(predsSVM)
   # install.packages('AUC')
   library(AUC)
   ROC_curve= roc(preds, db.test$improved);  auc(ROC_curve)
