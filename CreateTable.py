@@ -178,46 +178,44 @@ def ExportAsCSV(DataSet):
 			# Loop through all problem (re-)submissions
 			for SubmissionNumber in DataSet[ProblemID][UserID].keys():
 				
-				if SubmissionNumber > 0:
+				# Initialize row values
+				[TimeStamp, TimeSinceLast, Grade, GradeDiff, NVideoEvents, NForumEvents] = 6*[None]
+
+				# Get time stamps
+				TimeStamp = DataSet[ProblemID][UserID][SubmissionNumber]['TimeStamp']
+				if SubmissionNumber>0:
+					TimeSinceLast = DataSet[ProblemID][UserID][SubmissionNumber]['TimeSinceLast']
+
+				# Get number of video and forum events
+				if SubmissionNumber>0:
+					NVideoEvents = DataSet[ProblemID][UserID][SubmissionNumber]['NVideoEvents']
+					NForumEvents = DataSet[ProblemID][UserID][SubmissionNumber]['NForumEvents']
 					
-					# Initialize row values
-					[TimeStamp, TimeSinceLast, Grade, GradeDiff, NVideoEvents, NForumEvents] = 6*[None]
-	
-					# Get time stamps
-					TimeStamp = DataSet[ProblemID][UserID][SubmissionNumber]['TimeStamp']
-					if SubmissionNumber>0:
-						TimeSinceLast = DataSet[ProblemID][UserID][SubmissionNumber]['TimeSinceLast']
-	
-					# Get number of video and forum events
-					if SubmissionNumber>0:
-						NVideoEvents = DataSet[ProblemID][UserID][SubmissionNumber]['NVideoEvents']
-						NForumEvents = DataSet[ProblemID][UserID][SubmissionNumber]['NForumEvents']
-						
-					# Get grade and grade difference
-					Grade = DataSet[ProblemID][UserID][SubmissionNumber]['Grade']
-					if SubmissionNumber>0:
-						GradeDiff = DataSet[ProblemID][UserID][SubmissionNumber]['GradeDiff']
-					
-					# Build basic row
-					Row = [ProblemID, UserID, SubmissionNumber, TimeStamp, TimeSinceLast, Grade, GradeDiff, NVideoEvents, NForumEvents]
-					
-					# Add custom feature to row
-					if SubmissionNumber>0:
-						for FeatureName in ListOfFeatureNames:
-							if FeatureName in DataSet[ProblemID][UserID][SubmissionNumber]['Features'].keys():
-								Row += [DataSet[ProblemID][UserID][SubmissionNumber]['Features'][FeatureName]]
-							else:
-								Row += [None]
-					else:
-						for FeatureName in ListOfFeatureNames:
+				# Get grade and grade difference
+				Grade = DataSet[ProblemID][UserID][SubmissionNumber]['Grade']
+				if SubmissionNumber>0:
+					GradeDiff = DataSet[ProblemID][UserID][SubmissionNumber]['GradeDiff']
+				
+				# Build basic row
+				Row = [ProblemID, UserID, SubmissionNumber, TimeStamp, TimeSinceLast, Grade, GradeDiff, NVideoEvents, NForumEvents]
+				
+				# Add custom feature to row
+				if SubmissionNumber>0:
+					for FeatureName in ListOfFeatureNames:
+						if FeatureName in DataSet[ProblemID][UserID][SubmissionNumber]['Features'].keys():
+							Row += [DataSet[ProblemID][UserID][SubmissionNumber]['Features'][FeatureName]]
+						else:
 							Row += [None]
-	
-					# Add row to table (if there are video or forum events)
-					#if NVideoEvents is None and NForumEvents is None:
-					Table += [Row]
-					#else:
-					#	if (Row[7]+Row[8])>0 or SubmissionNumber==len(DataSet[ProblemID][UserID].keys()):
-					#		Table += [Row]
+				else:
+					for FeatureName in ListOfFeatureNames:
+						Row += [None]
+
+				# Add row to table (if there are video or forum events)
+				#if NVideoEvents is None and NForumEvents is None:
+				Table += [Row]
+				#else:
+				#	if (Row[7]+Row[8])>0 or SubmissionNumber==len(DataSet[ProblemID][UserID].keys()):
+				#		Table += [Row]
 
 	# Build list of output table's column names
 	ColumnNames = ['ProblemID', 'UserID', 'SubmissionNumber', 'TimeStamp', 'TimeSinceLast', 'Grade', 'GradeDiff', 'NVideoEvents', 'NForumEvents']
