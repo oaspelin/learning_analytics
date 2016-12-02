@@ -21,7 +21,7 @@ def indent(text, prefix, predicate=None):
 #--------------------------------------#
 def PrintDataSet(DataSet):
 	
-	# Initialize effective row counter (rows that have custom features)
+	# Initialize effective row er (rows that have custom features)
 	EffectiveRowCounter = 0
 
 	# Loop through all problems
@@ -222,8 +222,8 @@ def ExportAsCSV(DataSet):
 	ColumnNames += ListOfFeatureNames
 	
 	# Print sample of output table
-	print tabulate(Table[0:160], headers=ColumnNames, tablefmt="fancy_grid")
-	print '(this is a sample of the output table)\n'
+	#print tabulate(Table[0:160], headers=ColumnNames, tablefmt="fancy_grid")
+	#print '(this is a sample of the output table)\n'
 
 	# Save table into CSV file
 	with open("../OutputTable2.csv", "w") as f:
