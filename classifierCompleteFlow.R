@@ -32,14 +32,26 @@ library(plyr) #ddply
   dim(db.train)
   dim(db.test)
   
+  #Control function for linear model
+  set.seed(123)
+  ctrl <- trainControl(method = "repeatedcv", repeats =3)
+  
+  #train model
+  m1_train = train(improved ~ .,data=db.train, method="lm",trControl=ctrl)
+  summary(m1_train)
+  summary(m1_train)$r.squared
+  
   #----- train classifier to predict 'improved' status 
   #----- Try different methods, model parameters, feature sets and find the best classifier 
   #----- Use AUC as model evaluation metric
   library(caret)
-  fs=c('TimeSinceLast','SubmissionNumber')#,'NumberOfVideoPlays', 'NumberOfThreadViews', 'DurationOfVideoActivity', 'AverageVideoTimeDiffs')
+  fs=c('TimeSinceLast','SubmissionNumber','NumberOfVideoPlays', 'NumberOfThreadViews', 'DurationOfVideoActivity', 'AverageVideoTimeDiffs')
+  
+  #-------------For tuneGrid-----------------#
   tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
   interval<-1
   range<-c((tune-interval):(tune+interval))
+  range
   paramGrid <- expand.grid(mtry = range)
   
   ctrl= trainControl(method = 'cv', summaryFunction=twoClassSummary ,classProbs = TRUE)
@@ -48,7 +60,7 @@ library(plyr) #ddply
                method = "rf",
                metric="ROC",
                trControl = ctrl,
-               tuneGrid = paramGrid,
+               #tuneGrid = paramGrid,
                preProc = c("center", "scale"))
   print(model);   plot(model)  
   
@@ -70,6 +82,7 @@ library(plyr) #ddply
   # install.packages('AUC')
   library(AUC)
   ROC_curve= roc(preds, db.test$improved);  auc(ROC_curve)
+  confusionMatrix(preds, db.test$improved)
 
 #======================================================================== 
 #         step 2.1: Use classifier to predict progress for test data
