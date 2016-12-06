@@ -57,10 +57,10 @@ dim(db.test)
 fs=c('SubmissionNumber',
      'TimeSinceLast',
      'ForumScore',
-     'AverageVideoTimeDiffs',
-     'NForumEvents',
      'AverageForumTimeDiffs',
-     'DurationOfVideoActivity')
+     'NForumEvents',
+     'DurationOfVideoActivity',
+     'ProblemID')
 
 #-------------For tuneGrid-----------------#
 tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
@@ -70,15 +70,6 @@ range<-c(1:(tune+1))
 paramGrid <- expand.grid(mtry = range)
 
 ctrl= trainControl(method = 'cv', summaryFunction=twoClassSummary ,classProbs = TRUE)
-
-# rf_model<-train(x=db.train[,fs],
-#                 y=db.train$improved,
-#                 method="rf",
-#                 trControl=trainControl(method="cv",number=5),
-#                 prox=TRUE,
-#                 allowParallel=TRUE)
-# 
-# print(rf_model); plot(rf_model)
 
 model<-train(x=db.train[,fs],
              y=db.train$improved,
