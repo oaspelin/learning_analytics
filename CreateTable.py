@@ -20,7 +20,7 @@ def indent(text, prefix, predicate=None):
 # Function that pretty-prints data set #
 #--------------------------------------#
 def PrintDataSet(DataSet):
-	
+    
 	# Initialize effective row er (rows that have custom features)
 	EffectiveRowCounter = 0
 
@@ -96,7 +96,7 @@ def PrintDataSet(DataSet):
 						print colored('\n\t\t Features :', 'cyan')
 						for FeatureName in FeatureNames:
 							print colored('\t\t\t\t%s : %d' % (FeatureName, DataSet[ProblemID][UserID][SubmissionNumber]['Features'][FeatureName]), 'cyan')
-					
+
 				# Print (re-)submission grade and grade difference
 				print '\n\t\t Grade          '+str(DataSet[ProblemID][UserID][SubmissionNumber]['Grade'])
 				if SubmissionNumber>0:
@@ -109,7 +109,7 @@ def PrintDataSet(DataSet):
 						GradeDiffColor = 'grey'
 					print colored('\t\t GradeDiff      '+str(GradeDiff), GradeDiffColor)
 
-	# Print end of dataset notice, and number of effective rows 
+	# Print end of dataset notice, and number of effective rows
 	print '\nEnd of data set. Number of rows with custom features is %d.\n' % EffectiveRowCounter
 
 # END OF FUNCTION
@@ -177,9 +177,9 @@ def ExportAsCSV(DataSet):
 
 			# Loop through all problem (re-)submissions
 			for SubmissionNumber in DataSet[ProblemID][UserID].keys():
-				
+
 				# Initialize row values
-				[TimeStamp, TimeSinceLast, Grade, GradeDiff, NVideoEvents, NForumEvents] = 6*[None]
+				[TimeStamp, TimeSinceLast, Grade, GradeDiff, NVideoEvents, NForumEvents, NVideoAndForumEvents] = 7*[None]
 
 				# Get time stamps
 				TimeStamp = DataSet[ProblemID][UserID][SubmissionNumber]['TimeStamp']
@@ -190,15 +190,16 @@ def ExportAsCSV(DataSet):
 				if SubmissionNumber>0:
 					NVideoEvents = DataSet[ProblemID][UserID][SubmissionNumber]['NVideoEvents']
 					NForumEvents = DataSet[ProblemID][UserID][SubmissionNumber]['NForumEvents']
-					
+					NVideoAndForumEvents = NVideoEvents + NForumEvents
+
 				# Get grade and grade difference
 				Grade = DataSet[ProblemID][UserID][SubmissionNumber]['Grade']
 				if SubmissionNumber>0:
 					GradeDiff = DataSet[ProblemID][UserID][SubmissionNumber]['GradeDiff']
-				
+
 				# Build basic row
-				Row = [ProblemID, UserID, SubmissionNumber, TimeStamp, TimeSinceLast, Grade, GradeDiff, NVideoEvents, NForumEvents]
-				
+				Row = [ProblemID, UserID, SubmissionNumber, TimeStamp, TimeSinceLast, Grade, GradeDiff, NVideoEvents, NForumEvents, NVideoAndForumEvents]
+
 				# Add custom feature to row
 				if SubmissionNumber>0:
 					for FeatureName in ListOfFeatureNames:
@@ -218,15 +219,15 @@ def ExportAsCSV(DataSet):
 				#		Table += [Row]
 
 	# Build list of output table's column names
-	ColumnNames = ['ProblemID', 'UserID', 'SubmissionNumber', 'TimeStamp', 'TimeSinceLast', 'Grade', 'GradeDiff', 'NVideoEvents', 'NForumEvents']
+	ColumnNames = ['ProblemID', 'UserID', 'SubmissionNumber', 'TimeStamp', 'TimeSinceLast', 'Grade', 'GradeDiff', 'NVideoEvents', 'NForumEvents', 'NVideoAndForumEvents']
 	ColumnNames += ListOfFeatureNames
-	
+
 	# Print sample of output table
 	#print tabulate(Table[0:160], headers=ColumnNames, tablefmt="fancy_grid")
 	#print '(this is a sample of the output table)\n'
 
 	# Save table into CSV file
-	with open("../OutputTable2.csv", "w") as f:
+	with open("../OutputTable.csv", "w") as f:
 		f.write(','.join(ColumnNames)+'\n')
 		writer = csv.writer(f)
 		writer.writerows(Table)
@@ -259,4 +260,3 @@ os.system('read -s -n 1 -p "Data set will now be saved to CSV file. Press any ke
 
 # Save data set into CSV file
 ExportAsCSV(DataSet)
-

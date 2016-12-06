@@ -19,22 +19,22 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 		VideoTypes = VideoEvents['EventType']
 
 		NumberOfVideoUnique = float(len(set(VideoEvents['VideoID'])))
-		
-		NumberOfVideoPlaysPerVideo = VideoTypes.count('Video.Play')/NumberOfVideoUnique
-		NumberOfVideoSeekPerVideo = VideoTypes.count('Video.Seek')/NumberOfVideoUnique
-		#NumberOfVideoPausePerVideo = VideoTypes.count('Video.Pause')/NumberOfVideoUnique
+
+		NumberOfVideoPlay = VideoTypes.count('Video.Play')
+		NumberOfVideoSeek = VideoTypes.count('Video.Seek')
 
 		NumberOfVideoDownload = VideoTypes.count('Video.Download')
+
+		VideoScore = 1 * NumberOfVideoUnique + \
+		0.75 * NumberOfVideoPlay + \
+		0.5 * NumberOfVideoSeek + \
+		1 * NumberOfVideoDownload
 
 		# Append features to dictionary
 		Features.update({
 			'DurationOfVideoActivity' : DurationOfVideoActivity,
 			'AverageVideoTimeDiffs' : AverageVideoTimeDiffs,
-			'NumberOfVideoUnique' : NumberOfVideoUnique,
-			'NumberOfVideoPlaysPerVideo' : NumberOfVideoPlaysPerVideo,
-			'NumberOfVideoSeekPerVideo' : NumberOfVideoSeekPerVideo,
-			#'NumberOfVideoPausePerVideo' : NumberOfVideoPausePerVideo,
-			'NumberOfVideoDownload' : NumberOfVideoDownload
+			'VideoScore' : VideoScore
 		})
 
 	# Features for forum events
@@ -42,34 +42,37 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 
 		# Calculate custom features
 		# Keys: TimeStamp, EventType, PostType, PostID, PostLength
+		TimeStamps = ForumEvents['TimeStamp']
+		TimeStampDiffs = [x[0]-x[1] for x in zip(TimeStamps[1:],TimeStamps[:-1])]
+		AverageForumTimeDiffs = sum(TimeStampDiffs)/max(1,len(TimeStampDiffs))
+
 		EventTypes = ForumEvents['EventType']
-		
+
 		NumberOfThreadViews = EventTypes.count('Forum.Thread.View')
-		NumberOfThreadSubscribe = EventTypes.count('Forum.Thread.Subscribe')
-		
+		NumberOfThreadSubscribe = EventTypes.count('Forum.ThreadSubscribe')
+
 		NumberOfPostUpvotes = EventTypes.count('Forum.Post.Upvote')
 		NumberOfPostDownvotes = EventTypes.count('Forum.Post.Downvote')
 		NumberOfCommentUpvotes = EventTypes.count('Forum.Comment.Upvote')
 		NumberOfCommentDownvotes = EventTypes.count('Forum.Comment.Downvote')
 
 		NumberOfForumVotes =  NumberOfPostUpvotes + NumberOfPostDownvotes + NumberOfCommentUpvotes + NumberOfCommentDownvotes
-		
+
 		NumberOfThreadLaunch = EventTypes.count('Forum.Thread.Launch')
 		NumberOfThreadPostOn = EventTypes.count('Forum.Thread.PostOn')
 		NumberOfPostCommentOn = EventTypes.count('Forum.Post.CommentOn')
-		
-		a = 3
-		b = 2
-		g = 1
-		
-		ForumActivity = a * NumberOfThreadLaunch + b * NumberOfThreadPostOn + g * NumberOfPostCommentOn
-		
+
+		ForumScore = 1.5 * NumberOfThreadSubscribe + \
+		3 * NumberOfThreadLaunch + \
+		2 * NumberOfThreadPostOn + \
+		2 * NumberOfPostCommentOn + \
+		0.5 * NumberOfForumVotes + \
+		0.25 * NumberOfThreadViews
+
 		# Append features to dictionary
 		Features.update({
-			'NumberOfThreadViews' : NumberOfThreadViews,
-			'NumberOfThreadSubscribe' : NumberOfThreadSubscribe,
-			'NumberOfForumVotes' : NumberOfForumVotes,
-			'ForumActivity' : ForumActivity
+			'AverageForumTimeDiffs' : AverageForumTimeDiffs,
+			'ForumScore' : ForumScore
 		})
 
 	return Features

@@ -1,27 +1,36 @@
-library(dplyr)
+setwd("~/Documents/EPFL/Digital Education and Learning Analytics/Dataset and Scripts-20161108/learning_analytics")
 library(plyr) #ddply
+library(dplyr)
+library(caret)
 #======================================================================== 
 #         step 1: train classifier
 #======================================================================== 
 
   #------ read features extracted from train set, using your python script
-  db=read.csv('../OutputTable2.csv', stringsAsFactors = F)
+  db=read.csv('../OutputTable.csv', stringsAsFactors = F)
   
   #------ sort submissions
   db=db[order(db$UserID,db$ProblemID,db$SubmissionNumber),]
-  
-  #--- replace NA values with 0
-  db[is.na(db)]=0
   
   #----- remove first submissions
   db= filter(db,SubmissionNumber>0)
   
   #---- remove cases when there is no video or forum activity between two submissions
-  db$NVideoAndForum= db$NVideoEvents+db$NForumEvents
-  db= filter(db,NVideoAndForum>0)  
+  #db$NVideoAndForum= db$NVideoEvents+db$NForumEvents
+  db= filter(db,NVideoAndForumEvents>0)  
+  # db= filter(db,NVideoEvents>0)  
+  # db= filter(db,NForumEvents>0)  
   
-  #----- make a catgorical vribale, indicating if grade improved
-  db$improved = factor(ifelse(db$GradeDiff>0 ,'Yes', 'No' ))
+  #--- replace NA values with 0
+  
+    # test to remove columns with low entry frequency
+  # useful <- apply(!is.na(db),2,sum) > (dim(db)[1] * 0.65)
+  # db = db[useful]
+  
+  db[is.na(db)]=0
+  
+  #----- make a catgorical variable, indicating if grade improved
+  db$improved = factor(ifelse(db$GradeDiff>0 ,"Yes", "No"))
   table(db$improved)
   
   # ----- (Optional) split your training data into train and test set. Use train set to build your classifier and try it on test data to check generalizability. 
@@ -33,46 +42,62 @@ library(plyr) #ddply
   dim(db.test)
   
   #Control function for linear model
-  set.seed(123)
-  ctrl <- trainControl(method = "repeatedcv", repeats =3)
+  #set.seed(123)
+  #ctrl <- trainControl(method = "repeatedcv", repeats =3)
   
   #train model
-  m1_train = train(improved ~ .,data=db.train, method="lm",trControl=ctrl)
-  summary(m1_train)
-  summary(m1_train)$r.squared
+  # m1_train = train(improved ~ .,data=db.train, method="lm",trControl=ctrl)
+  # summary(m1_train)
+  # summary(m1_train)$r.squared
   
   #----- train classifier to predict 'improved' status 
   #----- Try different methods, model parameters, feature sets and find the best classifier 
   #----- Use AUC as model evaluation metric
-  library(caret)
-  fs=c('TimeSinceLast','SubmissionNumber','NumberOfVideoPlays', 'NumberOfThreadViews', 'DurationOfVideoActivity', 'AverageVideoTimeDiffs')
+  
+  fs=c('SubmissionNumber',
+       'TimeSinceLast',
+       'ForumScore',
+       'VideoScore',
+       'NForumEvents',
+       'DurationOfVideoActivity')
   
   #-------------For tuneGrid-----------------#
   tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
-  interval<-1
-  range<-c((tune-interval):(tune+interval))
-  range
+  #ifelse(tune==1, range<-c((tune):(tune+1)), range<-c((tune-1):(tune+1)))
+  range<-c(1:(tune+1))
+  
   paramGrid <- expand.grid(mtry = range)
   
   ctrl= trainControl(method = 'cv', summaryFunction=twoClassSummary ,classProbs = TRUE)
-  model=train(x=db.train[,fs],
+  
+  # rf_model<-train(x=db.train[,fs],
+  #                 y=db.train$improved,
+  #                 method="rf",
+  #                 trControl=trainControl(method="cv",number=5),
+  #                 prox=TRUE,
+  #                 allowParallel=TRUE)
+  # 
+  # print(rf_model); plot(rf_model)
+  
+  model<-train(x=db.train[,fs],
                y=db.train$improved,
                method = "rf",
                metric="ROC",
                trControl = ctrl,
-               #tuneGrid = paramGrid,
+               tuneGrid = paramGrid,
                preProc = c("center", "scale"))
-  print(model);   plot(model)  
   
-  #svmLinear
-  svmFit <- train(x=db.train[,fs],
-                  y=db.train$improved,
-                  method= "svmLinear",
-                  metric ="ROC",
-                  trControl=ctrl,
-                  tuneLength = 15,
-                  preProc= c("center", "scale"))
-  print(svmFit);   plot(svmFit) 
+  print(model); plot(model)
+  
+  # #svmLinear
+  # svmFit <- train(x=db.train[,fs],
+  #                 y=db.train$improved,
+  #                 method= "svmLinear",
+  #                 metric ="ROC",
+  #                 trControl=ctrl,
+  #                 tuneLength = 15,
+  #                 preProc= c("center", "scale"))
+  # print(svmFit);   plot(svmFit) 
   
 #----- check generalizability of your model on new data
   preds= predict(model, newdata=db.test);
