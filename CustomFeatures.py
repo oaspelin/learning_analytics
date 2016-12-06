@@ -25,6 +25,8 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 
 		NumberOfVideoDownload = VideoTypes.count('Video.Download')
 
+
+		# is currently not adding any value, consider changing this derived feature
 		VideoScore = 1 * NumberOfVideoUnique + \
 		0.75 * NumberOfVideoPlay + \
 		0.5 * NumberOfVideoSeek + \
