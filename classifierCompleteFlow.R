@@ -78,18 +78,53 @@ model<-train(x=db.train[,fs],
              trControl = ctrl,
              tuneGrid = paramGrid,
              preProc = c("center", "scale"))
+plot(model); summary(model)
 
-print(model); plot(model)
+#decent tutorial https://www.r-bloggers.com/the-5th-tribe-support-vector-machines-and-caret/
+#svmLinear
+set.seed(1492)
+svmFit <- train(x=db.train[,fs],
+                y=db.train$improved,
+                method= "svmLinear",
+                metric ="ROC",
+                trControl=ctrl,
+                preProc= c("center", "scale"))
+svmFit$finalModel
+#radial kernel
+set.seed(1492)
+radialFit<-train(x=db.train[,fs],
+                 y=db.train$improved,
+                 method= "svmRadial",
+                 metric ="ROC",
+                 tuneLength=9,
+                 trControl=ctrl,
+                 preProc= c("center", "scale"))
+plot(radialFit); summary(radialFit)
 
-# #svmLinear
-# svmFit <- train(x=db.train[,fs],
-#                 y=db.train$improved,
-#                 method= "svmLinear",
-#                 metric ="ROC",
-#                 trControl=ctrl,
-#                 tuneLength = 15,
-#                 preProc= c("center", "scale"))
-# print(svmFit);   plot(svmFit) 
+set.seed(1492)
+# Use the expand.grid to specify the search space	
+grid <- expand.grid(sigma = c(1.36, 1.039, 1.042),
+                    C = c(62, 63, 64, 65, 66)
+)
+radialFit<-train(x=db.train[,fs],
+                 y=db.train$improved,
+                 method= "svmRadial",
+                 metric ="ROC",
+                 tuneGrid = grid,
+                 trControl=ctrl,
+                 preProc= c("center", "scale"))
+plot(radialFit); summary(radialFit)
+
+
+#-----kNN-------#
+knnFit <- train(x=db.train[,fs],
+                y=db.train$improved,
+                method = "knn",
+                metric ="ROC",
+                trControl = ctrl, 
+                preProcess = c("center","scale"), 
+                tuneGrid = expand.grid(.k=20:40)) #up to  40 nearest
+plot(knnFit); summary(knnFit)
 
 #----- check generalizability of your model on new data
 preds= predict(model, newdata=db.test);
