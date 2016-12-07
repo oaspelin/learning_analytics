@@ -78,7 +78,7 @@ model<-train(x=db.train[,fs],
              trControl = ctrl,
              tuneGrid = paramGrid,
              preProc = c("center", "scale"))
-plot(model); summary(model)
+plot(model); model
 
 #decent tutorial https://www.r-bloggers.com/the-5th-tribe-support-vector-machines-and-caret/
 #svmLinear
@@ -99,7 +99,7 @@ radialFit<-train(x=db.train[,fs],
                  tuneLength=9,
                  trControl=ctrl,
                  preProc= c("center", "scale"))
-plot(radialFit); summary(radialFit)
+plot(radialFit); radialFit
 
 set.seed(1492)
 # Use the expand.grid to specify the search space	
@@ -113,7 +113,7 @@ radialFit<-train(x=db.train[,fs],
                  tuneGrid = grid,
                  trControl=ctrl,
                  preProc= c("center", "scale"))
-plot(radialFit); summary(radialFit)
+plot(radialFit); radialFit
 
 
 #-----kNN-------#
@@ -124,7 +124,7 @@ knnFit <- train(x=db.train[,fs],
                 trControl = ctrl, 
                 preProcess = c("center","scale"), 
                 tuneGrid = expand.grid(.k=20:40)) #up to  40 nearest
-plot(knnFit); summary(knnFit)
+plot(knnFit); knnFit
 
 #----- check generalizability of your model on new data
 preds= predict(model, newdata=db.test);
