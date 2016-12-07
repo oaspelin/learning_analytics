@@ -27,10 +27,10 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 
 
 		# is currently not adding any value, consider changing this derived feature
-		VideoScore = 1 * NumberOfVideoUnique + \
-		0.75 * NumberOfVideoPlay + \
-		0.5 * NumberOfVideoSeek + \
-		1 * NumberOfVideoDownload
+		VideoScore = 0.25 * NumberOfVideoUnique + \
+		1 * NumberOfVideoPlay + \
+		0.2 * NumberOfVideoSeek + \
+		0.25 * NumberOfVideoDownload
 
 		# Append features to dictionary
 		Features.update({
