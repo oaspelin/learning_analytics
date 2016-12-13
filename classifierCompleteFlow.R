@@ -27,33 +27,39 @@ table(db$improved)
 set.seed(1234)
 
 
-fs=c('SubmissionNumber',
-     'TimeSinceLast')
-# 'AverageForumTimeDiffs',
-# 'NumberOfThreadViews',
-# 'NumberOfThreadSubscribe',
-# 'NumberOfThreadLaunch',
-# 'NumberOfThreadPostOn',
-# 'NumberOfPostCommentOn',
-# 'NumberOfForumVotes',
-# 'DurationOfVideoActivity',
-# 'NumberOfVideoPlay',
-# 'NumberOfVideoSeek',
-# 'NumberOfVideoDownload',
-# 'NumberOfVideoUnique',
-# 'ProblemID',
-# 'AverageVideoTimeDiffs')
+fs=c(
+  'SubmissionNumber',
+  'TimeSinceLast',
+  #'ProblemID',
+  # 'AverageForumTimeDiffs',
+  # 'NumberOfThreadViews',
+  # 'NumberOfThreadSubscribe',
+  # 'NumberOfThreadLaunch',
+  # 'NumberOfThreadPostOn',
+  # 'NumberOfPostCommentOn',
+  # 'NumberOfForumVotes',
+  'ForumScore',
+  'DurationOfVideoActivity',
+  'AverageVideoTimeDiffs',
+  'NumberOfVideoPlay',
+  'NumberOfVideoSeek',
+  'NumberOfVideoDownload',
+  'NumberOfVideoUnique'
+  #'VideoScore'
+)
 
 
 #============================================
 #======== LDA SBD FEATURE SELECTION =========
 #============================================
 
-filterCtrl <- sbfControl(functions = ldaSBF, method = "repeatedcv", repeats = 10)
-# set.seed(10)
-rfWithFilter <- sbf(x=db.train[,fs],
-                    y=db.train$improved,
-                    sbfControl = filterCtrl)
+filterCtrl <- sbfControl(functions = rfSBF, method = "repeatedcv", repeats = 5)
+rfWithFilter <- sbf(x=db[,fs],
+                    y=db$improved,
+                    sbfControl = filterCtrl,
+                    preProc = c("center", "scale"))
+
+# DOESN'T SEEM TO PROVIDE ANY USEFUL INSIGHT
 
 #============================================
 #=============== RANDOM FOREST ==============
@@ -65,8 +71,8 @@ paramGrid <- expand.grid(mtry = range)
 
 ctrl= trainControl(method = 'cv', summaryFunction=twoClassSummary ,classProbs = TRUE)
 
-model<-train(x=db.train[,fs],
-             y=db.train$improved,
+model<-train(x=db[,fs],
+             y=db$improved,
              method = "rf",
              metric="ROC",
              trControl = ctrl,
@@ -77,37 +83,38 @@ plot(model); model
 #============================================
 #================ SVM LINEAR ================
 #============================================
-svmFit <- train(x=db.train[,fs],
-                y=db.train$improved,
+model <- train(x=db[,fs],
+                y=db$improved,
                 method= "svmLinear",
                 metric ="ROC",
                 trControl=ctrl,
                 preProc= c("center", "scale"))
-svmFit$finalModel
+model$finalModel
 
 #============================================
 #=================== KNN ====================
 #============================================
-knnFit <- train(x=db.train[,fs],
-                y=db.train$improved,
+model <- train(x=db[,fs],
+                y=db$improved,
                 method = "knn",
                 metric ="ROC",
                 trControl = ctrl, 
                 preProcess = c("center","scale"), 
                 tuneGrid = expand.grid(.k=77:100)) #up to  40 nearest
-plot(knnFit); knnFit
+plot(model); model
 
 #============================================
 #=================== LDA ====================
 #============================================
 set.seed(1234)
-ldaFit<-train(x=db.train[,fs],
-              y=db.train$improved,
+model<-train(x=db[,fs],
+              y=db$improved,
               method = "lda",
               metric ="ROC",
               preProcess = c("center","scale"),
               trControl=ctrl)
-
+#TUNING PARAMS?
+model
 #============================================
 #================= STEP LDA =================
 #============================================
@@ -116,8 +123,8 @@ direction <-"forward"
 tune_1     <-data.frame(maxvar,direction)
 
 set.seed(1234)
-stepldaFit<-train(x=db.train[,fs],
-              y=db.train$improved,
+stepldaFit<-train(x=db[,fs],
+              y=db$improved,
               method = "stepLDA",
               metric ="ROC",
               preProcess = c("center","scale"),
@@ -128,7 +135,7 @@ stepldaFit<-train(x=db.train[,fs],
 #================ CORRELATION ===============
 #============================================
 
-correlation_matrix<- cor(db.train[,fs])
+correlation_matrix<- cor(db[,fs])
 corrplot(correlation_matrix, method = "color")
 
 #----- check generalizability of your model on new data
@@ -145,12 +152,12 @@ confusionMatrix(preds, db.test$improved)
 #         step 2.1: Use classifier to predict progress for test data
 #======================================================================== 
 
-testDb=read.csv('OutputTable_test.csv', stringsAsFactors = F)
+testDb=read.csv('../OutputTable_test.csv', stringsAsFactors = F)
 testDb$Grade=NULL; testDb$GradeDiff=NULL;
 testDb[is.na(testDb)]=0
 
 #---- use trained model to predict progress for test data
-preds= predict(model, newdata=testDb);
+preds= predict(model, newdata=testDb[,fs]);
 
 #======================================================================== 
 #         step 2.1: prepare submission file for kaggle
@@ -165,8 +172,8 @@ table(cl.Results$improved)
 
 #----- keep only rows which are listed in classifier_templtae.csv file
 #----- this excludes first submissions and cases with no forum and video event in between two submissions
-classifier_templtaete= read.csv('classifier_templtae.csv', stringsAsFactors = F)
-kaggleSubmission=merge(classifier_templtaete,cl.Results )
+classifier_template= read.csv('../classifier_template.csv', stringsAsFactors = F)
+kaggleSubmission=merge(classifier_template,cl.Results )
 write.csv(kaggleSubmission,file='classifier_results.csv', row.names = F)
 
 
