@@ -20,7 +20,7 @@ def indent(text, prefix, predicate=None):
 # Function that pretty-prints data set #
 #--------------------------------------#
 def PrintDataSet(DataSet):
-    
+
 	# Initialize effective row er (rows that have custom features)
 	EffectiveRowCounter = 0
 
@@ -227,7 +227,7 @@ def ExportAsCSV(DataSet):
 	#print '(this is a sample of the output table)\n'
 
 	# Save table into CSV file
-	with open("../OutputTable.csv", "w") as f:
+	with open("../OutputTable_test.csv", "w") as f:
 		f.write(','.join(ColumnNames)+'\n')
 		writer = csv.writer(f)
 		writer.writerows(Table)
@@ -243,7 +243,7 @@ def ExportAsCSV(DataSet):
 #===============================#
 
 # Get input dataset filepath
-FilePath = '../dataset.pickle'
+FilePath = '../dataset_test.pickle'
 
 # Load dataset into python dictionary
 with open(FilePath, 'rb') as handle:
