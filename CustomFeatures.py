@@ -27,10 +27,10 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 
 
 		# is currently not adding any value, consider changing this derived feature
-		# VideoScore = 0.25 * NumberOfVideoUnique + \
-		# 1 * NumberOfVideoPlay + \
-		# 0.2 * NumberOfVideoSeek + \
-		# 0.25 * NumberOfVideoDownload
+		VideoScore = 0.25 * NumberOfVideoUnique + \
+		1 * NumberOfVideoPlay + \
+		0.2 * NumberOfVideoSeek + \
+		0.25 * NumberOfVideoDownload
 
 		# Append features to dictionary
 		Features.update({
@@ -39,8 +39,8 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 			'NumberOfVideoPlay' : NumberOfVideoPlay,
 			'NumberOfVideoSeek' : NumberOfVideoSeek,
 			'NumberOfVideoDownload' : NumberOfVideoDownload,
-			'NumberOfVideoUnique' : NumberOfVideoUnique
-			# 'VideoScore' : VideoScore
+			'NumberOfVideoUnique' : NumberOfVideoUnique,
+			'VideoScore' : VideoScore
 		})
 
 	# Features for forum events
@@ -68,11 +68,12 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 		NumberOfThreadPostOn = EventTypes.count('Forum.Thread.PostOn')
 		NumberOfPostCommentOn = EventTypes.count('Forum.Post.CommentOn')
 
-		# ForumScore = 1.5 * NumberOfThreadSubscribe + \
-		# 3 * NumberOfThreadLaunch + \
-		# 2 * NumberOfThreadPostOn + \
-		# 2 * NumberOfPostCommentOn + \
-		# 0.5 * NumberOfForumVotes
+		ForumScore = 1.5 * NumberOfThreadSubscribe + \
+		3 * NumberOfThreadLaunch + \
+		2 * NumberOfThreadPostOn + \
+		2 * NumberOfPostCommentOn + \
+		0.5 * NumberOfForumVotes + \
+		0.25 * NumberOfThreadViews
 
 		# Append features to dictionary
 		Features.update({
@@ -82,8 +83,8 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 			'NumberOfThreadLaunch' : NumberOfThreadLaunch,
 			'NumberOfThreadPostOn' : NumberOfThreadPostOn,
 			'NumberOfPostCommentOn' : NumberOfPostCommentOn,
-			'NumberOfForumVotes' : NumberOfForumVotes
-			# 'ForumScore' : ForumScore
+			'NumberOfForumVotes' : NumberOfForumVotes,
+			'ForumScore' : ForumScore
 		})
 
 	return Features
