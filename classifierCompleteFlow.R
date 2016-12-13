@@ -121,27 +121,27 @@ radialFit<-train(x=db.train[,fs],
 plot(radialFit); radialFit
 
 fs=c('SubmissionNumber',
-     'TimeSinceLast',
-     'AverageForumTimeDiffs',
-     'NumberOfThreadViews',
-     'NumberOfThreadSubscribe',
-     'NumberOfThreadLaunch',
-     'NumberOfThreadPostOn',
-     'NumberOfPostCommentOn',
-     'NumberOfForumVotes',
-     'DurationOfVideoActivity',
-     'NumberOfVideoPlay',
-     'NumberOfVideoSeek',
-     'NumberOfVideoDownload',
-     'NumberOfVideoUnique',
-     'ProblemID',
-     'AverageVideoTimeDiffs')
+     'TimeSinceLast')
+     # 'AverageForumTimeDiffs',
+     # 'NumberOfThreadViews',
+     # 'NumberOfThreadSubscribe',
+     # 'NumberOfThreadLaunch',
+     # 'NumberOfThreadPostOn',
+     # 'NumberOfPostCommentOn',
+     # 'NumberOfForumVotes',
+     # 'DurationOfVideoActivity',
+     # 'NumberOfVideoPlay',
+     # 'NumberOfVideoSeek',
+     # 'NumberOfVideoDownload',
+     # 'NumberOfVideoUnique',
+     # 'ProblemID',
+     # 'AverageVideoTimeDiffs')
 
 ##check correlation
 correlation_matrix<- cor(db.train[,fs])
 corrplot(correlation_matrix, method = "color")
 
-filterCtrl <- sbfControl(functions = rfSBF, method = "repeatedcv", repeats = 10)
+filterCtrl <- sbfControl(functions = ldaSBF, method = "repeatedcv", repeats = 10)
 # set.seed(10)
 rfWithFilter <- sbf(x=db.train[,fs],
                     y=db.train$improved,
@@ -164,8 +164,31 @@ knnFit <- train(x=db.train[,fs],
                 metric ="ROC",
                 trControl = ctrl, 
                 preProcess = c("center","scale"), 
-                tuneGrid = expand.grid(.k=135:150)) #up to  40 nearest
+                tuneGrid = expand.grid(.k=77:100)) #up to  40 nearest
 plot(knnFit); knnFit
+
+#-----------LDA------------#
+set.seed(1234)
+ldaFit<-train(x=db.train[,fs],
+              y=db.train$improved,
+              method = "lda",
+              metric ="ROC",
+              preProcess = c("center","scale"),
+              trControl=ctrl)
+
+#-----------stepLDA------------#
+maxvar     <-(length(fs)) 
+direction <-"forward"
+tune_1     <-data.frame(maxvar,direction)
+
+set.seed(1234)
+stepldaFit<-train(x=db.train[,fs],
+              y=db.train$improved,
+              method = "stepLDA",
+              metric ="ROC",
+              preProcess = c("center","scale"),
+              trControl=ctrl,
+              tuneGrid = tune_1)
 
 #----- check generalizability of your model on new data
 preds= predict(model, newdata=db.test);
