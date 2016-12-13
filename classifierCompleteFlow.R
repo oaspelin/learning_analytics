@@ -136,19 +136,26 @@ fs=c('SubmissionNumber',
      'NumberOfVideoUnique',
      'ProblemID',
      'AverageVideoTimeDiffs')
+
 ##check correlation
 correlation_matrix<- cor(db.train[,fs])
 corrplot(correlation_matrix, method = "color")
 
-sControl<-safsControl(functions=rfSA,
-                      method="cv",
-                      #repeats = 5,
-                      improve=50)
+filterCtrl <- sbfControl(functions = rfSBF, method = "repeatedcv", repeats = 10)
+# set.seed(10)
+rfWithFilter <- sbf(x=db.train[,fs],
+                    y=db.train$improved,
+                    sbfControl = filterCtrl)
 
-knnFeatures<-safs(x=db.train[,fs],
-                  y=db.train$improved,
-                  iters=100,
-                  safsControl = sControl)
+# sControl<-safsControl(functions=rfSA,
+#                       method="cv",
+#                       #repeats = 5,
+#                       improve=50)
+# 
+# knnFeatures<-safs(x=db.train[,fs],
+#                   y=db.train$improved,
+#                   iters=100,
+#                   safsControl = sControl)
 
 #----kNN-------#
 knnFit <- train(x=db.train[,fs],

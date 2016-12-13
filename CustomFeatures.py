@@ -86,5 +86,6 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 			'NumberOfForumVotes' : NumberOfForumVotes,
 			'ForumScore' : ForumScore
 		})
+		
 
 	return Features
