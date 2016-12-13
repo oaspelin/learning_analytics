@@ -30,22 +30,23 @@ set.seed(1234)
 fs=c(
   'SubmissionNumber',
   'TimeSinceLast',
-  #'ProblemID',
-  # 'AverageForumTimeDiffs',
+  'ProblemID',
+  'AverageForumTimeDiffs'
   # 'NumberOfThreadViews',
   # 'NumberOfThreadSubscribe',
   # 'NumberOfThreadLaunch',
   # 'NumberOfThreadPostOn',
   # 'NumberOfPostCommentOn',
   # 'NumberOfForumVotes',
-  'ForumScore',
-  'DurationOfVideoActivity',
-  'AverageVideoTimeDiffs',
-  'NumberOfVideoPlay',
-  'NumberOfVideoSeek',
-  'NumberOfVideoDownload',
-  'NumberOfVideoUnique'
-  #'VideoScore'
+  # 'ForumScore',
+  # 'DurationOfVideoActivity',
+  # 'AverageVideoTimeDiffs',
+  # 'NumberOfVideoPlay',
+  # 'NumberOfVideoSeek',
+  # 'NumberOfVideoDownload',
+  # 'NumberOfVideoUnique'
+  # 'VideoUniquePerTotalVideoEvent'
+  # 'VideoScore'
 )
 
 
@@ -67,7 +68,7 @@ rfWithFilter <- sbf(x=db[,fs],
 tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
 range<-c(1:(tune+1))
 
-paramGrid <- expand.grid(mtry = range)
+paramGrid <- expand.grid(mtry = 25:30)
 
 ctrl= trainControl(method = 'cv', summaryFunction=twoClassSummary ,classProbs = TRUE)
 
@@ -132,6 +133,52 @@ stepldaFit<-train(x=db[,fs],
               tuneGrid = tune_1)
 
 #============================================
+#=============== NEURAL NETWORKS ============
+#============================================
+set.seed(1234)
+#find tunegrid
+model<-train(x=db[,fs],
+          y=db$improved,
+          method="nnet",
+          metric ="ROC",
+          linout=FALSE, 
+          trace=FALSE,
+          preProcess = c("center","scale"),
+          trControl = ctrl)
+plot(model);model
+model<-train(x=db[,fs],
+          y=db$improved,
+          method="nnet",
+          metric ="ROC",
+          linout=FALSE,
+          trace=FALSE,
+          preProcess = c("center","scale"),
+          trControl = ctrl, 
+          maxint=10, 
+          Hess=T)
+plot(model);model
+
+#============================================
+#=============== glnet ======================
+#============================================
+#find tunegrid
+model <- train(x=db[,fs],
+               y=db$improved,
+               method='glmnet',
+               metric = "ROC",
+               trControl=ctrl)
+model
+grid = expand.grid(.alpha=c(0.54,0.056),.lambda=seq(0.0001,0.014,by=0.00001))
+model <- train(x=db[,fs],
+               y=db$improved,
+               method='glmnet',
+               metric = "ROC",
+               tuneGrid = grid,
+               trControl=ctrl)
+model
+plot(model, metric='ROC')
+
+#============================================
 #================ CORRELATION ===============
 #============================================
 
@@ -140,9 +187,7 @@ corrplot(correlation_matrix, method = "color")
 
 #----- check generalizability of your model on new data
 preds= predict(model, newdata=db.test);
-predsSVM= predict(svmFit, newdata=db.test);
 table(preds)
-table(predsSVM)
 # install.packages('AUC')
 library(AUC)
 ROC_curve= roc(preds, db.test$improved);  auc(ROC_curve)
