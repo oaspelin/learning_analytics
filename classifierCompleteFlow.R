@@ -60,7 +60,9 @@ fs=c('SubmissionNumber',
      'AverageForumTimeDiffs',
      'NForumEvents',
      'DurationOfVideoActivity',
-     'ProblemID')
+     'ProblemID',
+     'VideoScore',
+     'AverageVideoTimeDiffs')
 
 #-------------For tuneGrid-----------------#
 tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
@@ -123,7 +125,7 @@ knnFit <- train(x=db.train[,fs],
                 metric ="ROC",
                 trControl = ctrl, 
                 preProcess = c("center","scale"), 
-                tuneGrid = expand.grid(.k=20:40)) #up to  40 nearest
+                tuneGrid = expand.grid(.k=90:110)) #up to  40 nearest
 plot(knnFit); knnFit
 
 #----- check generalizability of your model on new data
