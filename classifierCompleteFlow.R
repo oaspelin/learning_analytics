@@ -2,6 +2,7 @@ setwd("~/Documents/EPFL/Digital Education and Learning Analytics/Dataset and Scr
 library(plyr) #ddply
 library(dplyr)
 library(caret)
+library(corrplot)
 #======================================================================== 
 #         step 1: train classifier
 #======================================================================== 
@@ -19,7 +20,7 @@ db= filter(db,SubmissionNumber>0)
 #db$NVideoAndForum= db$NVideoEvents+db$NForumEvents
 db= filter(db,NVideoAndForumEvents>0)  
 # db= filter(db,NVideoEvents>0)  
-# db= filter(db,NForumEvents>0)  
+# db= filter(db,NForumEvents>0) 
 
 #--- replace NA values with 0
 
@@ -32,6 +33,7 @@ db[is.na(db)]=0
 #----- make a catgorical variable, indicating if grade improved
 db$improved = factor(ifelse(db$GradeDiff>0 ,"Yes", "No"))
 table(db$improved)
+
 
 # ----- (Optional) split your training data into train and test set. Use train set to build your classifier and try it on test data to check generalizability. 
 set.seed(1234)
@@ -54,15 +56,16 @@ dim(db.test)
 #----- Try different methods, model parameters, feature sets and find the best classifier 
 #----- Use AUC as model evaluation metric
 
-fs=c('SubmissionNumber',
-     'TimeSinceLast',
-     'ForumScore',
-     'AverageForumTimeDiffs',
-     'NForumEvents',
-     'DurationOfVideoActivity',
-     'ProblemID',
-     'VideoScore',
-     'AverageVideoTimeDiffs')
+# fs=c('SubmissionNumber',
+#      'TimeSinceLast',
+#      'ForumScore',
+#      'AverageForumTimeDiffs',
+#      'NForumEvents',
+#      'DurationOfVideoActivity',
+#      'ProblemID',
+#      'VideoScore',
+#      'AverageVideoTimeDiffs')
+
 
 #-------------For tuneGrid-----------------#
 tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
@@ -117,15 +120,44 @@ radialFit<-train(x=db.train[,fs],
                  preProc= c("center", "scale"))
 plot(radialFit); radialFit
 
+fs=c('SubmissionNumber',
+     'TimeSinceLast',
+     'AverageForumTimeDiffs',
+     'NumberOfThreadViews',
+     'NumberOfThreadSubscribe',
+     'NumberOfThreadLaunch',
+     'NumberOfThreadPostOn',
+     'NumberOfPostCommentOn',
+     'NumberOfForumVotes',
+     'DurationOfVideoActivity',
+     'NumberOfVideoPlay',
+     'NumberOfVideoSeek',
+     'NumberOfVideoDownload',
+     'NumberOfVideoUnique',
+     'ProblemID',
+     'AverageVideoTimeDiffs')
+##check correlation
+correlation_matrix<- cor(db.train[,fs])
+corrplot(correlation_matrix, method = "color")
 
-#-----kNN-------#
+sControl<-safsControl(functions=rfSA,
+                      method="cv",
+                      #repeats = 5,
+                      improve=50)
+
+knnFeatures<-safs(x=db.train[,fs],
+                  y=db.train$improved,
+                  iters=100,
+                  safsControl = sControl)
+
+#----kNN-------#
 knnFit <- train(x=db.train[,fs],
                 y=db.train$improved,
                 method = "knn",
                 metric ="ROC",
                 trControl = ctrl, 
                 preProcess = c("center","scale"), 
-                tuneGrid = expand.grid(.k=90:110)) #up to  40 nearest
+                tuneGrid = expand.grid(.k=135:150)) #up to  40 nearest
 plot(knnFit); knnFit
 
 #----- check generalizability of your model on new data
