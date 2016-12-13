@@ -17,59 +17,48 @@ db=db[order(db$UserID,db$ProblemID,db$SubmissionNumber),]
 db= filter(db,SubmissionNumber>0)
 
 #---- remove cases when there is no video or forum activity between two submissions
-#db$NVideoAndForum= db$NVideoEvents+db$NForumEvents
 db= filter(db,NVideoAndForumEvents>0)  
-# db= filter(db,NVideoEvents>0)  
-# db= filter(db,NForumEvents>0) 
-
-#--- replace NA values with 0
-
-# test to remove columns with low entry frequency
-# useful <- apply(!is.na(db),2,sum) > (dim(db)[1] * 0.65)
-# db = db[useful]
-
 db[is.na(db)]=0
 
 #----- make a catgorical variable, indicating if grade improved
 db$improved = factor(ifelse(db$GradeDiff>0 ,"Yes", "No"))
 table(db$improved)
 
-
-# ----- (Optional) split your training data into train and test set. Use train set to build your classifier and try it on test data to check generalizability. 
 set.seed(1234)
-tr.index= sample(nrow(db), nrow(db)*0.9)
-db.train= db[tr.index,]
-db.test = db[-tr.index,]
-dim(db.train)
-dim(db.test)
-
-#Control function for linear model
-#set.seed(123)
-#ctrl <- trainControl(method = "repeatedcv", repeats =3)
-
-#train model
-# m1_train = train(improved ~ .,data=db.train, method="lm",trControl=ctrl)
-# summary(m1_train)
-# summary(m1_train)$r.squared
-
-#----- train classifier to predict 'improved' status 
-#----- Try different methods, model parameters, feature sets and find the best classifier 
-#----- Use AUC as model evaluation metric
-
-# fs=c('SubmissionNumber',
-#      'TimeSinceLast',
-#      'ForumScore',
-#      'AverageForumTimeDiffs',
-#      'NForumEvents',
-#      'DurationOfVideoActivity',
-#      'ProblemID',
-#      'VideoScore',
-#      'AverageVideoTimeDiffs')
 
 
-#-------------For tuneGrid-----------------#
+fs=c('SubmissionNumber',
+     'TimeSinceLast')
+# 'AverageForumTimeDiffs',
+# 'NumberOfThreadViews',
+# 'NumberOfThreadSubscribe',
+# 'NumberOfThreadLaunch',
+# 'NumberOfThreadPostOn',
+# 'NumberOfPostCommentOn',
+# 'NumberOfForumVotes',
+# 'DurationOfVideoActivity',
+# 'NumberOfVideoPlay',
+# 'NumberOfVideoSeek',
+# 'NumberOfVideoDownload',
+# 'NumberOfVideoUnique',
+# 'ProblemID',
+# 'AverageVideoTimeDiffs')
+
+
+#============================================
+#======== LDA SBD FEATURE SELECTION =========
+#============================================
+
+filterCtrl <- sbfControl(functions = ldaSBF, method = "repeatedcv", repeats = 10)
+# set.seed(10)
+rfWithFilter <- sbf(x=db.train[,fs],
+                    y=db.train$improved,
+                    sbfControl = filterCtrl)
+
+#============================================
+#=============== RANDOM FOREST ==============
+#============================================
 tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
-#ifelse(tune==1, range<-c((tune):(tune+1)), range<-c((tune-1):(tune+1)))
 range<-c(1:(tune+1))
 
 paramGrid <- expand.grid(mtry = range)
@@ -85,9 +74,9 @@ model<-train(x=db.train[,fs],
              preProc = c("center", "scale"))
 plot(model); model
 
-#decent tutorial https://www.r-bloggers.com/the-5th-tribe-support-vector-machines-and-caret/
-#svmLinear
-set.seed(1492)
+#============================================
+#================ SVM LINEAR ================
+#============================================
 svmFit <- train(x=db.train[,fs],
                 y=db.train$improved,
                 method= "svmLinear",
@@ -95,69 +84,10 @@ svmFit <- train(x=db.train[,fs],
                 trControl=ctrl,
                 preProc= c("center", "scale"))
 svmFit$finalModel
-#radial kernel
-set.seed(1492)
-radialFit<-train(x=db.train[,fs],
-                 y=db.train$improved,
-                 method= "svmRadial",
-                 metric ="ROC",
-                 tuneLength=9,
-                 trControl=ctrl,
-                 preProc= c("center", "scale"))
-plot(radialFit); radialFit
 
-set.seed(1492)
-# Use the expand.grid to specify the search space	
-grid <- expand.grid(sigma = c(1.36, 1.039, 1.042),
-                    C = c(62, 63, 64, 65, 66)
-)
-radialFit<-train(x=db.train[,fs],
-                 y=db.train$improved,
-                 method= "svmRadial",
-                 metric ="ROC",
-                 tuneGrid = grid,
-                 trControl=ctrl,
-                 preProc= c("center", "scale"))
-plot(radialFit); radialFit
-
-fs=c('SubmissionNumber',
-     'TimeSinceLast')
-     # 'AverageForumTimeDiffs',
-     # 'NumberOfThreadViews',
-     # 'NumberOfThreadSubscribe',
-     # 'NumberOfThreadLaunch',
-     # 'NumberOfThreadPostOn',
-     # 'NumberOfPostCommentOn',
-     # 'NumberOfForumVotes',
-     # 'DurationOfVideoActivity',
-     # 'NumberOfVideoPlay',
-     # 'NumberOfVideoSeek',
-     # 'NumberOfVideoDownload',
-     # 'NumberOfVideoUnique',
-     # 'ProblemID',
-     # 'AverageVideoTimeDiffs')
-
-##check correlation
-correlation_matrix<- cor(db.train[,fs])
-corrplot(correlation_matrix, method = "color")
-
-filterCtrl <- sbfControl(functions = ldaSBF, method = "repeatedcv", repeats = 10)
-# set.seed(10)
-rfWithFilter <- sbf(x=db.train[,fs],
-                    y=db.train$improved,
-                    sbfControl = filterCtrl)
-
-# sControl<-safsControl(functions=rfSA,
-#                       method="cv",
-#                       #repeats = 5,
-#                       improve=50)
-# 
-# knnFeatures<-safs(x=db.train[,fs],
-#                   y=db.train$improved,
-#                   iters=100,
-#                   safsControl = sControl)
-
-#----kNN-------#
+#============================================
+#=================== KNN ====================
+#============================================
 knnFit <- train(x=db.train[,fs],
                 y=db.train$improved,
                 method = "knn",
@@ -167,7 +97,9 @@ knnFit <- train(x=db.train[,fs],
                 tuneGrid = expand.grid(.k=77:100)) #up to  40 nearest
 plot(knnFit); knnFit
 
-#-----------LDA------------#
+#============================================
+#=================== LDA ====================
+#============================================
 set.seed(1234)
 ldaFit<-train(x=db.train[,fs],
               y=db.train$improved,
@@ -176,7 +108,9 @@ ldaFit<-train(x=db.train[,fs],
               preProcess = c("center","scale"),
               trControl=ctrl)
 
-#-----------stepLDA------------#
+#============================================
+#================= STEP LDA =================
+#============================================
 maxvar     <-(length(fs)) 
 direction <-"forward"
 tune_1     <-data.frame(maxvar,direction)
@@ -189,6 +123,13 @@ stepldaFit<-train(x=db.train[,fs],
               preProcess = c("center","scale"),
               trControl=ctrl,
               tuneGrid = tune_1)
+
+#============================================
+#================ CORRELATION ===============
+#============================================
+
+correlation_matrix<- cor(db.train[,fs])
+corrplot(correlation_matrix, method = "color")
 
 #----- check generalizability of your model on new data
 preds= predict(model, newdata=db.test);
