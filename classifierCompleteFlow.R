@@ -26,12 +26,14 @@ table(db$improved)
 
 set.seed(1234)
 
-
 fs=c(
   'SubmissionNumber',
   'TimeSinceLast',
   'ProblemID',
-  'AverageForumTimeDiffs'
+  # 'AverageForumTimeDiffs',
+  'NForumEvents',
+  'NVideoEvents',
+  # 'NVideoAndForumEvents',
   # 'NumberOfThreadViews',
   # 'NumberOfThreadSubscribe',
   # 'NumberOfThreadLaunch',
@@ -39,22 +41,32 @@ fs=c(
   # 'NumberOfPostCommentOn',
   # 'NumberOfForumVotes',
   # 'ForumScore',
-  # 'DurationOfVideoActivity',
-  # 'AverageVideoTimeDiffs',
+  'DurationOfVideoActivity',
+  'AverageVideoTimeDiffs'
   # 'NumberOfVideoPlay',
   # 'NumberOfVideoSeek',
   # 'NumberOfVideoDownload',
-  # 'NumberOfVideoUnique'
+  # 'NumberOfVideoUnique',
   # 'VideoUniquePerTotalVideoEvent'
   # 'VideoScore'
 )
 
+#============================================
+#============== TRAIN CONTROL =============== 
+#============================================
+ctrl <- trainControl(method = "cv",
+                     # number = 10,
+                     # repeats = 5,
+                     classProbs = TRUE,
+                     # search = "random",
+                     summaryFunction = twoClassSummary
+                     )
 
 #============================================
 #======== LDA SBD FEATURE SELECTION =========
 #============================================
-
 filterCtrl <- sbfControl(functions = rfSBF, method = "repeatedcv", repeats = 5)
+
 rfWithFilter <- sbf(x=db[,fs],
                     y=db$improved,
                     sbfControl = filterCtrl,
@@ -65,12 +77,7 @@ rfWithFilter <- sbf(x=db[,fs],
 #============================================
 #=============== RANDOM FOREST ==============
 #============================================
-tune<-max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))
-range<-c(1:(tune+1))
-
-paramGrid <- expand.grid(mtry = 25:30)
-
-ctrl= trainControl(method = 'cv', summaryFunction=twoClassSummary ,classProbs = TRUE)
+paramGrid <- expand.grid(mtry = c(1:(max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))+1)))
 
 model<-train(x=db[,fs],
              y=db$improved,
@@ -82,48 +89,27 @@ model<-train(x=db[,fs],
 plot(model); model
 
 #============================================
-#================ SVM LINEAR ================
-#============================================
-model <- train(x=db[,fs],
-                y=db$improved,
-                method= "svmLinear",
-                metric ="ROC",
-                trControl=ctrl,
-                preProc= c("center", "scale"))
-model$finalModel
-
-#============================================
 #=================== KNN ====================
 #============================================
+paramGrid <- expand.grid(.k=(length(fs)-1:length(fs)+1)*20)
+
 model <- train(x=db[,fs],
                 y=db$improved,
                 method = "knn",
                 metric ="ROC",
+                # tuneLength = 10,
                 trControl = ctrl, 
                 preProcess = c("center","scale"), 
-                tuneGrid = expand.grid(.k=77:100)) #up to  40 nearest
+                tuneGrid = paramGrid)
 plot(model); model
 
 #============================================
-#=================== LDA ====================
-#============================================
-set.seed(1234)
-model<-train(x=db[,fs],
-              y=db$improved,
-              method = "lda",
-              metric ="ROC",
-              preProcess = c("center","scale"),
-              trControl=ctrl)
-#TUNING PARAMS?
-model
-#============================================
 #================= STEP LDA =================
 #============================================
-maxvar     <-(length(fs)) 
-direction <-"forward"
-tune_1     <-data.frame(maxvar,direction)
+maxvar <-(length(fs)) 
+direction <- "forward"
+paramGrid <- data.frame(maxvar, direction)
 
-set.seed(1234)
 stepldaFit<-train(x=db[,fs],
               y=db$improved,
               method = "stepLDA",
@@ -135,27 +121,18 @@ stepldaFit<-train(x=db[,fs],
 #============================================
 #=============== NEURAL NETWORKS ============
 #============================================
-set.seed(1234)
 #find tunegrid
+
 model<-train(x=db[,fs],
           y=db$improved,
           method="nnet",
           metric ="ROC",
-          linout=FALSE, 
+          linout=TRUE, 
           trace=FALSE,
           preProcess = c("center","scale"),
-          trControl = ctrl)
-plot(model);model
-model<-train(x=db[,fs],
-          y=db$improved,
-          method="nnet",
-          metric ="ROC",
-          linout=FALSE,
-          trace=FALSE,
-          preProcess = c("center","scale"),
-          trControl = ctrl, 
-          maxint=10, 
-          Hess=T)
+          trControl = ctrl
+          # tuneLength = 10
+          )
 plot(model);model
 
 #============================================
@@ -202,7 +179,7 @@ testDb$Grade=NULL; testDb$GradeDiff=NULL;
 testDb[is.na(testDb)]=0
 
 #---- use trained model to predict progress for test data
-preds= predict(model, newdata=testDb[,fs]);
+preds= predict(model, newdata=testDb[, fs]);
 
 #======================================================================== 
 #         step 2.1: prepare submission file for kaggle
@@ -215,7 +192,7 @@ cl.Results$uniqRowID= paste0(cl.Results$UserID,'_', cl.Results$ProblemID,'_', cl
 cl.Results=cl.Results[,c('uniqRowID','improved')]
 table(cl.Results$improved)
 
-#----- keep only rows which are listed in classifier_templtae.csv file
+#----- keep only rows which are listed in classifier_template.csv file
 #----- this excludes first submissions and cases with no forum and video event in between two submissions
 classifier_template= read.csv('../classifier_template.csv', stringsAsFactors = F)
 kaggleSubmission=merge(classifier_template,cl.Results )

@@ -38,6 +38,7 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 		Features.update({
 			'DurationOfVideoActivity' : DurationOfVideoActivity,
 			'AverageVideoTimeDiffs' : AverageVideoTimeDiffs,
+
 			'NumberOfVideoPlay' : NumberOfVideoPlay,
 			'NumberOfVideoSeek' : NumberOfVideoSeek,
 			'NumberOfVideoDownload' : NumberOfVideoDownload,
@@ -89,6 +90,8 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 			'NumberOfForumVotes' : NumberOfForumVotes,
 			'ForumScore' : ForumScore
 		})
-		
+
+
+
 
 	return Features
