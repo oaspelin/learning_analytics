@@ -31,9 +31,9 @@ fs=c(
   'TimeSinceLast',
   'ProblemID',
   # 'AverageForumTimeDiffs',
-  'NForumEvents',
-  'NVideoEvents',
-  # 'NVideoAndForumEvents',
+  # 'NForumEvents',
+  # 'NVideoEvents',
+  'NVideoAndForumEvents',
   # 'NumberOfThreadViews',
   # 'NumberOfThreadSubscribe',
   # 'NumberOfThreadLaunch',
@@ -89,49 +89,20 @@ model<-train(x=db[,fs],
 plot(model); model
 
 #============================================
-#=================== KNN ====================
-#============================================
-paramGrid <- expand.grid(.k=(length(fs)-1:length(fs)+1)*20)
-
-model <- train(x=db[,fs],
-                y=db$improved,
-                method = "knn",
-                metric ="ROC",
-                # tuneLength = 10,
-                trControl = ctrl, 
-                preProcess = c("center","scale"), 
-                tuneGrid = paramGrid)
-plot(model); model
-
-#============================================
-#================= STEP LDA =================
-#============================================
-maxvar <-(length(fs)) 
-direction <- "forward"
-paramGrid <- data.frame(maxvar, direction)
-
-stepldaFit<-train(x=db[,fs],
-              y=db$improved,
-              method = "stepLDA",
-              metric ="ROC",
-              preProcess = c("center","scale"),
-              trControl=ctrl,
-              tuneGrid = tune_1)
-
-#============================================
 #=============== NEURAL NETWORKS ============
 #============================================
 #find tunegrid
+paramGrid <- expand.grid(.decay = c(0.5, 0.1), .size = c(5, 6, 7))
 
 model<-train(x=db[,fs],
           y=db$improved,
           method="nnet",
           metric ="ROC",
-          linout=TRUE, 
+          linout=FALSE, 
           trace=FALSE,
           preProcess = c("center","scale"),
-          trControl = ctrl
-          # tuneLength = 10
+          trControl = ctrl,
+          tuneGrid = paramGrid
           )
 plot(model);model
 

@@ -13,6 +13,7 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 		# Keys: TimeStamp, EventType, VideoID, CurrentTime, OldTime, NewTime, SeekType, OldSpeed, NewSpeed
 		TimeStamps = VideoEvents['TimeStamp']
 		TimeStampDiffs = [x[0]-x[1] for x in zip(TimeStamps[1:],TimeStamps[:-1])]
+
 		DurationOfVideoActivity = TimeStamps[-1] - TimeStamps[0]
 		AverageVideoTimeDiffs = sum(TimeStampDiffs)/max(1,len(TimeStampDiffs))
 
@@ -22,29 +23,39 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 
 		NumberOfVideoPlay = VideoTypes.count('Video.Play')
 		NumberOfVideoSeek = VideoTypes.count('Video.Seek')
-
 		NumberOfVideoDownload = VideoTypes.count('Video.Download')
 
-		VideoUniquePerTotalVideoEvent=float(NumberOfVideoUnique/len(VideoEvents))
-
+		TotalNumberOfVideoEvents = float(NumberOfVideoPlay + \
+									NumberOfVideoSeek + \
+									NumberOfVideoDownload)
 
 		# is currently not adding any value, consider changing this derived feature
-		VideoScore = 0.25 * NumberOfVideoUnique + \
-		1 * NumberOfVideoPlay + \
-		0.2 * NumberOfVideoSeek + \
-		0.25 * NumberOfVideoDownload
+		# VideoScore = 0.25 * NumberOfVideoUnique + \
+		# 1 * NumberOfVideoPlay + \
+		# 0.2 * NumberOfVideoSeek + \
+		# 0.25 * NumberOfVideoDownload
+
+		VideoPlayScore = 0
+		VideoSeekScore = 0
+		VideoDownloadScore = 0
+
+		if TotalNumberOfVideoEvents > 0:
+			VideoPlayScore = NumberOfVideoPlay/TotalNumberOfVideoEvents
+			VideoSeekScore = NumberOfVideoSeek/TotalNumberOfVideoEvents
+			VideoDownloadScore = NumberOfVideoDownload//TotalNumberOfVideoEvents
 
 		# Append features to dictionary
 		Features.update({
 			'DurationOfVideoActivity' : DurationOfVideoActivity,
 			'AverageVideoTimeDiffs' : AverageVideoTimeDiffs,
-
-			'NumberOfVideoPlay' : NumberOfVideoPlay,
-			'NumberOfVideoSeek' : NumberOfVideoSeek,
-			'NumberOfVideoDownload' : NumberOfVideoDownload,
 			'NumberOfVideoUnique' : NumberOfVideoUnique,
-			'VideoScore' : VideoScore,
-			'VideoUniquePerTotalVideoEvent': VideoUniquePerTotalVideoEvent
+
+			'VideoPlayScore' : VideoPlayScore,
+			'VideoSeekScore' : VideoSeekScore,
+			'VideoDownloadScore' : VideoDownloadScore,
+
+			'VideoEventCountScore' : float(len(VideoEvents))/(len(VideoEvents) + len(ForumEvents))
+			# 'VideoScore' : VideoScore,
 		})
 
 	# Features for forum events
@@ -58,7 +69,7 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 
 		EventTypes = ForumEvents['EventType']
 
-		NumberOfThreadViews = EventTypes.count('Forum.Thread.View')
+		NumberOfThreadView = EventTypes.count('Forum.Thread.View')
 		NumberOfThreadSubscribe = EventTypes.count('Forum.ThreadSubscribe')
 
 		NumberOfPostUpvotes = EventTypes.count('Forum.Post.Upvote')
@@ -66,30 +77,56 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 		NumberOfCommentUpvotes = EventTypes.count('Forum.Comment.Upvote')
 		NumberOfCommentDownvotes = EventTypes.count('Forum.Comment.Downvote')
 
-		NumberOfForumVotes =  NumberOfPostUpvotes + NumberOfPostDownvotes + NumberOfCommentUpvotes + NumberOfCommentDownvotes
+		NumberOfForumVote =  (NumberOfPostUpvotes + NumberOfPostDownvotes + NumberOfCommentUpvotes + NumberOfCommentDownvotes)
 
 		NumberOfThreadLaunch = EventTypes.count('Forum.Thread.Launch')
 		NumberOfThreadPostOn = EventTypes.count('Forum.Thread.PostOn')
 		NumberOfPostCommentOn = EventTypes.count('Forum.Post.CommentOn')
 
-		ForumScore = 1.5 * NumberOfThreadSubscribe + \
-		3 * NumberOfThreadLaunch + \
-		2 * NumberOfThreadPostOn + \
-		2 * NumberOfPostCommentOn + \
-		0.5 * NumberOfForumVotes + \
-		0.25 * NumberOfThreadViews
+		TotalNumberOfForumEvents = float(NumberOfThreadView + \
+									NumberOfThreadSubscribe + \
+									NumberOfForumVote + \
+									NumberOfThreadLaunch + \
+									NumberOfThreadPostOn + \
+									NumberOfPostCommentOn)
+
+		# ForumScore = 1.5 * NumberOfThreadSubscribe + \
+		# 3 * NumberOfThreadLaunch + \
+		# 2 * NumberOfThreadPostOn + \
+		# 2 * NumberOfPostCommentOn + \
+		# 0.5 * NumberOfForumVotes + \
+		# 0.25 * NumberOfThreadViews
+
+		ThreadViewScore = 0
+		ThreadSubscribeScore = 0
+		ThreadLaunchScore = 0
+		ThreadPostOnScore = 0
+		PostCommentOnScore = 0
+		ForumVoteScore = 0
+
+		if TotalNumberOfForumEvents > 0:
+			ThreadViewScore = NumberOfThreadView/TotalNumberOfForumEvents
+			ThreadSubscribeScore = NumberOfThreadSubscribe/TotalNumberOfForumEvents
+			ThreadLaunchScore = NumberOfThreadLaunch/TotalNumberOfForumEvents
+			ThreadPostOnScore = NumberOfThreadPostOn/TotalNumberOfForumEvents
+			PostCommentOnScore = NumberOfPostCommentOn/TotalNumberOfForumEvents
+			ForumVoteScore = NumberOfForumVote/TotalNumberOfForumEvents
 
 		# Append features to dictionary
 		Features.update({
 			'AverageForumTimeDiffs' : AverageForumTimeDiffs,
-			'NumberOfThreadViews' : NumberOfThreadViews,
-			'NumberOfThreadSubscribe' : NumberOfThreadSubscribe,
-			'NumberOfThreadLaunch' : NumberOfThreadLaunch,
-			'NumberOfThreadPostOn' : NumberOfThreadPostOn,
-			'NumberOfPostCommentOn' : NumberOfPostCommentOn,
-			'NumberOfForumVotes' : NumberOfForumVotes,
-			'ForumScore' : ForumScore
+
+			'ThreadViewScore' : ThreadViewScore,
+			'ThreadSubscribeScore' : ThreadSubscribeScore,
+			'ThreadLaunchScore' : ThreadLaunchScore,
+			'ThreadPostOnScore' : ThreadPostOnScore,
+			'PostCommentOnScore' : PostCommentOnScore,
+			'ForumVoteScore' : ForumVoteScore,
+
+			'ForumEventCountScore' : float(len(ForumEvents))/(len(VideoEvents) + len(ForumEvents))
+			# 'ForumScore' : ForumScore
 		})
+
 
 
 
