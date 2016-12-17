@@ -152,7 +152,7 @@ def AppendFeatures(DataSet):
 #------------------------------------------------------#
 # Function that exports data set as table and CSV File #
 #------------------------------------------------------#
-def ExportAsCSV(DataSet):
+def ExportAsCSV(DataSet, fileName):
 
 	# Print title
 	print '\nOutput Table (with custom features):\n'
@@ -227,13 +227,13 @@ def ExportAsCSV(DataSet):
 	#print '(this is a sample of the output table)\n'
 
 	# Save table into CSV file
-	with open("OutputTable.csv", "w") as f:
+	with open(fileName, "w") as f:
 		f.write(','.join(ColumnNames)+'\n')
 		writer = csv.writer(f)
 		writer.writerows(Table)
 
 	# Print success message
-	print colored('Success! Table with %d rows saved to file: ./OutputTable.csv\n' % len(Table), 'green')
+	print colored('Success! Table with %d rows saved to file: ./ %s \n' % (len(Table), fileName), 'green')
 
 # END OF FUNCTION
 
@@ -243,14 +243,19 @@ def ExportAsCSV(DataSet):
 #===============================#
 
 # Get input dataset filepath
-FilePath = 'dataset.pickle'
+FilePath_train = 'dataset.pickle'
+FilePath_test = 'dataset_test.pickle'
 
 # Load dataset into python dictionary
-with open(FilePath, 'rb') as handle:
-	DataSet = pickle.load(handle)
+with open(FilePath_train, 'rb') as handle1:
+	DataSet_train = pickle.load(handle1)
+
+with open(FilePath_train, 'rb') as handle2:
+	DataSet_test = pickle.load(handle2)
 
 # Add custom features to data set
-DataSet = AppendFeatures(DataSet)
+DataSet_train = AppendFeatures(DataSet_train)
+DataSet_test = AppendFeatures(DataSet_test)
 
 # Pretty-print updated data set
 # PrintDataSet(DataSet)
@@ -259,4 +264,5 @@ DataSet = AppendFeatures(DataSet)
 os.system('read -s -n 1 -p "Data set will now be saved to CSV file. Press any key to continue..." | echo ""')
 
 # Save data set into CSV file
-ExportAsCSV(DataSet)
+ExportAsCSV(DataSet_train, "OutputTable.csv")
+ExportAsCSV(DataSet_test, "OutputTable_test.csv")

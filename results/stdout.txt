@@ -1,0 +1,7 @@
+sh: 1: read: Illegal option -s
+
+
+Output Table (with custom features):
+
+[32mSuccess! Table with 26062 rows saved to file: ./OutputTable.csv
+[0m
