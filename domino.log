@@ -5650,3 +5650,115 @@ FileUpdate(x Modifying file results/stdout.txt,None)
 2016-12-17 14:32:44,145 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
 2016-12-17 14:32:49,150 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
 2016-12-17 14:32:49,150 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:32:54,151 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:32:54,151 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:32:59,152 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:32:59,152 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:04,153 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:04,153 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:09,154 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:09,155 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:14,155 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:14,155 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:19,156 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:19,157 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:24,157 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:24,157 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:29,159 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:29,159 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:34,163 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:34,163 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:39,168 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:39,168 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:44,173 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:44,174 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:49,174 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:49,174 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:54,174 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:54,174 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:33:59,180 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:33:59,180 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:04,181 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:04,181 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:09,187 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:09,187 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:14,191 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:14,191 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:19,192 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:19,192 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:24,192 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:24,192 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:29,193 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:29,193 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:34,197 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:34,197 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:39,198 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:39,198 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:44,201 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:44,202 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:49,205 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:49,205 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:54,206 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:54,207 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:34:59,208 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:34:59,209 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:04,211 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:04,211 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:09,216 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:09,216 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:14,221 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:14,221 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:19,225 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:19,225 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:24,230 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:24,230 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:29,235 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:29,235 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:34,236 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:34,236 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:39,240 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:39,240 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:44,241 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:44,241 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:49,245 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:49,245 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:54,247 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:54,247 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:35:59,250 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:35:59,250 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:04,250 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:04,251 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:09,256 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:09,256 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:14,256 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:14,256 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:19,257 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:19,257 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:24,259 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:24,260 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:29,265 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:29,265 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:34,267 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:34,267 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:39,271 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:39,271 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:44,276 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:44,276 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:49,277 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:49,277 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:54,280 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:54,280 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:36:59,281 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:36:59,281 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:37:04,286 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:37:04,286 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:37:09,289 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:37:09,290 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:37:14,290 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:37:14,290 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:37:19,293 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:37:19,293 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:37:24,297 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:37:24,297 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 14:37:29,301 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 14:37:29,301 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
