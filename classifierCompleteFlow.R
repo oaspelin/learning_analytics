@@ -2,12 +2,13 @@ library(plyr) #ddply
 library(dplyr)
 library(caret)
 library(corrplot)
+library(doMC)
 #======================================================================== 
 #         step 1: train classifier
 #======================================================================== 
 
 #------ read features extracted from train set, using your python script
-db=read.csv('../OutputTable.csv', stringsAsFactors = F)
+db=read.csv('OutputTable.csv', stringsAsFactors = F)
 
 #------ sort submissions
 db=db[order(db$UserID,db$ProblemID,db$SubmissionNumber),]
@@ -26,29 +27,30 @@ table(db$improved)
 set.seed(1234)
 
 fs=c(
+  'ProblemID',
   'SubmissionNumber',
   'TimeSinceLast',
-  'ProblemID',
-  # 'AverageForumTimeDiffs',
-  # 'NForumEvents',
-  # 'NVideoEvents',
+  'NVideoEvents',
+  'NForumEvents', 
   'NVideoAndForumEvents',
-  # 'NumberOfThreadViews',
-  # 'NumberOfThreadSubscribe',
-  # 'NumberOfThreadLaunch',
-  # 'NumberOfThreadPostOn',
-  # 'NumberOfPostCommentOn',
-  # 'NumberOfForumVotes',
-  # 'ForumScore',
+  'ThreadLaunchScore',
+  'VideoPlayScore',
+  'ThreadViewScore',
+  'VideoEventCountScore',
+  'AverageForumTimeDiffs',
+  'ThreadPostOnScore',
+  'ForumVoteScore',
+  'NumberOfVideoUnique',
   'DurationOfVideoActivity',
-  'AverageVideoTimeDiffs'
-  # 'NumberOfVideoPlay',
-  # 'NumberOfVideoSeek',
-  # 'NumberOfVideoDownload',
-  # 'NumberOfVideoUnique',
-  # 'VideoUniquePerTotalVideoEvent'
-  # 'VideoScore'
+  'ThreadSubscribeScore',
+  'VideoDownloadScore',
+  'ForumEventCountScore',
+  'PostCommentOnScore',
+  'AverageVideoTimeDiffs',
+  'VideoSeekScore'
 )
+
+registerDoMC(8)
 
 #============================================
 #============== TRAIN CONTROL =============== 
@@ -62,23 +64,24 @@ ctrl <- trainControl(method = "cv",
                      )
 
 #============================================
-#======== LDA SBD FEATURE SELECTION =========
+#========== RFE FEATURE SELECTION ===========
 #============================================
-filterCtrl <- sbfControl(functions = rfSBF, method = "repeatedcv", repeats = 5)
+filterCtrl <- rfeControl(functions=rfFuncs, method="cv", number=10)
 
-rfWithFilter <- sbf(x=db[,fs],
+rfWithFilter <- rfe(x=db[,fs],
                     y=db$improved,
-                    sbfControl = filterCtrl,
-                    preProc = c("center", "scale"))
+                    sizes=c(1:length(fs)),
+                    method="rf",
+                    rfeControl=filterCtrl)
 
 # DOESN'T SEEM TO PROVIDE ANY USEFUL INSIGHT
 
 #============================================
 #=============== RANDOM FOREST ==============
 #============================================
-paramGrid <- expand.grid(mtry = c(1:(max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))+1)))
-
-model<-train(x=db[,fs],
+paramGrid <- expand.grid(mtry = c(1:5))
+# (max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))+1))
+model<-train(x=db[,rfWithFilter$optVariables],
              y=db$improved,
              method = "rf",
              metric="ROC",
@@ -91,7 +94,7 @@ plot(model); model
 #=============== NEURAL NETWORKS ============
 #============================================
 #find tunegrid
-paramGrid <- expand.grid(.decay = c(0.5, 0.1), .size = c(5, 6, 7))
+paramGrid <- expand.grid(.decay = c(0.5, 0.4, 0.3, 0.2, 0.1, 0.001), .size = c(4:14))
 
 model<-train(x=db[,fs],
           y=db$improved,
@@ -144,12 +147,12 @@ confusionMatrix(preds, db.test$improved)
 #         step 2.1: Use classifier to predict progress for test data
 #======================================================================== 
 
-testDb=read.csv('../OutputTable_test.csv', stringsAsFactors = F)
+testDb=read.csv('OutputTable_test.csv', stringsAsFactors = F)
 testDb$Grade=NULL; testDb$GradeDiff=NULL;
 testDb[is.na(testDb)]=0
 
 #---- use trained model to predict progress for test data
-preds= predict(model, newdata=testDb[, fs]);
+preds= predict(model, newdata=testDb);
 
 #======================================================================== 
 #         step 2.1: prepare submission file for kaggle
@@ -164,7 +167,7 @@ table(cl.Results$improved)
 
 #----- keep only rows which are listed in classifier_template.csv file
 #----- this excludes first submissions and cases with no forum and video event in between two submissions
-classifier_template= read.csv('../classifier_template.csv', stringsAsFactors = F)
+classifier_template= read.csv('classifier_template.csv', stringsAsFactors = F)
 kaggleSubmission=merge(classifier_template,cl.Results )
 write.csv(kaggleSubmission,file='classifier_results.csv', row.names = F)
 

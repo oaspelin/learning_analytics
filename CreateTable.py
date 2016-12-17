@@ -250,7 +250,7 @@ FilePath_test = 'dataset_test.pickle'
 with open(FilePath_train, 'rb') as handle1:
 	DataSet_train = pickle.load(handle1)
 
-with open(FilePath_train, 'rb') as handle2:
+with open(FilePath_test, 'rb') as handle2:
 	DataSet_test = pickle.load(handle2)
 
 # Add custom features to data set
