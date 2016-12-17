@@ -7,4 +7,6 @@
 
 *.big-data
 
+*.pickle
+
 datafiles/
