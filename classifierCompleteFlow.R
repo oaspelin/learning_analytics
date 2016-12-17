@@ -1,4 +1,3 @@
-setwd("~/Documents/EPFL/Digital Education and Learning Analytics/Dataset and Scripts-20161108/learning_analytics")
 library(plyr) #ddply
 library(dplyr)
 library(caret)
