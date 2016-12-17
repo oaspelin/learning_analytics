@@ -1,6 +1,16 @@
 
-.Rhistory
+*.Rhistory
 
-.RData
+*.RData
 
-.pyc
+*.pyc
+
+*.big-data
+
+*.pickle
+
+OutputTable.csv
+
+OutputTable_test.csv
+
+datafiles/

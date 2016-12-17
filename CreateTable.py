@@ -227,7 +227,7 @@ def ExportAsCSV(DataSet):
 	#print '(this is a sample of the output table)\n'
 
 	# Save table into CSV file
-	with open("../OutputTable.csv", "w") as f:
+	with open("OutputTable.csv", "w") as f:
 		f.write(','.join(ColumnNames)+'\n')
 		writer = csv.writer(f)
 		writer.writerows(Table)
@@ -243,7 +243,7 @@ def ExportAsCSV(DataSet):
 #===============================#
 
 # Get input dataset filepath
-FilePath = '../dataset.pickle'
+FilePath = 'dataset.pickle'
 
 # Load dataset into python dictionary
 with open(FilePath, 'rb') as handle:
