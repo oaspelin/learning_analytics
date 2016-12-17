@@ -9,4 +9,8 @@
 
 *.pickle
 
+OutputTable.csv
+
+OutputTable_test.csv
+
 datafiles/
