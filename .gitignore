@@ -1,6 +1,10 @@
 
-.Rhistory
+*.Rhistory
 
-.RData
+*.RData
 
-.pyc
+*.pyc
+
+*.big-data
+
+datafiles/
