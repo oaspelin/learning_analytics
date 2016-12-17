@@ -12705,3 +12705,1292 @@ commit 3e9dc1894d7bd36ab7cc21fd3f7792300cfb29a1 1481988357 ----sp
 2016-12-17 17:39:13,460 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
 2016-12-17 17:39:18,461 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
 2016-12-17 17:39:18,461 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:25:52,734 CET  INFO Domino - ================================================================================
+2016-12-17 20:25:52,762 CET  INFO Domino - Starting client. BuildInfo=name: common, version: 1.46.0.0, scalaVersion: 2.11.8, sbtVersion: 0.13.12, buildNumber: 350, gitCommit: 55f584cd743bd7a772452cedc70495afd9ed3f5d, buildTime: 2016-12-01
+2016-12-17 20:25:52,763 CET DEBUG Domino - CWD = /Users/thomasjuelandersen/Documents/EPFL/Digital Education and Learning Analytics/Dataset and Scripts-20161108/learning_analytics
+2016-12-17 20:25:52,764 CET  INFO Domino - executing command: sync
+2016-12-17 20:25:52,920 CET  INFO Domino - Verifying that the cloud update URL isn't being used.
+2016-12-17 20:25:52,960 CET  INFO Domino - Cloud update URL not in use.
+2016-12-17 20:25:53,324 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:25:53,324 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:25:53,813 CET  INFO ProjectControllerProxy - getting git host from https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification
+2016-12-17 20:25:53,827 CET DEBUG DefaultTransport - Issuing request to https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification (full request = ApacheHttpClientRequest(https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification,GET,Map(),Map(X-Domino-Api-Key -> [API key redacted]),1 minute,1 minute,true,EmptyBody,com.cerebro.domino.common.util.http.HttpService@352c1b98))
+2016-12-17 20:25:53,842 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:25:53,901 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:25:53,902 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:25:53,919 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:25:53,920 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:25:53,988 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:25:53,988 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:25:54,412 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:25:54,413 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:25:54,413 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:25:54,647 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:25:54,647 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:25:54,647 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:25:54,648 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:25:54,648 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:25:54,648 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:25:54,654 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62304<->104.20.67.168:443
+2016-12-17 20:25:54,654 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 60000
+2016-12-17 20:25:54,654 CET DEBUG MainClientExec - Executing request GET /gitRepoUri/tjuela/learning_analytics_classification HTTP/1.1
+2016-12-17 20:25:54,654 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:25:54,655 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:25:54,656 CET DEBUG headers - http-outgoing-0 >> GET /gitRepoUri/tjuela/learning_analytics_classification HTTP/1.1
+2016-12-17 20:25:54,656 CET DEBUG headers - http-outgoing-0 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:25:54,657 CET DEBUG headers - http-outgoing-0 >> Host: trial.dominodatalab.com
+2016-12-17 20:25:54,657 CET DEBUG headers - http-outgoing-0 >> Connection: Keep-Alive
+2016-12-17 20:25:54,657 CET DEBUG headers - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:25:54,657 CET DEBUG headers - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:25:55,149 CET DEBUG headers - http-outgoing-0 << HTTP/1.1 200 OK
+2016-12-17 20:25:55,149 CET DEBUG headers - http-outgoing-0 << Date: Sat, 17 Dec 2016 19:25:55 GMT
+2016-12-17 20:25:55,149 CET DEBUG headers - http-outgoing-0 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:25:55,149 CET DEBUG headers - http-outgoing-0 << Transfer-Encoding: chunked
+2016-12-17 20:25:55,149 CET DEBUG headers - http-outgoing-0 << Connection: keep-alive
+2016-12-17 20:25:55,149 CET DEBUG headers - http-outgoing-0 << Set-Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754; expires=Sun, 17-Dec-17 19:25:54 GMT; path=/; domain=.dominodatalab.com; HttpOnly
+2016-12-17 20:25:55,149 CET DEBUG headers - http-outgoing-0 << Play-Processing-Time: 2
+2016-12-17 20:25:55,149 CET DEBUG headers - http-outgoing-0 << Server: cloudflare-nginx
+2016-12-17 20:25:55,150 CET DEBUG headers - http-outgoing-0 << CF-RAY: 312cc381ff740bf9-AMS
+2016-12-17 20:25:55,150 CET DEBUG headers - http-outgoing-0 << Content-Encoding: gzip
+2016-12-17 20:25:55,157 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:25:55,169 CET DEBUG ResponseProcessCookies - Cookie accepted [__cfduid="d81fba5d2d143bec8c60715723892546e1482002754", version:0, domain:dominodatalab.com, path:/, expiry:Sun Dec 17 20:25:54 CET 2017]
+2016-12-17 20:25:55,186 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+2016-12-17 20:25:55,188 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:25:55,188 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:25:55,189 CET DEBUG ProjectControllerProxy - response from server: https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git
+2016-12-17 20:25:55,191 CET  INFO CLIFileSyncClient - checking whether remote (https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git) needs to be upgraded to match new desired url (https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git)
+2016-12-17 20:25:55,199 CET  INFO CLIFileSyncClient - Running in cloud mode, so using AnonymousS3BlobStore
+2016-12-17 20:25:55,416 CET TRACE FileSyncClient - Starting upload...
+2016-12-17 20:25:55,723 CET TRACE FileStructureRepo - Staging structure. Current branch = master, head commit ID = Some(AnyObjectId[3f03fc22b78cf32255a91fb2359ba2cd84bce536]).
+2016-12-17 20:25:55,911 CET DEBUG FileStructureRepo - Staging structure complete. Head advanced to commit ID = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]).
+2016-12-17 20:25:55,916 CET TRACE FileStructureRepoSynchronizer - Upload starting...
+2016-12-17 20:25:55,925 CET TRACE FileStructureRepoSynchronizer - Asserting repo is safe to operate.  repo state = SAFE, isClean = true, isSafe = true, currentBranch = master.
+2016-12-17 20:25:55,942 CET DEBUG FileStructureRepoSynchronizer - Local paths:
+	classifier_template.csv -> FileSignature(1480351760000,109882,Sha1(2eb27690c41d573f7db8e727cf6d7d1dea2a74de))
+	OutputTable.csv -> FileSignature(1482002747000,4553288,Sha1(a27d069729cb5bb8b537ed43ddb7df385ec93d89))
+	CreateTable.py -> FileSignature(1481986870000,11030,Sha1(6059ce0196ead22acea40931b34f391c252db20c))
+	domino.workspace.RData -> FileSignature(1481981231000,819,Sha1(f1856081cddf9fa90253623625c9c01c6d558d45))
+	OutputTable_test.csv -> FileSignature(1482002748000,2407103,Sha1(29c6a33f1b912cddae94915e982c0180463359af))
+	requirements.txt -> FileSignature(1481981279000,10,Sha1(7cb10ee3f6d88459fa8d89f2e653d4baaa3e22ab))
+	results.xlsx -> FileSignature(1481623818000,10350,Sha1(2fa0dd0561aa03df18410a46bf57bce6683d9ba7))
+	.RData -> FileSignature(1481879733000,2767385,Sha1(3b3007314378e77faa050972f5cc0be0c72592eb))
+	dataset_test.pickle -> FileSignature(1481980693000,8152449,Sha1(9f9d8c557ec9b78180f025d0cd249c94126bbee2))
+	.dominoresults -> FileSignature(1477176857000,313,Sha1(21dd498c2501c732b021ce2f28133e8c6d108f75))
+	domino.last.dump.rda -> FileSignature(1481981231000,366,Sha1(01ba78e13a6c34c109739fad462d9d4971bf9815))
+	classifierCompleteFlow.R -> FileSignature(1481997834000,6183,Sha1(6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51))
+	classifier_results.csv -> FileSignature(1481992513000,120981,Sha1(e7b540e576a89a5a55b427f9af8c59d4d07226ce))
+	dataset.pickle -> FileSignature(1481980695000,11453920,Sha1(ee20614a51f1b57ec7b81247a28ed1553c169d75))
+	CustomFeatures.py -> FileSignature(1482000675000,5390,Sha1(1e6beca509e4f61d81a57f766d035ff1119afd73))
+	aggregateFeatures.R -> FileSignature(1479816948000,1270,Sha1(c7f89be9f86a0c082ee2a6c84c7d1e3be3e573c3))
+	nnetRplot.png -> FileSignature(1481985564000,35521,Sha1(dbd869a6de5be9fdbd051b5cfbed6da57350133d))
+	results/stdout.txt -> FileSignature(1481988371000,0,Sha1(da39a3ee5e6b4b0d3255bfef95601890afd80709))
+	.dominoignore -> FileSignature(1477176857000,537,Sha1(a32008b6db09d9ec5ab91b3dd01c0ad0e4a50b62))
+2016-12-17 20:25:55,944 CET TRACE FileStructureRepo - Starting fetch: master = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]), refs/remotes/origin/master = Some(AnyObjectId[3f03fc22b78cf32255a91fb2359ba2cd84bce536]).
+2016-12-17 20:25:58,326 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:25:58,326 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:25:58,933 CET TRACE FileStructureRepo - Fetch complete: master = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]), refs/remotes/origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:25:58,934 CET TRACE FileStructureRepo - Fetch result = TrackingRefUpdate[refs/heads/master -> refs/remotes/origin/master (forced) 3f03fc2..476664d]
+2016-12-17 20:25:58,935 CET  INFO FileStructureRepoSynchronizer - Upload failed: working directory was out of date. fetchResult=TrackingRefUpdate[refs/heads/master -> refs/remotes/origin/master (forced) 3f03fc2..476664d] workingDirectory=/Users/thomasjuelandersen/Documents/EPFL/Digital Education and Learning Analytics/Dataset and Scripts-20161108/learning_analytics/.domino/repo
+2016-12-17 20:25:58,937 CET DEBUG FileSyncClient - Push result: Failed: Working directory was out of date.
+2016-12-17 20:25:58,939 CET  INFO SyncCommand - Upload failed: Failed: Working directory was out of date.
+2016-12-17 20:25:58,945 CET  INFO ProjectControllerProxy - getting git host from https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification
+2016-12-17 20:25:58,945 CET DEBUG DefaultTransport - Issuing request to https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification (full request = ApacheHttpClientRequest(https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification,GET,Map(),Map(X-Domino-Api-Key -> [API key redacted]),1 minute,1 minute,true,EmptyBody,com.cerebro.domino.common.util.http.HttpService@352c1b98))
+2016-12-17 20:25:58,946 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:25:58,946 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/gitRepoUri/tjuela/learning_analytics_classification]
+2016-12-17 20:25:58,947 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:25:58,947 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:25:58,947 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:25:58,947 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:25:58,947 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:25:58,947 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:25:58,969 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:25:58,970 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:25:58,970 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:25:58,996 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:25:58,996 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:25:58,996 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:25:58,996 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:25:58,996 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:25:58,996 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:25:58,997 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62316<->104.20.67.168:443
+2016-12-17 20:25:58,997 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-1: set socket timeout to 60000
+2016-12-17 20:25:58,997 CET DEBUG MainClientExec - Executing request GET /gitRepoUri/tjuela/learning_analytics_classification HTTP/1.1
+2016-12-17 20:25:58,997 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:25:58,997 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:25:58,997 CET DEBUG headers - http-outgoing-1 >> GET /gitRepoUri/tjuela/learning_analytics_classification HTTP/1.1
+2016-12-17 20:25:58,997 CET DEBUG headers - http-outgoing-1 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:25:58,997 CET DEBUG headers - http-outgoing-1 >> Host: trial.dominodatalab.com
+2016-12-17 20:25:58,997 CET DEBUG headers - http-outgoing-1 >> Connection: Keep-Alive
+2016-12-17 20:25:58,997 CET DEBUG headers - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:25:58,997 CET DEBUG headers - http-outgoing-1 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:25:58,997 CET DEBUG headers - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << HTTP/1.1 200 OK
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << Date: Sat, 17 Dec 2016 19:25:59 GMT
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << Transfer-Encoding: chunked
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << Connection: keep-alive
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << Play-Processing-Time: 1
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << Server: cloudflare-nginx
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << CF-RAY: 312cc39d1bbb2c06-AMS
+2016-12-17 20:25:59,132 CET DEBUG headers - http-outgoing-1 << Content-Encoding: gzip
+2016-12-17 20:25:59,132 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:25:59,133 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-1: Close connection
+2016-12-17 20:25:59,133 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:25:59,133 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:25:59,133 CET DEBUG ProjectControllerProxy - response from server: https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git
+2016-12-17 20:25:59,134 CET  INFO CLIFileSyncClient - checking whether remote (https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git) needs to be upgraded to match new desired url (https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git)
+2016-12-17 20:25:59,134 CET  INFO CLIFileSyncClient - Running in cloud mode, so using AnonymousS3BlobStore
+2016-12-17 20:25:59,136 CET TRACE FileSyncClient - Starting download...
+2016-12-17 20:25:59,177 CET TRACE FileStructureRepo - Staging structure. Current branch = master, head commit ID = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]).
+2016-12-17 20:25:59,199 CET DEBUG FileStructureRepo - Staging structure complete. Head advanced to commit ID = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]).
+2016-12-17 20:25:59,201 CET TRACE FileStructureRepoSynchronizer - Starting download...
+2016-12-17 20:25:59,210 CET TRACE FileStructureRepoSynchronizer - Asserting repo is safe to operate.  repo state = SAFE, isClean = true, isSafe = true, currentBranch = master.
+2016-12-17 20:25:59,215 CET TRACE FileStructureRepo - Starting fetch: master = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]), refs/remotes/origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:25:59,867 CET TRACE FileStructureRepo - Fetch complete: master = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]), refs/remotes/origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:25:59,867 CET TRACE FileStructureRepo - Fetch result = [No Update]
+2016-12-17 20:25:59,869 CET TRACE FileStructureRepo - Finding shared ancestor between commit e45f9b94d71a8b5f42d3b9ef5129276252a2b385 1482002755 -----p and commit 476664db52bc140f74c1b2829ea04c93c5cb6456 1482000626 -----p
+2016-12-17 20:25:59,876 CET DEBUG FileStructureRepo - Ancestors of Commit B, up until ancestors of A:
+commit 476664db52bc140f74c1b2829ea04c93c5cb6456 1482000626 ----sp
+commit fefe18850fb2126c99d0ce49650659da6c8372fb 1482000594 ----sp
+commit 51e3ea260fbe1ed5ac9e006ce1a3ceae1a82cd33 1481997192 ----sp
+commit 2925a174e2319eb3c2da83333f21b33d1816c0c3 1481996601 ----sp
+commit 325155fc72fb4b94f5d0a3c291de879706df2e39 1481994641 ----sp
+2016-12-17 20:25:59,878 CET DEBUG FileStructureRepo - Shared ancestor computed as commit 3f03fc22b78cf32255a91fb2359ba2cd84bce536 1481991512 ---usp
+2016-12-17 20:25:59,881 CET DEBUG FileStructureRepo - BranchState between master and refs/remotes/origin/master with currentHeadCommitId=AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385], sharedAncestorId=commit 3f03fc22b78cf32255a91fb2359ba2cd84bce536 1481991512 ---usp, serverTipCommitId=AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456] is BranchState(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385],commit 3f03fc22b78cf32255a91fb2359ba2cd84bce536 1481991512 ---usp,AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:25:59,882 CET TRACE FileStructureRepoSynchronizer - Integrating fetch changes into local...
+2016-12-17 20:25:59,883 CET TRACE FileStructureRepo - Starting fast-forward: master = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]), origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:25:59,900 CET DEBUG FileStructureRepo - Merge result = Merge of revisions e45f9b94d71a8b5f42d3b9ef5129276252a2b385, 476664db52bc140f74c1b2829ea04c93c5cb6456 with base 476664db52bc140f74c1b2829ea04c93c5cb6456 using strategy recursive resulted in: Aborted. 
+2016-12-17 20:25:59,901 CET DEBUG FileStructureRepo - Fast-forward failed with status = Aborted
+2016-12-17 20:25:59,902 CET DEBUG FileStructureRepo - Fast-forward complete: master = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]), origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:25:59,904 CET TRACE FileStructureRepo - Finding shared ancestor between commit e45f9b94d71a8b5f42d3b9ef5129276252a2b385 1482002755 -----p and commit 476664db52bc140f74c1b2829ea04c93c5cb6456 1482000626 -----p
+2016-12-17 20:25:59,905 CET DEBUG FileStructureRepo - Ancestors of Commit B, up until ancestors of A:
+commit 476664db52bc140f74c1b2829ea04c93c5cb6456 1482000626 ----sp
+commit fefe18850fb2126c99d0ce49650659da6c8372fb 1482000594 ----sp
+commit 51e3ea260fbe1ed5ac9e006ce1a3ceae1a82cd33 1481997192 ----sp
+commit 2925a174e2319eb3c2da83333f21b33d1816c0c3 1481996601 ----sp
+commit 325155fc72fb4b94f5d0a3c291de879706df2e39 1481994641 ----sp
+2016-12-17 20:25:59,906 CET DEBUG FileStructureRepo - Shared ancestor computed as commit 3f03fc22b78cf32255a91fb2359ba2cd84bce536 1481991512 ---usp
+2016-12-17 20:25:59,906 CET DEBUG FileStructureRepo - BranchState between master and refs/remotes/origin/master with currentHeadCommitId=AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385], sharedAncestorId=commit 3f03fc22b78cf32255a91fb2359ba2cd84bce536 1481991512 ---usp, serverTipCommitId=AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456] is BranchState(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385],commit 3f03fc22b78cf32255a91fb2359ba2cd84bce536 1481991512 ---usp,AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:25:59,907 CET DEBUG FileStructureRepo - Starting rebase onto origin: master = Some(AnyObjectId[e45f9b94d71a8b5f42d3b9ef5129276252a2b385]), origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:26:00,045 CET DEBUG FileStructureRepo - Rebase stopped with status = STOPPED
+2016-12-17 20:26:00,046 CET DEBUG FileStructureRepo - Rebase complete: 476664db52bc140f74c1b2829ea04c93c5cb6456 = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]), origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:26:00,047 CET DEBUG FileStructureRepoSynchronizer - Resolving rebase conflicted commit commit e45f9b94d71a8b5f42d3b9ef5129276252a2b385 1482002755 -t--sp in favor of local changes starting...
+2016-12-17 20:26:00,048 CET TRACE FileStructureRepo - Computing updates between: local = commit e45f9b94d71a8b5f42d3b9ef5129276252a2b385 1482002755 -t--sp, shared = commit 3f03fc22b78cf32255a91fb2359ba2cd84bce536 1481991512 ---usp, origin = AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]
+2016-12-17 20:26:00,062 CET DEBUG FileStructureRepo - Local changes:
+. File dataset_test.pickle up to date.
+. File requirements.txt up to date.
+. File aggregateFeatures.R up to date.
+. File results.xlsx up to date.
+x Modifying file CustomFeatures.py
+. File OutputTable_test.csv up to date.
+x Modifying file classifierCompleteFlow.R
+. File domino.last.dump.rda up to date.
+. File OutputTable.csv up to date.
+. File dataset.pickle up to date.
+. File CreateTable.py up to date.
+. File .RData up to date.
+x Modifying file classifier_results.csv
+. File results/stdout.txt up to date.
+. File classifier_template.csv up to date.
+. File .dominoignore up to date.
+. File .dominoresults up to date.
+. File nnetRplot.png up to date.
+. File domino.workspace.RData up to date.
+2016-12-17 20:26:00,070 CET DEBUG FileStructureRepo - Origin changes:
+. File dataset_test.pickle up to date.
+. File requirements.txt up to date.
+. File aggregateFeatures.R up to date.
+. File results.xlsx up to date.
+x Modifying file CustomFeatures.py
+. File OutputTable_test.csv up to date.
+x Modifying file classifierCompleteFlow.R
+. File domino.last.dump.rda up to date.
+. File OutputTable.csv up to date.
+. File dataset.pickle up to date.
+. File CreateTable.py up to date.
+. File .RData up to date.
+x Modifying file classifier_results.csv
+. File results/stdout.txt up to date.
+. File classifier_template.csv up to date.
+. File .dominoignore up to date.
+. File .dominoresults up to date.
+. File nnetRplot.png up to date.
+. File domino.workspace.RData up to date.
+2016-12-17 20:26:00,083 CET DEBUG FileStructureRepo - Merged updates:
+FileUpdate(. File .dominoresults up to date.,None)
+FileUpdate(. File domino.workspace.RData up to date.,None)
+FileUpdate(. File .dominoignore up to date.,None)
+FileUpdate(. File requirements.txt up to date.,None)
+FileUpdate(x Modifying file CustomFeatures.py,Some(. File CustomFeatures.py up to date.))
+FileUpdate(. File CreateTable.py up to date.,None)
+FileUpdate(. File .RData up to date.,None)
+FileUpdate(. File domino.last.dump.rda up to date.,None)
+FileUpdate(. File dataset_test.pickle up to date.,None)
+FileUpdate(. File OutputTable.csv up to date.,None)
+FileUpdate(. File results.xlsx up to date.,None)
+FileUpdate(. File aggregateFeatures.R up to date.,None)
+FileUpdate(x Modifying file results/stdout.txt,None)
+FileUpdate(x Modifying file classifier_results.csv,Some(x Modifying file classifier_results.csv))
+FileUpdate(. File classifier_template.csv up to date.,None)
+FileUpdate(. File dataset.pickle up to date.,None)
+FileUpdate(. File OutputTable_test.csv up to date.,None)
+FileUpdate(x Modifying file classifierCompleteFlow.R,Some(x Modifying file classifierCompleteFlow.R))
+FileUpdate(. File nnetRplot.png up to date.,None)
+2016-12-17 20:26:00,090 CET TRACE FileStructureRepo - Starting finishRebase...
+2016-12-17 20:26:00,109 CET DEBUG FileStructureRepo - finishRebase complete.  Status = OK
+2016-12-17 20:26:00,109 CET DEBUG FileStructureRepoSynchronizer - Resolving rebase in favor of local changes complete. Updates size = 19
+2016-12-17 20:26:00,116 CET DEBUG FileStructureRepo - Local changes:
+. File domino.last.dump.rda up to date.
+. File domino.workspace.RData up to date.
+. File OutputTable.csv up to date.
+. File .dominoignore up to date.
+. File classifier_template.csv up to date.
+. File requirements.txt up to date.
+. File results.xlsx up to date.
+. File classifierCompleteFlow.R up to date.
+. File aggregateFeatures.R up to date.
+. File CreateTable.py up to date.
+. File .dominoresults up to date.
+. File dataset_test.pickle up to date.
+. File classifier_results.csv up to date.
+. File CustomFeatures.py up to date.
+x Modifying file results/stdout.txt
+. File .RData up to date.
+. File nnetRplot.png up to date.
+. File dataset.pickle up to date.
+. File OutputTable_test.csv up to date.
+2016-12-17 20:26:00,123 CET DEBUG FileStructureRepo - Origin changes:
+. File domino.last.dump.rda up to date.
+. File domino.workspace.RData up to date.
+. File OutputTable.csv up to date.
+. File .dominoignore up to date.
+. File classifier_template.csv up to date.
+. File requirements.txt up to date.
+. File results.xlsx up to date.
+. File classifierCompleteFlow.R up to date.
+. File aggregateFeatures.R up to date.
+. File CreateTable.py up to date.
+. File .dominoresults up to date.
+. File dataset_test.pickle up to date.
+. File classifier_results.csv up to date.
+. File CustomFeatures.py up to date.
+x Modifying file results/stdout.txt
+. File .RData up to date.
+. File nnetRplot.png up to date.
+. File dataset.pickle up to date.
+. File OutputTable_test.csv up to date.
+2016-12-17 20:26:00,130 CET DEBUG FileStructureRepo - Merged updates:
+FileUpdate(. File dataset.pickle up to date.,None)
+FileUpdate(. File .dominoresults up to date.,None)
+FileUpdate(. File classifier_template.csv up to date.,None)
+FileUpdate(. File requirements.txt up to date.,None)
+FileUpdate(. File domino.workspace.RData up to date.,None)
+FileUpdate(. File CreateTable.py up to date.,None)
+FileUpdate(. File domino.last.dump.rda up to date.,None)
+FileUpdate(. File .RData up to date.,None)
+FileUpdate(. File nnetRplot.png up to date.,None)
+FileUpdate(x Modifying file results/stdout.txt,None)
+FileUpdate(. File aggregateFeatures.R up to date.,None)
+FileUpdate(. File .dominoignore up to date.,None)
+FileUpdate(. File CustomFeatures.py up to date.,None)
+FileUpdate(. File classifierCompleteFlow.R up to date.,Some(x Modifying file classifierCompleteFlow.R))
+FileUpdate(. File OutputTable.csv up to date.,None)
+FileUpdate(. File OutputTable_test.csv up to date.,None)
+FileUpdate(. File dataset_test.pickle up to date.,None)
+FileUpdate(. File results.xlsx up to date.,None)
+FileUpdate(. File classifier_results.csv up to date.,Some(x Modifying file classifier_results.csv))
+2016-12-17 20:26:00,130 CET TRACE FileStructureRepoSynchronizer - Integrating changes complete.
+2016-12-17 20:26:00,132 CET TRACE FileStructureRepoSynchronizer - Download updates: FileUpdate(. File dataset.pickle up to date.,None);FileUpdate(. File .dominoresults up to date.,None);FileUpdate(. File classifier_template.csv up to date.,None);FileUpdate(. File requirements.txt up to date.,None);FileUpdate(. File domino.workspace.RData up to date.,None);FileUpdate(. File CreateTable.py up to date.,None);FileUpdate(. File domino.last.dump.rda up to date.,None);FileUpdate(. File .RData up to date.,None);FileUpdate(. File nnetRplot.png up to date.,None);FileUpdate(x Modifying file results/stdout.txt,None);FileUpdate(. File aggregateFeatures.R up to date.,None);FileUpdate(. File .dominoignore up to date.,None);FileUpdate(. File CustomFeatures.py up to date.,None);FileUpdate(. File classifierCompleteFlow.R up to date.,Some(x Modifying file classifierCompleteFlow.R));FileUpdate(. File OutputTable.csv up to date.,None);FileUpdate(. File OutputTable_test.csv up to date.,None);FileUpdate(. File dataset_test.pickle up to date.,None);FileUpdate(. File results.xlsx up to date.,None);FileUpdate(. File classifier_results.csv up to date.,Some(x Modifying file classifier_results.csv))
+2016-12-17 20:26:00,132 CET DEBUG FileStructureRepoSynchronizer - Download updates size = 19
+2016-12-17 20:26:00,199 CET DEBUG DefaultTransport - Issuing request to https://trial.dominodatalab.com/blobs/signedGetUrl/2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e (full request = ApacheHttpClientRequest(https://trial.dominodatalab.com/blobs/signedGetUrl/2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e,GET,Map(),Map(X-Domino-Api-Key -> [API key redacted]),1 minute,1 minute,true,EmptyBody,com.cerebro.domino.common.util.http.HttpService@352c1b98))
+2016-12-17 20:26:00,199 CET DEBUG DefaultTransport - Issuing request to https://trial.dominodatalab.com/blobs/signedGetUrl/50f5bcac20d697c4335a0fbf592d64c4d5a04b51 (full request = ApacheHttpClientRequest(https://trial.dominodatalab.com/blobs/signedGetUrl/50f5bcac20d697c4335a0fbf592d64c4d5a04b51,GET,Map(),Map(X-Domino-Api-Key -> [API key redacted]),1 minute,1 minute,true,EmptyBody,com.cerebro.domino.common.util.http.HttpService@352c1b98))
+2016-12-17 20:26:00,199 CET DEBUG DefaultTransport - Issuing request to https://trial.dominodatalab.com/blobs/signedGetUrl/941568deb25e8d7bd8ac33a38ed2363ca8823ced (full request = ApacheHttpClientRequest(https://trial.dominodatalab.com/blobs/signedGetUrl/941568deb25e8d7bd8ac33a38ed2363ca8823ced,GET,Map(),Map(X-Domino-Api-Key -> [API key redacted]),1 minute,1 minute,true,EmptyBody,com.cerebro.domino.common.util.http.HttpService@352c1b98))
+2016-12-17 20:26:00,206 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:00,206 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:00,206 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:00,206 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/blobs/signedGetUrl/50f5bcac20d697c4335a0fbf592d64c4d5a04b51]
+2016-12-17 20:26:00,206 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/blobs/signedGetUrl/2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e]
+2016-12-17 20:26:00,206 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/blobs/signedGetUrl/941568deb25e8d7bd8ac33a38ed2363ca8823ced]
+2016-12-17 20:26:00,207 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:00,206 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:00,207 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:00,208 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:00,208 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:00,208 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:00,208 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 2][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:26:00,208 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:00,209 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 4][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 3 of 10; total allocated: 3 of 30]
+2016-12-17 20:26:00,209 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 3][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 3 of 10; total allocated: 3 of 30]
+2016-12-17 20:26:00,209 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:00,209 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:00,209 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:00,209 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:00,209 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:00,209 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:00,209 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:00,209 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:00,248 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:00,248 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:00,248 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:00,251 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:00,252 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:00,252 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:00,256 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:00,256 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:00,256 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:00,276 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:00,276 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:00,276 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:00,276 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:00,277 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:00,277 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:00,277 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:00,277 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:00,277 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:00,277 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:00,277 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:00,277 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:00,277 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62320<->104.20.67.168:443
+2016-12-17 20:26:00,277 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62319<->104.20.67.168:443
+2016-12-17 20:26:00,277 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-4: set socket timeout to 60000
+2016-12-17 20:26:00,277 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-2: set socket timeout to 60000
+2016-12-17 20:26:00,278 CET DEBUG MainClientExec - Executing request POST /blobs/signedGetUrl/50f5bcac20d697c4335a0fbf592d64c4d5a04b51 HTTP/1.1
+2016-12-17 20:26:00,278 CET DEBUG MainClientExec - Executing request POST /blobs/signedGetUrl/941568deb25e8d7bd8ac33a38ed2363ca8823ced HTTP/1.1
+2016-12-17 20:26:00,278 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:00,278 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:00,278 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:00,278 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-4 >> POST /blobs/signedGetUrl/50f5bcac20d697c4335a0fbf592d64c4d5a04b51 HTTP/1.1
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-4 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-2 >> POST /blobs/signedGetUrl/941568deb25e8d7bd8ac33a38ed2363ca8823ced HTTP/1.1
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-4 >> Content-Length: 0
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-2 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-4 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-2 >> Content-Length: 0
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-4 >> Connection: Keep-Alive
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-2 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:00,278 CET DEBUG headers - http-outgoing-4 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:00,279 CET DEBUG headers - http-outgoing-2 >> Connection: Keep-Alive
+2016-12-17 20:26:00,279 CET DEBUG headers - http-outgoing-4 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:00,279 CET DEBUG headers - http-outgoing-2 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:00,279 CET DEBUG headers - http-outgoing-4 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:00,279 CET DEBUG headers - http-outgoing-2 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:00,279 CET DEBUG headers - http-outgoing-2 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:00,311 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:00,311 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:00,311 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:00,311 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:00,311 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:00,312 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:00,312 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62321<->104.20.67.168:443
+2016-12-17 20:26:00,312 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-3: set socket timeout to 60000
+2016-12-17 20:26:00,312 CET DEBUG MainClientExec - Executing request POST /blobs/signedGetUrl/2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e HTTP/1.1
+2016-12-17 20:26:00,312 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:00,312 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:00,312 CET DEBUG headers - http-outgoing-3 >> POST /blobs/signedGetUrl/2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e HTTP/1.1
+2016-12-17 20:26:00,312 CET DEBUG headers - http-outgoing-3 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:00,313 CET DEBUG headers - http-outgoing-3 >> Content-Length: 0
+2016-12-17 20:26:00,313 CET DEBUG headers - http-outgoing-3 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:00,313 CET DEBUG headers - http-outgoing-3 >> Connection: Keep-Alive
+2016-12-17 20:26:00,313 CET DEBUG headers - http-outgoing-3 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:00,313 CET DEBUG headers - http-outgoing-3 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:00,313 CET DEBUG headers - http-outgoing-3 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << HTTP/1.1 200 OK
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << Date: Sat, 17 Dec 2016 19:26:00 GMT
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << Transfer-Encoding: chunked
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << Connection: keep-alive
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << Play-Processing-Time: 1
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << Server: cloudflare-nginx
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << CF-RAY: 312cc3a549f52bb8-AMS
+2016-12-17 20:26:00,445 CET DEBUG headers - http-outgoing-3 << Content-Encoding: gzip
+2016-12-17 20:26:00,446 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:00,446 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-3: Close connection
+2016-12-17 20:26:00,447 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:00,447 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 3][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 2 of 10; total allocated: 2 of 30]
+2016-12-17 20:26:00,448 CET  INFO AnonymousS3SingleProjectBlobStore - Generated signed GET url: https://domino-trial-blobs.s3-external-1.amazonaws.com/2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=QBMcYYuoZyxJ4kxABnEia6xv8wE%3D
+2016-12-17 20:26:00,448 CET  INFO AnonymousS3SingleProjectBlobStore - Starting signed GET request
+2016-12-17 20:26:00,484 CET DEBUG Jets3tProperties - s3service.https-only=true
+2016-12-17 20:26:00,484 CET DEBUG Jets3tProperties - storage-service.internal-error-retry-max=5
+2016-12-17 20:26:00,484 CET DEBUG Jets3tProperties - storage-service.apply-recommended-dns-caching-defaults=true
+2016-12-17 20:26:00,484 CET DEBUG StorageService - Setting recommended DNS caching defaults
+2016-12-17 20:26:00,484 CET DEBUG StorageService - Using DNS caching system settings: networkaddress.cache.ttl=300, networkaddress.cache.negative.ttl=1
+2016-12-17 20:26:00,489 CET DEBUG Jets3tProperties - http.connection-manager.factory-class-name=org.jets3t.service.utils.RestUtils$ConnManagerFactory
+2016-12-17 20:26:00,490 CET DEBUG Jets3tProperties - httpclient.connection-timeout-ms=60000
+2016-12-17 20:26:00,490 CET DEBUG Jets3tProperties - httpclient.socket-timeout-ms=60000
+2016-12-17 20:26:00,490 CET DEBUG Jets3tProperties - httpclient.stale-checking-enabled=true
+2016-12-17 20:26:00,490 CET DEBUG Jets3tProperties - httpclient.useragent=null
+2016-12-17 20:26:00,493 CET DEBUG RestUtils - Setting user agent string: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:00,493 CET DEBUG Jets3tProperties - http.protocol.expect-continue=true
+2016-12-17 20:26:00,493 CET DEBUG Jets3tProperties - httpclient.connection-manager-timeout=0
+2016-12-17 20:26:00,497 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:00,497 CET DEBUG Jets3tProperties - httpclient.proxy-autodetect=true
+2016-12-17 20:26:00,497 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:00,498 CET DEBUG PluginProxyUtil - About to attempt auto proxy detection under Java version:1.8.0_101-b13
+2016-12-17 20:26:00,498 CET DEBUG PluginProxyUtil - Sun Plugin reported java version not 1.3.X, 1.4.X, 1.5.X or 1.6.X - trying failover detection...
+2016-12-17 20:26:00,498 CET DEBUG PluginProxyUtil - Using failover proxy detection...
+2016-12-17 20:26:00,498 CET DEBUG PluginProxyUtil - Plugin Proxy Config List Property:null
+2016-12-17 20:26:00,498 CET DEBUG PluginProxyUtil - No configured plugin proxy list
+2016-12-17 20:26:00,498 CET DEBUG Jets3tProperties - s3service.default-storage-class=null
+2016-12-17 20:26:00,498 CET DEBUG Jets3tProperties - s3service.server-side-encryption=null
+2016-12-17 20:26:00,499 CET DEBUG Jets3tProperties - devpay.user-token=null
+2016-12-17 20:26:00,499 CET DEBUG Jets3tProperties - devpay.product-token=null
+2016-12-17 20:26:00,499 CET DEBUG Jets3tProperties - httpclient.requester-pays-buckets-enabled=false
+2016-12-17 20:26:00,499 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:00,499 CET DEBUG RestStorageService - Performing GET request for 'https://domino-trial-blobs.s3-external-1.amazonaws.com/2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=QBMcYYuoZyxJ4kxABnEia6xv8wE%3D', expecting response codes: [200]
+2016-12-17 20:26:00,499 CET DEBUG RestStorageService - Headers: []
+2016-12-17 20:26:00,499 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:00,500 CET DEBUG RestStorageService - Service has no Credential and is un-authenticated, skipping authorization
+2016-12-17 20:26:00,511 CET DEBUG Jets3tProperties - httpclient.max-connections=20
+2016-12-17 20:26:00,511 CET DEBUG Jets3tProperties - httpclient.max-connections-per-host=0
+2016-12-17 20:26:00,512 CET DEBUG Jets3tProperties - httpclient.connection.ttl=-1
+2016-12-17 20:26:00,530 CET DEBUG RestUtils$ThreadSafeConnManager - Get connection: {s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443, timeout = 0
+2016-12-17 20:26:00,531 CET DEBUG ConnPoolByRoute - [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+2016-12-17 20:26:00,531 CET DEBUG ConnPoolByRoute - No free connections [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:00,531 CET DEBUG ConnPoolByRoute - Available capacity: 20 out of 20 [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:00,531 CET DEBUG ConnPoolByRoute - Creating new connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443]
+2016-12-17 20:26:00,609 CET DEBUG DefaultClientConnectionOperator - Connecting to domino-trial-blobs.s3-external-1.amazonaws.com:443
+2016-12-17 20:26:00,641 CET DEBUG headers - http-outgoing-4 << HTTP/1.1 200 OK
+2016-12-17 20:26:00,642 CET DEBUG headers - http-outgoing-4 << Date: Sat, 17 Dec 2016 19:26:00 GMT
+2016-12-17 20:26:00,642 CET DEBUG headers - http-outgoing-4 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:00,642 CET DEBUG headers - http-outgoing-4 << Transfer-Encoding: chunked
+2016-12-17 20:26:00,642 CET DEBUG headers - http-outgoing-4 << Connection: keep-alive
+2016-12-17 20:26:00,642 CET DEBUG headers - http-outgoing-4 << Play-Processing-Time: 1
+2016-12-17 20:26:00,642 CET DEBUG headers - http-outgoing-4 << Server: cloudflare-nginx
+2016-12-17 20:26:00,642 CET DEBUG headers - http-outgoing-4 << CF-RAY: 312cc3a519710c71-AMS
+2016-12-17 20:26:00,642 CET DEBUG headers - http-outgoing-4 << Content-Encoding: gzip
+2016-12-17 20:26:00,643 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:00,643 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-4: Close connection
+2016-12-17 20:26:00,644 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:00,644 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 4][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:26:00,644 CET  INFO AnonymousS3SingleProjectBlobStore - Generated signed GET url: https://domino-trial-blobs.s3-external-1.amazonaws.com/50f5bcac20d697c4335a0fbf592d64c4d5a04b51?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=BYVwA6Vk6hi7aLV3f%2Bheix%2FU0mI%3D
+2016-12-17 20:26:00,645 CET  INFO AnonymousS3SingleProjectBlobStore - Starting signed GET request
+2016-12-17 20:26:00,645 CET DEBUG Jets3tProperties - s3service.https-only=true
+2016-12-17 20:26:00,646 CET DEBUG Jets3tProperties - storage-service.internal-error-retry-max=5
+2016-12-17 20:26:00,646 CET DEBUG Jets3tProperties - storage-service.apply-recommended-dns-caching-defaults=true
+2016-12-17 20:26:00,646 CET DEBUG StorageService - Setting recommended DNS caching defaults
+2016-12-17 20:26:00,646 CET DEBUG StorageService - Using DNS caching system settings: networkaddress.cache.ttl=300, networkaddress.cache.negative.ttl=1
+2016-12-17 20:26:00,646 CET DEBUG Jets3tProperties - http.connection-manager.factory-class-name=org.jets3t.service.utils.RestUtils$ConnManagerFactory
+2016-12-17 20:26:00,646 CET DEBUG Jets3tProperties - httpclient.connection-timeout-ms=60000
+2016-12-17 20:26:00,646 CET DEBUG Jets3tProperties - httpclient.socket-timeout-ms=60000
+2016-12-17 20:26:00,646 CET DEBUG Jets3tProperties - httpclient.stale-checking-enabled=true
+2016-12-17 20:26:00,646 CET DEBUG Jets3tProperties - httpclient.useragent=null
+2016-12-17 20:26:00,646 CET DEBUG RestUtils - Setting user agent string: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:00,647 CET DEBUG Jets3tProperties - http.protocol.expect-continue=true
+2016-12-17 20:26:00,647 CET DEBUG Jets3tProperties - httpclient.connection-manager-timeout=0
+2016-12-17 20:26:00,647 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:00,647 CET DEBUG Jets3tProperties - httpclient.proxy-autodetect=true
+2016-12-17 20:26:00,647 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:00,647 CET DEBUG PluginProxyUtil - About to attempt auto proxy detection under Java version:1.8.0_101-b13
+2016-12-17 20:26:00,649 CET DEBUG PluginProxyUtil - Sun Plugin reported java version not 1.3.X, 1.4.X, 1.5.X or 1.6.X - trying failover detection...
+2016-12-17 20:26:00,649 CET DEBUG PluginProxyUtil - Using failover proxy detection...
+2016-12-17 20:26:00,649 CET DEBUG PluginProxyUtil - Plugin Proxy Config List Property:null
+2016-12-17 20:26:00,649 CET DEBUG PluginProxyUtil - No configured plugin proxy list
+2016-12-17 20:26:00,649 CET DEBUG Jets3tProperties - s3service.default-storage-class=null
+2016-12-17 20:26:00,649 CET DEBUG Jets3tProperties - s3service.server-side-encryption=null
+2016-12-17 20:26:00,649 CET DEBUG Jets3tProperties - devpay.user-token=null
+2016-12-17 20:26:00,649 CET DEBUG Jets3tProperties - devpay.product-token=null
+2016-12-17 20:26:00,649 CET DEBUG Jets3tProperties - httpclient.requester-pays-buckets-enabled=false
+2016-12-17 20:26:00,650 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:00,650 CET DEBUG RestStorageService - Performing GET request for 'https://domino-trial-blobs.s3-external-1.amazonaws.com/50f5bcac20d697c4335a0fbf592d64c4d5a04b51?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=BYVwA6Vk6hi7aLV3f%2Bheix%2FU0mI%3D', expecting response codes: [200]
+2016-12-17 20:26:00,650 CET DEBUG RestStorageService - Headers: []
+2016-12-17 20:26:00,650 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:00,650 CET DEBUG RestStorageService - Service has no Credential and is un-authenticated, skipping authorization
+2016-12-17 20:26:00,653 CET DEBUG Jets3tProperties - httpclient.max-connections=20
+2016-12-17 20:26:00,653 CET DEBUG Jets3tProperties - httpclient.max-connections-per-host=0
+2016-12-17 20:26:00,653 CET DEBUG Jets3tProperties - httpclient.connection.ttl=-1
+2016-12-17 20:26:00,653 CET DEBUG RestUtils$ThreadSafeConnManager - Get connection: {s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443, timeout = 0
+2016-12-17 20:26:00,654 CET DEBUG ConnPoolByRoute - [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+2016-12-17 20:26:00,654 CET DEBUG ConnPoolByRoute - No free connections [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:00,654 CET DEBUG ConnPoolByRoute - Available capacity: 20 out of 20 [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:00,654 CET DEBUG ConnPoolByRoute - Creating new connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443]
+2016-12-17 20:26:00,655 CET DEBUG DefaultClientConnectionOperator - Connecting to domino-trial-blobs.s3-external-1.amazonaws.com:443
+2016-12-17 20:26:00,694 CET DEBUG headers - http-outgoing-2 << HTTP/1.1 200 OK
+2016-12-17 20:26:00,695 CET DEBUG headers - http-outgoing-2 << Date: Sat, 17 Dec 2016 19:26:00 GMT
+2016-12-17 20:26:00,695 CET DEBUG headers - http-outgoing-2 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:00,695 CET DEBUG headers - http-outgoing-2 << Transfer-Encoding: chunked
+2016-12-17 20:26:00,695 CET DEBUG headers - http-outgoing-2 << Connection: keep-alive
+2016-12-17 20:26:00,695 CET DEBUG headers - http-outgoing-2 << Play-Processing-Time: 1
+2016-12-17 20:26:00,695 CET DEBUG headers - http-outgoing-2 << Server: cloudflare-nginx
+2016-12-17 20:26:00,696 CET DEBUG headers - http-outgoing-2 << CF-RAY: 312cc3a5193c1479-AMS
+2016-12-17 20:26:00,696 CET DEBUG headers - http-outgoing-2 << Content-Encoding: gzip
+2016-12-17 20:26:00,696 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:00,696 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-2: Close connection
+2016-12-17 20:26:00,697 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:00,697 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 2][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:00,697 CET  INFO AnonymousS3SingleProjectBlobStore - Generated signed GET url: https://domino-trial-blobs.s3-external-1.amazonaws.com/941568deb25e8d7bd8ac33a38ed2363ca8823ced?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=YzX%2BZSMHOSm994FDe%2Fj6ioFk46Y%3D
+2016-12-17 20:26:00,697 CET  INFO AnonymousS3SingleProjectBlobStore - Starting signed GET request
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - s3service.https-only=true
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - storage-service.internal-error-retry-max=5
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - storage-service.apply-recommended-dns-caching-defaults=true
+2016-12-17 20:26:00,698 CET DEBUG StorageService - Setting recommended DNS caching defaults
+2016-12-17 20:26:00,698 CET DEBUG StorageService - Using DNS caching system settings: networkaddress.cache.ttl=300, networkaddress.cache.negative.ttl=1
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - http.connection-manager.factory-class-name=org.jets3t.service.utils.RestUtils$ConnManagerFactory
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - httpclient.connection-timeout-ms=60000
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - httpclient.socket-timeout-ms=60000
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - httpclient.stale-checking-enabled=true
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - httpclient.useragent=null
+2016-12-17 20:26:00,698 CET DEBUG RestUtils - Setting user agent string: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:00,698 CET DEBUG Jets3tProperties - http.protocol.expect-continue=true
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - httpclient.connection-manager-timeout=0
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - httpclient.proxy-autodetect=true
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:00,699 CET DEBUG PluginProxyUtil - About to attempt auto proxy detection under Java version:1.8.0_101-b13
+2016-12-17 20:26:00,699 CET DEBUG PluginProxyUtil - Sun Plugin reported java version not 1.3.X, 1.4.X, 1.5.X or 1.6.X - trying failover detection...
+2016-12-17 20:26:00,699 CET DEBUG PluginProxyUtil - Using failover proxy detection...
+2016-12-17 20:26:00,699 CET DEBUG PluginProxyUtil - Plugin Proxy Config List Property:null
+2016-12-17 20:26:00,699 CET DEBUG PluginProxyUtil - No configured plugin proxy list
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - s3service.default-storage-class=null
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - s3service.server-side-encryption=null
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - devpay.user-token=null
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - devpay.product-token=null
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - httpclient.requester-pays-buckets-enabled=false
+2016-12-17 20:26:00,699 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:00,700 CET DEBUG RestStorageService - Performing GET request for 'https://domino-trial-blobs.s3-external-1.amazonaws.com/941568deb25e8d7bd8ac33a38ed2363ca8823ced?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=YzX%2BZSMHOSm994FDe%2Fj6ioFk46Y%3D', expecting response codes: [200]
+2016-12-17 20:26:00,700 CET DEBUG RestStorageService - Headers: []
+2016-12-17 20:26:00,700 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:00,700 CET DEBUG RestStorageService - Service has no Credential and is un-authenticated, skipping authorization
+2016-12-17 20:26:00,702 CET DEBUG Jets3tProperties - httpclient.max-connections=20
+2016-12-17 20:26:00,703 CET DEBUG Jets3tProperties - httpclient.max-connections-per-host=0
+2016-12-17 20:26:00,703 CET DEBUG Jets3tProperties - httpclient.connection.ttl=-1
+2016-12-17 20:26:00,703 CET DEBUG RestUtils$ThreadSafeConnManager - Get connection: {s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443, timeout = 0
+2016-12-17 20:26:00,703 CET DEBUG ConnPoolByRoute - [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+2016-12-17 20:26:00,703 CET DEBUG ConnPoolByRoute - No free connections [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:00,704 CET DEBUG ConnPoolByRoute - Available capacity: 20 out of 20 [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:00,704 CET DEBUG ConnPoolByRoute - Creating new connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443]
+2016-12-17 20:26:00,705 CET DEBUG DefaultClientConnectionOperator - Connecting to domino-trial-blobs.s3-external-1.amazonaws.com:443
+2016-12-17 20:26:01,062 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:01,063 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:01,063 CET DEBUG RequestTargetAuthentication - Target auth state: UNCHALLENGED
+2016-12-17 20:26:01,064 CET DEBUG RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:01,064 CET DEBUG DefaultHttpClient - Attempt 1 to execute request
+2016-12-17 20:26:01,064 CET DEBUG DefaultClientConnection - Sending request: GET /2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=QBMcYYuoZyxJ4kxABnEia6xv8wE%3D HTTP/1.1
+2016-12-17 20:26:01,064 CET DEBUG headers - >> GET /2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=QBMcYYuoZyxJ4kxABnEia6xv8wE%3D HTTP/1.1
+2016-12-17 20:26:01,064 CET DEBUG headers - >> Host: domino-trial-blobs.s3-external-1.amazonaws.com
+2016-12-17 20:26:01,064 CET DEBUG headers - >> Connection: Keep-Alive
+2016-12-17 20:26:01,064 CET DEBUG headers - >> User-Agent: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:01,136 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:01,137 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:01,137 CET DEBUG RequestTargetAuthentication - Target auth state: UNCHALLENGED
+2016-12-17 20:26:01,138 CET DEBUG RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:01,138 CET DEBUG DefaultHttpClient - Attempt 1 to execute request
+2016-12-17 20:26:01,138 CET DEBUG DefaultClientConnection - Sending request: GET /50f5bcac20d697c4335a0fbf592d64c4d5a04b51?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=BYVwA6Vk6hi7aLV3f%2Bheix%2FU0mI%3D HTTP/1.1
+2016-12-17 20:26:01,139 CET DEBUG headers - >> GET /50f5bcac20d697c4335a0fbf592d64c4d5a04b51?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=BYVwA6Vk6hi7aLV3f%2Bheix%2FU0mI%3D HTTP/1.1
+2016-12-17 20:26:01,139 CET DEBUG headers - >> Host: domino-trial-blobs.s3-external-1.amazonaws.com
+2016-12-17 20:26:01,139 CET DEBUG headers - >> Connection: Keep-Alive
+2016-12-17 20:26:01,139 CET DEBUG headers - >> User-Agent: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:01,148 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:01,149 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:01,149 CET DEBUG RequestTargetAuthentication - Target auth state: UNCHALLENGED
+2016-12-17 20:26:01,149 CET DEBUG RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:01,149 CET DEBUG DefaultHttpClient - Attempt 1 to execute request
+2016-12-17 20:26:01,150 CET DEBUG DefaultClientConnection - Sending request: GET /941568deb25e8d7bd8ac33a38ed2363ca8823ced?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=YzX%2BZSMHOSm994FDe%2Fj6ioFk46Y%3D HTTP/1.1
+2016-12-17 20:26:01,150 CET DEBUG headers - >> GET /941568deb25e8d7bd8ac33a38ed2363ca8823ced?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002820&Signature=YzX%2BZSMHOSm994FDe%2Fj6ioFk46Y%3D HTTP/1.1
+2016-12-17 20:26:01,150 CET DEBUG headers - >> Host: domino-trial-blobs.s3-external-1.amazonaws.com
+2016-12-17 20:26:01,150 CET DEBUG headers - >> Connection: Keep-Alive
+2016-12-17 20:26:01,150 CET DEBUG headers - >> User-Agent: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:01,202 CET DEBUG DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+2016-12-17 20:26:01,203 CET DEBUG headers - << HTTP/1.1 200 OK
+2016-12-17 20:26:01,203 CET DEBUG headers - << x-amz-id-2: h1xB3FjqZEMkIs0+P6c3uUZ35d16wKLHk07yBbx8+BJY+YluUY0nUrR8ZhMwBQ7LDZNno0P67+U=
+2016-12-17 20:26:01,203 CET DEBUG headers - << x-amz-request-id: 4A6F8C8875E4A68E
+2016-12-17 20:26:01,203 CET DEBUG headers - << Date: Sat, 17 Dec 2016 19:26:02 GMT
+2016-12-17 20:26:01,203 CET DEBUG headers - << Last-Modified: Sat, 17 Dec 2016 18:49:56 GMT
+2016-12-17 20:26:01,203 CET DEBUG headers - << ETag: "7662300e244b9a8d292e5906448389d5"
+2016-12-17 20:26:01,203 CET DEBUG headers - << x-amz-server-side-encryption: AES256
+2016-12-17 20:26:01,203 CET DEBUG headers - << Content-Encoding: gzip
+2016-12-17 20:26:01,203 CET DEBUG headers - << x-amz-meta-domino-original-blob-length: 120981
+2016-12-17 20:26:01,203 CET DEBUG headers - << Accept-Ranges: bytes
+2016-12-17 20:26:01,203 CET DEBUG headers - << Content-Type: application/x-gzip
+2016-12-17 20:26:01,203 CET DEBUG headers - << Content-Length: 17595
+2016-12-17 20:26:01,203 CET DEBUG headers - << Server: AmazonS3
+2016-12-17 20:26:01,204 CET DEBUG DefaultHttpClient - Connection can be kept alive indefinitely
+2016-12-17 20:26:01,212 CET DEBUG RestStorageService - Response for 'GET'. Content-Type: application/x-gzip, Headers: [x-amz-id-2: h1xB3FjqZEMkIs0+P6c3uUZ35d16wKLHk07yBbx8+BJY+YluUY0nUrR8ZhMwBQ7LDZNno0P67+U=, x-amz-request-id: 4A6F8C8875E4A68E, Date: Sat, 17 Dec 2016 19:26:02 GMT, Last-Modified: Sat, 17 Dec 2016 18:49:56 GMT, ETag: "7662300e244b9a8d292e5906448389d5", x-amz-server-side-encryption: AES256, Content-Encoding: gzip, x-amz-meta-domino-original-blob-length: 120981, Accept-Ranges: bytes, Content-Type: application/x-gzip, Content-Length: 17595, Server: AmazonS3]
+2016-12-17 20:26:01,212 CET DEBUG RestStorageService - Response entity: org.apache.http.conn.BasicManagedEntity@6d0aaad1
+2016-12-17 20:26:01,212 CET DEBUG RestStorageService - Entity length: 17595
+2016-12-17 20:26:01,212 CET DEBUG RestStorageService - Received response code 200; matches one of expected set ([200])? true
+2016-12-17 20:26:01,214 CET DEBUG ServiceUtils - Processing REST metadata items
+2016-12-17 20:26:01,215 CET DEBUG ServiceUtils - Ignoring metadata item: Server=AmazonS3
+2016-12-17 20:26:01,215 CET DEBUG ServiceUtils - Removed user metadata header prefix x-amz-meta- from key: x-amz-meta-domino-original-blob-length=>domino-original-blob-length
+2016-12-17 20:26:01,215 CET DEBUG ServiceUtils - Parsing date string 'Sat, 17 Dec 2016 18:49:56 GMT' into Date object for key: Last-Modified
+2016-12-17 20:26:01,216 CET DEBUG ServiceUtils - Leaving header item unchanged: Last-Modified=Sat Dec 17 19:49:56 CET 2016
+2016-12-17 20:26:01,216 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-server-side-encryption=>server-side-encryption
+2016-12-17 20:26:01,216 CET DEBUG ServiceUtils - Parsing date string 'Sat, 17 Dec 2016 19:26:02 GMT' into Date object for key: Date
+2016-12-17 20:26:01,216 CET DEBUG ServiceUtils - Leaving header item unchanged: Date=Sat Dec 17 20:26:02 CET 2016
+2016-12-17 20:26:01,216 CET DEBUG ServiceUtils - Ignoring metadata item: Accept-Ranges=bytes
+2016-12-17 20:26:01,216 CET DEBUG ServiceUtils - Leaving header item unchanged: ETag="7662300e244b9a8d292e5906448389d5"
+2016-12-17 20:26:01,216 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Encoding=gzip
+2016-12-17 20:26:01,216 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-request-id=>request-id
+2016-12-17 20:26:01,217 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-id-2=>id-2
+2016-12-17 20:26:01,217 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Length=17595
+2016-12-17 20:26:01,217 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Type=application/x-gzip
+2016-12-17 20:26:01,275 CET TRACE MultiThreadedBlobStoreSynchronizer - Downloading blob Sha1(2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e) of size 120981
+2016-12-17 20:26:01,334 CET DEBUG RestUtils$ThreadSafeConnManager - Released connection is reusable.
+2016-12-17 20:26:01,334 CET DEBUG ConnPoolByRoute - Releasing connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:01,335 CET DEBUG ConnPoolByRoute - Pooling connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]; keep alive indefinitely
+2016-12-17 20:26:01,335 CET DEBUG ConnPoolByRoute - Notifying no-one, there are no waiting threads
+2016-12-17 20:26:01,335 CET DEBUG HttpMethodReleaseInputStream - Released HttpMethod as its response data stream is closed
+2016-12-17 20:26:01,337 CET TRACE MultiThreadedBlobStoreSynchronizer - Downloaded blob Sha1(2a550911fa81c758de5e8e22b24c6ae2ba6b7e5e) of size 120981 in 58 ms
+2016-12-17 20:26:01,371 CET DEBUG DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+2016-12-17 20:26:01,371 CET DEBUG headers - << HTTP/1.1 200 OK
+2016-12-17 20:26:01,371 CET DEBUG headers - << x-amz-id-2: byHMTT1gQIKUysjitQn55uJoBB15nJVIHvVY+vQwdclzgo6JEXwX2mjthosRnfp0FM80W5n1aCY=
+2016-12-17 20:26:01,371 CET DEBUG headers - << x-amz-request-id: CAC25A0B3EA118B7
+2016-12-17 20:26:01,372 CET DEBUG headers - << Date: Sat, 17 Dec 2016 19:26:02 GMT
+2016-12-17 20:26:01,372 CET DEBUG headers - << Last-Modified: Sat, 17 Dec 2016 18:49:55 GMT
+2016-12-17 20:26:01,372 CET DEBUG headers - << ETag: "11bae7a7528e3f63bc70922f99ee50ea"
+2016-12-17 20:26:01,372 CET DEBUG headers - << x-amz-server-side-encryption: AES256
+2016-12-17 20:26:01,372 CET DEBUG headers - << Content-Encoding: gzip
+2016-12-17 20:26:01,372 CET DEBUG headers - << x-amz-meta-domino-original-blob-length: 6664
+2016-12-17 20:26:01,372 CET DEBUG headers - << Accept-Ranges: bytes
+2016-12-17 20:26:01,372 CET DEBUG headers - << Content-Type: application/x-gzip
+2016-12-17 20:26:01,372 CET DEBUG headers - << Content-Length: 1968
+2016-12-17 20:26:01,372 CET DEBUG headers - << Server: AmazonS3
+2016-12-17 20:26:01,372 CET DEBUG DefaultHttpClient - Connection can be kept alive indefinitely
+2016-12-17 20:26:01,372 CET DEBUG RestStorageService - Response for 'GET'. Content-Type: application/x-gzip, Headers: [x-amz-id-2: byHMTT1gQIKUysjitQn55uJoBB15nJVIHvVY+vQwdclzgo6JEXwX2mjthosRnfp0FM80W5n1aCY=, x-amz-request-id: CAC25A0B3EA118B7, Date: Sat, 17 Dec 2016 19:26:02 GMT, Last-Modified: Sat, 17 Dec 2016 18:49:55 GMT, ETag: "11bae7a7528e3f63bc70922f99ee50ea", x-amz-server-side-encryption: AES256, Content-Encoding: gzip, x-amz-meta-domino-original-blob-length: 6664, Accept-Ranges: bytes, Content-Type: application/x-gzip, Content-Length: 1968, Server: AmazonS3]
+2016-12-17 20:26:01,372 CET DEBUG RestStorageService - Response entity: org.apache.http.conn.BasicManagedEntity@776b4fdc
+2016-12-17 20:26:01,372 CET DEBUG RestStorageService - Entity length: 1968
+2016-12-17 20:26:01,372 CET DEBUG RestStorageService - Received response code 200; matches one of expected set ([200])? true
+2016-12-17 20:26:01,373 CET DEBUG ServiceUtils - Processing REST metadata items
+2016-12-17 20:26:01,373 CET DEBUG ServiceUtils - Ignoring metadata item: Server=AmazonS3
+2016-12-17 20:26:01,373 CET DEBUG ServiceUtils - Removed user metadata header prefix x-amz-meta- from key: x-amz-meta-domino-original-blob-length=>domino-original-blob-length
+2016-12-17 20:26:01,373 CET DEBUG ServiceUtils - Parsing date string 'Sat, 17 Dec 2016 18:49:55 GMT' into Date object for key: Last-Modified
+2016-12-17 20:26:01,374 CET DEBUG ServiceUtils - Leaving header item unchanged: Last-Modified=Sat Dec 17 19:49:55 CET 2016
+2016-12-17 20:26:01,374 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-server-side-encryption=>server-side-encryption
+2016-12-17 20:26:01,374 CET DEBUG ServiceUtils - Parsing date string 'Sat, 17 Dec 2016 19:26:02 GMT' into Date object for key: Date
+2016-12-17 20:26:01,374 CET DEBUG ServiceUtils - Leaving header item unchanged: Date=Sat Dec 17 20:26:02 CET 2016
+2016-12-17 20:26:01,374 CET DEBUG ServiceUtils - Ignoring metadata item: Accept-Ranges=bytes
+2016-12-17 20:26:01,374 CET DEBUG ServiceUtils - Leaving header item unchanged: ETag="11bae7a7528e3f63bc70922f99ee50ea"
+2016-12-17 20:26:01,376 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Encoding=gzip
+2016-12-17 20:26:01,376 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-request-id=>request-id
+2016-12-17 20:26:01,376 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-id-2=>id-2
+2016-12-17 20:26:01,376 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Length=1968
+2016-12-17 20:26:01,376 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Type=application/x-gzip
+2016-12-17 20:26:01,391 CET TRACE MultiThreadedBlobStoreSynchronizer - Downloading blob Sha1(941568deb25e8d7bd8ac33a38ed2363ca8823ced) of size 6664
+2016-12-17 20:26:01,396 CET DEBUG RestUtils$ThreadSafeConnManager - Released connection is reusable.
+2016-12-17 20:26:01,396 CET DEBUG ConnPoolByRoute - Releasing connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:01,396 CET DEBUG ConnPoolByRoute - Pooling connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]; keep alive indefinitely
+2016-12-17 20:26:01,396 CET DEBUG ConnPoolByRoute - Notifying no-one, there are no waiting threads
+2016-12-17 20:26:01,397 CET DEBUG HttpMethodReleaseInputStream - Released HttpMethod as its response data stream is closed
+2016-12-17 20:26:01,397 CET TRACE MultiThreadedBlobStoreSynchronizer - Downloaded blob Sha1(941568deb25e8d7bd8ac33a38ed2363ca8823ced) of size 6664 in 5 ms
+2016-12-17 20:26:01,617 CET DEBUG DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+2016-12-17 20:26:01,617 CET DEBUG headers - << HTTP/1.1 200 OK
+2016-12-17 20:26:01,617 CET DEBUG headers - << x-amz-id-2: Lv7jmMpiHjwQ6al9kO5sK4hKUuxmV8lUUdm3k4CQfeRiqVKxEDZnPJPOsVLxWnIuwkKW1Mwehfs=
+2016-12-17 20:26:01,617 CET DEBUG headers - << x-amz-request-id: B708519A308D7ED4
+2016-12-17 20:26:01,617 CET DEBUG headers - << Date: Sat, 17 Dec 2016 19:26:02 GMT
+2016-12-17 20:26:01,617 CET DEBUG headers - << Last-Modified: Sat, 17 Dec 2016 18:50:27 GMT
+2016-12-17 20:26:01,617 CET DEBUG headers - << ETag: "9f4642191eedf6c9c78b99ba71ee8a1f"
+2016-12-17 20:26:01,617 CET DEBUG headers - << x-amz-server-side-encryption: AES256
+2016-12-17 20:26:01,617 CET DEBUG headers - << Content-Encoding: gzip
+2016-12-17 20:26:01,617 CET DEBUG headers - << x-amz-meta-domino-original-blob-length: 267
+2016-12-17 20:26:01,617 CET DEBUG headers - << Accept-Ranges: bytes
+2016-12-17 20:26:01,617 CET DEBUG headers - << Content-Type: application/x-gzip
+2016-12-17 20:26:01,617 CET DEBUG headers - << Content-Length: 158
+2016-12-17 20:26:01,617 CET DEBUG headers - << Server: AmazonS3
+2016-12-17 20:26:01,618 CET DEBUG DefaultHttpClient - Connection can be kept alive indefinitely
+2016-12-17 20:26:01,618 CET DEBUG RestStorageService - Response for 'GET'. Content-Type: application/x-gzip, Headers: [x-amz-id-2: Lv7jmMpiHjwQ6al9kO5sK4hKUuxmV8lUUdm3k4CQfeRiqVKxEDZnPJPOsVLxWnIuwkKW1Mwehfs=, x-amz-request-id: B708519A308D7ED4, Date: Sat, 17 Dec 2016 19:26:02 GMT, Last-Modified: Sat, 17 Dec 2016 18:50:27 GMT, ETag: "9f4642191eedf6c9c78b99ba71ee8a1f", x-amz-server-side-encryption: AES256, Content-Encoding: gzip, x-amz-meta-domino-original-blob-length: 267, Accept-Ranges: bytes, Content-Type: application/x-gzip, Content-Length: 158, Server: AmazonS3]
+2016-12-17 20:26:01,618 CET DEBUG RestStorageService - Response entity: org.apache.http.conn.BasicManagedEntity@3e098271
+2016-12-17 20:26:01,618 CET DEBUG RestStorageService - Entity length: 158
+2016-12-17 20:26:01,618 CET DEBUG RestStorageService - Received response code 200; matches one of expected set ([200])? true
+2016-12-17 20:26:01,618 CET DEBUG ServiceUtils - Processing REST metadata items
+2016-12-17 20:26:01,618 CET DEBUG ServiceUtils - Ignoring metadata item: Server=AmazonS3
+2016-12-17 20:26:01,618 CET DEBUG ServiceUtils - Removed user metadata header prefix x-amz-meta- from key: x-amz-meta-domino-original-blob-length=>domino-original-blob-length
+2016-12-17 20:26:01,618 CET DEBUG ServiceUtils - Parsing date string 'Sat, 17 Dec 2016 18:50:27 GMT' into Date object for key: Last-Modified
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Leaving header item unchanged: Last-Modified=Sat Dec 17 19:50:27 CET 2016
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-server-side-encryption=>server-side-encryption
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Parsing date string 'Sat, 17 Dec 2016 19:26:02 GMT' into Date object for key: Date
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Leaving header item unchanged: Date=Sat Dec 17 20:26:02 CET 2016
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Ignoring metadata item: Accept-Ranges=bytes
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Leaving header item unchanged: ETag="9f4642191eedf6c9c78b99ba71ee8a1f"
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Encoding=gzip
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-request-id=>request-id
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-id-2=>id-2
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Length=158
+2016-12-17 20:26:01,619 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Type=application/x-gzip
+2016-12-17 20:26:01,622 CET TRACE MultiThreadedBlobStoreSynchronizer - Downloading blob Sha1(50f5bcac20d697c4335a0fbf592d64c4d5a04b51) of size 267
+2016-12-17 20:26:01,623 CET DEBUG RestUtils$ThreadSafeConnManager - Released connection is reusable.
+2016-12-17 20:26:01,623 CET DEBUG ConnPoolByRoute - Releasing connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:01,623 CET DEBUG ConnPoolByRoute - Pooling connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]; keep alive indefinitely
+2016-12-17 20:26:01,624 CET DEBUG ConnPoolByRoute - Notifying no-one, there are no waiting threads
+2016-12-17 20:26:01,624 CET DEBUG HttpMethodReleaseInputStream - Released HttpMethod as its response data stream is closed
+2016-12-17 20:26:01,624 CET TRACE MultiThreadedBlobStoreSynchronizer - Downloaded blob Sha1(50f5bcac20d697c4335a0fbf592d64c4d5a04b51) of size 267 in 2 ms
+2016-12-17 20:26:01,628 CET TRACE LocalFileDirectory - Starting local data directory processing...
+2016-12-17 20:26:01,630 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File dataset.pickle up to date.,None)...
+2016-12-17 20:26:01,633 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File dataset.pickle up to date.,None) complete.
+2016-12-17 20:26:01,634 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File .dominoresults up to date.,None)...
+2016-12-17 20:26:01,634 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File .dominoresults up to date.,None) complete.
+2016-12-17 20:26:01,634 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File classifier_template.csv up to date.,None)...
+2016-12-17 20:26:01,635 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File classifier_template.csv up to date.,None) complete.
+2016-12-17 20:26:01,635 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File requirements.txt up to date.,None)...
+2016-12-17 20:26:01,635 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File requirements.txt up to date.,None) complete.
+2016-12-17 20:26:01,635 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File domino.workspace.RData up to date.,None)...
+2016-12-17 20:26:01,637 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File domino.workspace.RData up to date.,None) complete.
+2016-12-17 20:26:01,637 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File CreateTable.py up to date.,None)...
+2016-12-17 20:26:01,638 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File CreateTable.py up to date.,None) complete.
+2016-12-17 20:26:01,638 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File domino.last.dump.rda up to date.,None)...
+2016-12-17 20:26:01,638 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File domino.last.dump.rda up to date.,None) complete.
+2016-12-17 20:26:01,639 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File .RData up to date.,None)...
+2016-12-17 20:26:01,639 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File .RData up to date.,None) complete.
+2016-12-17 20:26:01,639 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File nnetRplot.png up to date.,None)...
+2016-12-17 20:26:01,639 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File nnetRplot.png up to date.,None) complete.
+2016-12-17 20:26:01,640 CET TRACE LocalFileDirectory - Processing update FileUpdate(x Modifying file results/stdout.txt,None)...
+2016-12-17 20:26:01,644 CET TRACE LocalFileDirectory - Processing update FileUpdate(x Modifying file results/stdout.txt,None) complete.
+2016-12-17 20:26:01,645 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File aggregateFeatures.R up to date.,None)...
+2016-12-17 20:26:01,645 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File aggregateFeatures.R up to date.,None) complete.
+2016-12-17 20:26:01,646 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File .dominoignore up to date.,None)...
+2016-12-17 20:26:01,646 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File .dominoignore up to date.,None) complete.
+2016-12-17 20:26:01,646 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File CustomFeatures.py up to date.,None)...
+2016-12-17 20:26:01,646 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File CustomFeatures.py up to date.,None) complete.
+2016-12-17 20:26:01,646 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File classifierCompleteFlow.R up to date.,Some(x Modifying file classifierCompleteFlow.R))...
+2016-12-17 20:26:01,647 CET DEBUG LocalFileDirectory - Update FileUpdate(. File classifierCompleteFlow.R up to date.,Some(x Modifying file classifierCompleteFlow.R)) is in conflict.
+2016-12-17 20:26:01,649 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File classifierCompleteFlow.R up to date.,Some(x Modifying file classifierCompleteFlow.R)) complete.
+2016-12-17 20:26:01,649 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File OutputTable.csv up to date.,None)...
+2016-12-17 20:26:01,649 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File OutputTable.csv up to date.,None) complete.
+2016-12-17 20:26:01,650 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File OutputTable_test.csv up to date.,None)...
+2016-12-17 20:26:01,650 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File OutputTable_test.csv up to date.,None) complete.
+2016-12-17 20:26:01,650 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File dataset_test.pickle up to date.,None)...
+2016-12-17 20:26:01,650 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File dataset_test.pickle up to date.,None) complete.
+2016-12-17 20:26:01,650 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File results.xlsx up to date.,None)...
+2016-12-17 20:26:01,651 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File results.xlsx up to date.,None) complete.
+2016-12-17 20:26:01,651 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File classifier_results.csv up to date.,Some(x Modifying file classifier_results.csv))...
+2016-12-17 20:26:01,651 CET DEBUG LocalFileDirectory - Update FileUpdate(. File classifier_results.csv up to date.,Some(x Modifying file classifier_results.csv)) is in conflict.
+2016-12-17 20:26:01,657 CET TRACE LocalFileDirectory - Processing update FileUpdate(. File classifier_results.csv up to date.,Some(x Modifying file classifier_results.csv)) complete.
+2016-12-17 20:26:01,658 CET DEBUG LocalFileDirectory - Local data directory processing complete.
+2016-12-17 20:26:01,658 CET DEBUG FileSyncClient - Local data directory processing complete.
+2016-12-17 20:26:01,662 CET DEBUG FileSyncClient - Clearing local blob directory
+2016-12-17 20:26:01,665 CET DEBUG FileSyncClient - Download complete.
+2016-12-17 20:26:01,672 CET  INFO ProjectControllerProxy - getting git host from https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification
+2016-12-17 20:26:01,673 CET DEBUG DefaultTransport - Issuing request to https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification (full request = ApacheHttpClientRequest(https://trial.dominodatalab.com/gitRepoUri/tjuela/learning_analytics_classification,GET,Map(),Map(X-Domino-Api-Key -> [API key redacted]),1 minute,1 minute,true,EmptyBody,com.cerebro.domino.common.util.http.HttpService@352c1b98))
+2016-12-17 20:26:01,673 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:01,674 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/gitRepoUri/tjuela/learning_analytics_classification]
+2016-12-17 20:26:01,674 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:01,674 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:01,674 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 5][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:26:01,674 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:01,674 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:01,674 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:01,697 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:01,697 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:01,697 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:01,727 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:01,727 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:01,727 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:01,727 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:01,727 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:01,727 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:01,727 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62327<->104.20.67.168:443
+2016-12-17 20:26:01,727 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-5: set socket timeout to 60000
+2016-12-17 20:26:01,728 CET DEBUG MainClientExec - Executing request GET /gitRepoUri/tjuela/learning_analytics_classification HTTP/1.1
+2016-12-17 20:26:01,728 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:01,728 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:01,728 CET DEBUG headers - http-outgoing-5 >> GET /gitRepoUri/tjuela/learning_analytics_classification HTTP/1.1
+2016-12-17 20:26:01,728 CET DEBUG headers - http-outgoing-5 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:01,728 CET DEBUG headers - http-outgoing-5 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:01,728 CET DEBUG headers - http-outgoing-5 >> Connection: Keep-Alive
+2016-12-17 20:26:01,728 CET DEBUG headers - http-outgoing-5 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:01,728 CET DEBUG headers - http-outgoing-5 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:01,728 CET DEBUG headers - http-outgoing-5 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << HTTP/1.1 200 OK
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << Date: Sat, 17 Dec 2016 19:26:02 GMT
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << Transfer-Encoding: chunked
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << Connection: keep-alive
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << Play-Processing-Time: 1
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << Server: cloudflare-nginx
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << CF-RAY: 312cc3ae2df52c60-AMS
+2016-12-17 20:26:02,108 CET DEBUG headers - http-outgoing-5 << Content-Encoding: gzip
+2016-12-17 20:26:02,108 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:02,109 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-5: Close connection
+2016-12-17 20:26:02,110 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:02,110 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 5][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:02,111 CET DEBUG ProjectControllerProxy - response from server: https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git
+2016-12-17 20:26:02,111 CET  INFO CLIFileSyncClient - checking whether remote (https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git) needs to be upgraded to match new desired url (https://trial.dominodatalab.com/projectrepos/5855/5855381c4b348526f34e0e52.git)
+2016-12-17 20:26:02,112 CET  INFO CLIFileSyncClient - Running in cloud mode, so using AnonymousS3BlobStore
+2016-12-17 20:26:02,179 CET TRACE FileSyncClient - Starting upload...
+2016-12-17 20:26:02,179 CET DEBUG RestUtils$ThreadSafeConnManager - Shutting down
+2016-12-17 20:26:02,179 CET DEBUG ConnPoolByRoute - Closing connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:02,180 CET DEBUG DefaultClientConnection - Connection 0.0.0.0:62325<->52.216.32.41:443 closed
+2016-12-17 20:26:02,180 CET DEBUG RestUtils$ThreadSafeConnManager - Shutting down
+2016-12-17 20:26:02,180 CET DEBUG ConnPoolByRoute - Closing connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:02,180 CET DEBUG DefaultClientConnection - Connection 0.0.0.0:62324<->52.216.32.41:443 closed
+2016-12-17 20:26:02,181 CET DEBUG RestUtils$ThreadSafeConnManager - Shutting down
+2016-12-17 20:26:02,181 CET DEBUG ConnPoolByRoute - Closing connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:02,181 CET DEBUG DefaultClientConnection - Connection 0.0.0.0:62323<->52.216.32.41:443 closed
+2016-12-17 20:26:02,202 CET TRACE FileStructureRepo - Staging structure. Current branch = master, head commit ID = Some(AnyObjectId[615f2176b369bd11c4a279a0d89bfbbef0986e09]).
+2016-12-17 20:26:02,221 CET DEBUG FileStructureRepo - Staging structure complete. Head advanced to commit ID = Some(AnyObjectId[615f2176b369bd11c4a279a0d89bfbbef0986e09]).
+2016-12-17 20:26:02,222 CET TRACE FileStructureRepoSynchronizer - Upload starting...
+2016-12-17 20:26:02,233 CET TRACE FileStructureRepoSynchronizer - Asserting repo is safe to operate.  repo state = SAFE, isClean = true, isSafe = true, currentBranch = master.
+2016-12-17 20:26:02,244 CET DEBUG FileStructureRepoSynchronizer - Local paths:
+	classifier_template.csv -> FileSignature(1480351760000,109882,Sha1(2eb27690c41d573f7db8e727cf6d7d1dea2a74de))
+	OutputTable.csv -> FileSignature(1482002747000,4553288,Sha1(a27d069729cb5bb8b537ed43ddb7df385ec93d89))
+	CreateTable.py -> FileSignature(1481986870000,11030,Sha1(6059ce0196ead22acea40931b34f391c252db20c))
+	domino.workspace.RData -> FileSignature(1481981231000,819,Sha1(f1856081cddf9fa90253623625c9c01c6d558d45))
+	OutputTable_test.csv -> FileSignature(1482002748000,2407103,Sha1(29c6a33f1b912cddae94915e982c0180463359af))
+	requirements.txt -> FileSignature(1481981279000,10,Sha1(7cb10ee3f6d88459fa8d89f2e653d4baaa3e22ab))
+	results.xlsx -> FileSignature(1481623818000,10350,Sha1(2fa0dd0561aa03df18410a46bf57bce6683d9ba7))
+	.RData -> FileSignature(1481879733000,2767385,Sha1(3b3007314378e77faa050972f5cc0be0c72592eb))
+	dataset_test.pickle -> FileSignature(1481980693000,8152449,Sha1(9f9d8c557ec9b78180f025d0cd249c94126bbee2))
+	.dominoresults -> FileSignature(1477176857000,313,Sha1(21dd498c2501c732b021ce2f28133e8c6d108f75))
+	domino.last.dump.rda -> FileSignature(1481981231000,366,Sha1(01ba78e13a6c34c109739fad462d9d4971bf9815))
+	classifierCompleteFlow.R -> FileSignature(1481997834000,6183,Sha1(6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51))
+	classifier_results.csv -> FileSignature(1481992513000,120981,Sha1(e7b540e576a89a5a55b427f9af8c59d4d07226ce))
+	dataset.pickle -> FileSignature(1481980695000,11453920,Sha1(ee20614a51f1b57ec7b81247a28ed1553c169d75))
+	CustomFeatures.py -> FileSignature(1482000675000,5390,Sha1(1e6beca509e4f61d81a57f766d035ff1119afd73))
+	aggregateFeatures.R -> FileSignature(1479816948000,1270,Sha1(c7f89be9f86a0c082ee2a6c84c7d1e3be3e573c3))
+	nnetRplot.png -> FileSignature(1481985564000,35521,Sha1(dbd869a6de5be9fdbd051b5cfbed6da57350133d))
+	results/stdout.txt -> FileSignature(1482000625000,267,Sha1(50f5bcac20d697c4335a0fbf592d64c4d5a04b51))
+	.dominoignore -> FileSignature(1477176857000,537,Sha1(a32008b6db09d9ec5ab91b3dd01c0ad0e4a50b62))
+2016-12-17 20:26:02,245 CET TRACE FileStructureRepo - Starting fetch: master = Some(AnyObjectId[615f2176b369bd11c4a279a0d89bfbbef0986e09]), refs/remotes/origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:26:02,939 CET TRACE FileStructureRepo - Fetch complete: master = Some(AnyObjectId[615f2176b369bd11c4a279a0d89bfbbef0986e09]), refs/remotes/origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:26:02,939 CET TRACE FileStructureRepo - Fetch result = [No Update]
+2016-12-17 20:26:02,941 CET DEBUG FileStructureRepo - Computing diffs between base = refs/remotes/origin/master (476664db52bc140f74c1b2829ea04c93c5cb6456) and target = HEAD (615f2176b369bd11c4a279a0d89bfbbef0986e09).
+2016-12-17 20:26:02,947 CET DEBUG FileStructureRepo - Updates:
+	. File results.xlsx up to date.
+	. File .RData up to date.
+	. File results/stdout.txt up to date.
+	. File nnetRplot.png up to date.
+	. File requirements.txt up to date.
+	x Modifying file CustomFeatures.py
+	. File classifier_template.csv up to date.
+	. File OutputTable.csv up to date.
+	. File domino.last.dump.rda up to date.
+	. File .dominoignore up to date.
+	. File domino.workspace.RData up to date.
+	. File aggregateFeatures.R up to date.
+	x Modifying file classifier_results.csv
+	. File dataset.pickle up to date.
+	. File CreateTable.py up to date.
+	x Modifying file classifierCompleteFlow.R
+	. File dataset_test.pickle up to date.
+	. File .dominoresults up to date.
+	. File OutputTable_test.csv up to date.
+2016-12-17 20:26:02,948 CET TRACE FileStructureRepoSynchronizer - Upload before push starting
+2016-12-17 20:26:02,974 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:02,975 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/blob/hasKey/tjuela/learning_analytics_classification/e7b540e576a89a5a55b427f9af8c59d4d07226ce]
+2016-12-17 20:26:02,975 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:02,975 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:02,976 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 6][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:26:02,976 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:02,976 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:02,976 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:02,996 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:02,996 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:02,996 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:03,024 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:03,024 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:03,024 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:03,024 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:03,025 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:03,025 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:03,025 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62330<->104.20.67.168:443
+2016-12-17 20:26:03,025 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-6: set socket timeout to 60000
+2016-12-17 20:26:03,025 CET DEBUG MainClientExec - Executing request GET /blob/hasKey/tjuela/learning_analytics_classification/e7b540e576a89a5a55b427f9af8c59d4d07226ce HTTP/1.1
+2016-12-17 20:26:03,025 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:03,025 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:03,025 CET DEBUG headers - http-outgoing-6 >> GET /blob/hasKey/tjuela/learning_analytics_classification/e7b540e576a89a5a55b427f9af8c59d4d07226ce HTTP/1.1
+2016-12-17 20:26:03,025 CET DEBUG headers - http-outgoing-6 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:03,025 CET DEBUG headers - http-outgoing-6 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:03,025 CET DEBUG headers - http-outgoing-6 >> Connection: Keep-Alive
+2016-12-17 20:26:03,025 CET DEBUG headers - http-outgoing-6 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:03,025 CET DEBUG headers - http-outgoing-6 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:03,025 CET DEBUG headers - http-outgoing-6 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:03,327 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:03,327 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << HTTP/1.1 200 OK
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << Date: Sat, 17 Dec 2016 19:26:03 GMT
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << Transfer-Encoding: chunked
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << Connection: keep-alive
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << Play-Processing-Time: 125
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << Server: cloudflare-nginx
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << CF-RAY: 312cc3b648c4074f-AMS
+2016-12-17 20:26:03,518 CET DEBUG headers - http-outgoing-6 << Content-Encoding: gzip
+2016-12-17 20:26:03,518 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:03,518 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-6: Close connection
+2016-12-17 20:26:03,519 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:03,519 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 6][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:03,519 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:03,519 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/blob/hasKey/tjuela/learning_analytics_classification/1e6beca509e4f61d81a57f766d035ff1119afd73]
+2016-12-17 20:26:03,519 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:03,520 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:03,520 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 7][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:26:03,520 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:03,520 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:03,520 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:03,539 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:03,539 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:03,539 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:03,576 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:03,576 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:03,576 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:03,576 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:03,576 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:03,576 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:03,577 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62334<->104.20.67.168:443
+2016-12-17 20:26:03,577 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-7: set socket timeout to 60000
+2016-12-17 20:26:03,577 CET DEBUG MainClientExec - Executing request GET /blob/hasKey/tjuela/learning_analytics_classification/1e6beca509e4f61d81a57f766d035ff1119afd73 HTTP/1.1
+2016-12-17 20:26:03,577 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:03,577 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:03,577 CET DEBUG headers - http-outgoing-7 >> GET /blob/hasKey/tjuela/learning_analytics_classification/1e6beca509e4f61d81a57f766d035ff1119afd73 HTTP/1.1
+2016-12-17 20:26:03,577 CET DEBUG headers - http-outgoing-7 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:03,577 CET DEBUG headers - http-outgoing-7 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:03,577 CET DEBUG headers - http-outgoing-7 >> Connection: Keep-Alive
+2016-12-17 20:26:03,577 CET DEBUG headers - http-outgoing-7 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:03,577 CET DEBUG headers - http-outgoing-7 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:03,577 CET DEBUG headers - http-outgoing-7 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << HTTP/1.1 200 OK
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << Date: Sat, 17 Dec 2016 19:26:03 GMT
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << Transfer-Encoding: chunked
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << Connection: keep-alive
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << Play-Processing-Time: 93
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << Server: cloudflare-nginx
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << CF-RAY: 312cc3b9bf290bf9-AMS
+2016-12-17 20:26:03,781 CET DEBUG headers - http-outgoing-7 << Content-Encoding: gzip
+2016-12-17 20:26:03,781 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:03,782 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-7: Close connection
+2016-12-17 20:26:03,782 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:03,782 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 7][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:03,782 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:03,783 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/blob/hasKey/tjuela/learning_analytics_classification/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51]
+2016-12-17 20:26:03,783 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:03,783 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:03,783 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 8][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:26:03,783 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:03,783 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:03,783 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:03,802 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:03,802 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:03,802 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:03,828 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:03,828 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:03,828 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:03,828 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:03,828 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:03,828 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:03,828 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62335<->104.20.67.168:443
+2016-12-17 20:26:03,829 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-8: set socket timeout to 60000
+2016-12-17 20:26:03,829 CET DEBUG MainClientExec - Executing request GET /blob/hasKey/tjuela/learning_analytics_classification/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51 HTTP/1.1
+2016-12-17 20:26:03,829 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:03,829 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:03,829 CET DEBUG headers - http-outgoing-8 >> GET /blob/hasKey/tjuela/learning_analytics_classification/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51 HTTP/1.1
+2016-12-17 20:26:03,829 CET DEBUG headers - http-outgoing-8 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:03,829 CET DEBUG headers - http-outgoing-8 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:03,829 CET DEBUG headers - http-outgoing-8 >> Connection: Keep-Alive
+2016-12-17 20:26:03,829 CET DEBUG headers - http-outgoing-8 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:03,829 CET DEBUG headers - http-outgoing-8 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:03,829 CET DEBUG headers - http-outgoing-8 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:03,954 CET DEBUG headers - http-outgoing-8 << HTTP/1.1 200 OK
+2016-12-17 20:26:03,955 CET DEBUG headers - http-outgoing-8 << Date: Sat, 17 Dec 2016 19:26:04 GMT
+2016-12-17 20:26:03,955 CET DEBUG headers - http-outgoing-8 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:03,955 CET DEBUG headers - http-outgoing-8 << Transfer-Encoding: chunked
+2016-12-17 20:26:03,955 CET DEBUG headers - http-outgoing-8 << Connection: keep-alive
+2016-12-17 20:26:03,955 CET DEBUG headers - http-outgoing-8 << Play-Processing-Time: 17
+2016-12-17 20:26:03,955 CET DEBUG headers - http-outgoing-8 << Server: cloudflare-nginx
+2016-12-17 20:26:03,955 CET DEBUG headers - http-outgoing-8 << CF-RAY: 312cc3bb4f332be8-AMS
+2016-12-17 20:26:03,955 CET DEBUG headers - http-outgoing-8 << Content-Encoding: gzip
+2016-12-17 20:26:03,955 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:03,955 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-8: Close connection
+2016-12-17 20:26:03,956 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:03,956 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 8][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:03,962 CET TRACE MultiThreadedBlobStoreSynchronizer - Batch-uploading 2 blobs of total size 11573
+2016-12-17 20:26:03,969 CET DEBUG DefaultTransport - Issuing request to https://trial.dominodatalab.com/blobs/signedPutUrl/1e6beca509e4f61d81a57f766d035ff1119afd73/5390?x=true (full request = ApacheHttpClientRequest(https://trial.dominodatalab.com/blobs/signedPutUrl/1e6beca509e4f61d81a57f766d035ff1119afd73/5390?x=true,GET,Map(),Map(X-Domino-Api-Key -> [API key redacted]),1 minute,1 minute,true,EmptyBody,com.cerebro.domino.common.util.http.HttpService@352c1b98))
+2016-12-17 20:26:03,969 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:03,969 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/blobs/signedPutUrl/1e6beca509e4f61d81a57f766d035ff1119afd73/5390]
+2016-12-17 20:26:03,969 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:03,969 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:03,969 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 9][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:26:03,969 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:03,969 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:03,969 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:04,013 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:04,013 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:04,013 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:04,042 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:04,042 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:04,042 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:04,042 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:04,042 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:04,042 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:04,042 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62337<->104.20.67.168:443
+2016-12-17 20:26:04,042 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-9: set socket timeout to 60000
+2016-12-17 20:26:04,042 CET DEBUG MainClientExec - Executing request POST /blobs/signedPutUrl/1e6beca509e4f61d81a57f766d035ff1119afd73/5390?x=true HTTP/1.1
+2016-12-17 20:26:04,042 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:04,042 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:04,042 CET DEBUG headers - http-outgoing-9 >> POST /blobs/signedPutUrl/1e6beca509e4f61d81a57f766d035ff1119afd73/5390?x=true HTTP/1.1
+2016-12-17 20:26:04,042 CET DEBUG headers - http-outgoing-9 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:04,042 CET DEBUG headers - http-outgoing-9 >> Content-Length: 0
+2016-12-17 20:26:04,042 CET DEBUG headers - http-outgoing-9 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:04,042 CET DEBUG headers - http-outgoing-9 >> Connection: Keep-Alive
+2016-12-17 20:26:04,042 CET DEBUG headers - http-outgoing-9 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:04,042 CET DEBUG headers - http-outgoing-9 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:04,042 CET DEBUG headers - http-outgoing-9 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << HTTP/1.1 200 OK
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << Date: Sat, 17 Dec 2016 19:26:04 GMT
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << Transfer-Encoding: chunked
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << Connection: keep-alive
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << Play-Processing-Time: 1
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << Server: cloudflare-nginx
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << CF-RAY: 312cc3bc9a5a1479-AMS
+2016-12-17 20:26:04,149 CET DEBUG headers - http-outgoing-9 << Content-Encoding: gzip
+2016-12-17 20:26:04,150 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:04,150 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-9: Close connection
+2016-12-17 20:26:04,151 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:04,151 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 9][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:04,151 CET  INFO AnonymousS3SingleProjectBlobStore - Generated signed PUT url: https://domino-trial-blobs.s3-external-1.amazonaws.com/1e6beca509e4f61d81a57f766d035ff1119afd73?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002824&Signature=Bram0wvk0zkdHjxL1qloP7M%2BG70%3D
+2016-12-17 20:26:04,152 CET  INFO AnonymousS3SingleProjectBlobStore - Starting signed PUT request
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - s3service.https-only=true
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - storage-service.internal-error-retry-max=5
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - storage-service.apply-recommended-dns-caching-defaults=true
+2016-12-17 20:26:04,152 CET DEBUG StorageService - Setting recommended DNS caching defaults
+2016-12-17 20:26:04,152 CET DEBUG StorageService - Using DNS caching system settings: networkaddress.cache.ttl=300, networkaddress.cache.negative.ttl=1
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - http.connection-manager.factory-class-name=org.jets3t.service.utils.RestUtils$ConnManagerFactory
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - httpclient.connection-timeout-ms=60000
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - httpclient.socket-timeout-ms=60000
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - httpclient.stale-checking-enabled=true
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - httpclient.useragent=null
+2016-12-17 20:26:04,152 CET DEBUG RestUtils - Setting user agent string: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - http.protocol.expect-continue=true
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - httpclient.connection-manager-timeout=0
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - httpclient.proxy-autodetect=true
+2016-12-17 20:26:04,152 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:04,152 CET DEBUG PluginProxyUtil - About to attempt auto proxy detection under Java version:1.8.0_101-b13
+2016-12-17 20:26:04,153 CET DEBUG PluginProxyUtil - Sun Plugin reported java version not 1.3.X, 1.4.X, 1.5.X or 1.6.X - trying failover detection...
+2016-12-17 20:26:04,153 CET DEBUG PluginProxyUtil - Using failover proxy detection...
+2016-12-17 20:26:04,153 CET DEBUG PluginProxyUtil - Plugin Proxy Config List Property:null
+2016-12-17 20:26:04,153 CET DEBUG PluginProxyUtil - No configured plugin proxy list
+2016-12-17 20:26:04,153 CET DEBUG Jets3tProperties - s3service.default-storage-class=null
+2016-12-17 20:26:04,153 CET DEBUG Jets3tProperties - s3service.server-side-encryption=null
+2016-12-17 20:26:04,153 CET DEBUG Jets3tProperties - devpay.user-token=null
+2016-12-17 20:26:04,153 CET DEBUG Jets3tProperties - devpay.product-token=null
+2016-12-17 20:26:04,153 CET DEBUG Jets3tProperties - httpclient.requester-pays-buckets-enabled=false
+2016-12-17 20:26:04,154 CET DEBUG Jets3tProperties - storage-service.disable-live-md5=false
+2016-12-17 20:26:04,154 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:04,156 CET DEBUG RepeatableRequestEntity - Setting maximal read-ahead mark limit for markable input stream com.cerebro.domino.common.sync.ConsoleProgressMonitoredInputStream assuming it doesn't use in-memory storage: 1221
+2016-12-17 20:26:04,156 CET DEBUG RepeatableRequestEntity - Setting maximal read-ahead mark limit for markable input stream java.io.ByteArrayInputStream assuming it doesn't use in-memory storage: 1221
+2016-12-17 20:26:04,156 CET DEBUG Jets3tProperties - httpclient.read-throttle=0
+2016-12-17 20:26:04,156 CET DEBUG RestStorageService - Performing PUT request for 'https://domino-trial-blobs.s3-external-1.amazonaws.com/1e6beca509e4f61d81a57f766d035ff1119afd73?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002824&Signature=Bram0wvk0zkdHjxL1qloP7M%2BG70%3D', expecting response codes: [200]
+2016-12-17 20:26:04,156 CET DEBUG RestStorageService - Headers: [Content-Encoding: gzip, x-amz-meta-domino-original-blob-length: 5390, x-amz-server-side-encryption: AES256, Content-Type: application/x-gzip]
+2016-12-17 20:26:04,156 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:04,156 CET DEBUG RestStorageService - Service has no Credential and is un-authenticated, skipping authorization
+2016-12-17 20:26:04,158 CET DEBUG Jets3tProperties - httpclient.max-connections=20
+2016-12-17 20:26:04,158 CET DEBUG Jets3tProperties - httpclient.max-connections-per-host=0
+2016-12-17 20:26:04,158 CET DEBUG Jets3tProperties - httpclient.connection.ttl=-1
+2016-12-17 20:26:04,164 CET DEBUG RestUtils$ThreadSafeConnManager - Get connection: {s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443, timeout = 0
+2016-12-17 20:26:04,164 CET DEBUG ConnPoolByRoute - [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+2016-12-17 20:26:04,164 CET DEBUG ConnPoolByRoute - No free connections [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:04,164 CET DEBUG ConnPoolByRoute - Available capacity: 20 out of 20 [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:04,164 CET DEBUG ConnPoolByRoute - Creating new connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443]
+2016-12-17 20:26:04,166 CET DEBUG DefaultClientConnectionOperator - Connecting to domino-trial-blobs.s3-external-1.amazonaws.com:443
+2016-12-17 20:26:04,697 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:04,697 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:04,697 CET DEBUG RequestTargetAuthentication - Target auth state: UNCHALLENGED
+2016-12-17 20:26:04,697 CET DEBUG RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:04,697 CET DEBUG DefaultHttpClient - Attempt 1 to execute request
+2016-12-17 20:26:04,697 CET DEBUG DefaultClientConnection - Sending request: PUT /1e6beca509e4f61d81a57f766d035ff1119afd73?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002824&Signature=Bram0wvk0zkdHjxL1qloP7M%2BG70%3D HTTP/1.1
+2016-12-17 20:26:04,697 CET DEBUG headers - >> PUT /1e6beca509e4f61d81a57f766d035ff1119afd73?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002824&Signature=Bram0wvk0zkdHjxL1qloP7M%2BG70%3D HTTP/1.1
+2016-12-17 20:26:04,697 CET DEBUG headers - >> Content-Encoding: gzip
+2016-12-17 20:26:04,697 CET DEBUG headers - >> x-amz-meta-domino-original-blob-length: 5390
+2016-12-17 20:26:04,697 CET DEBUG headers - >> x-amz-server-side-encryption: AES256
+2016-12-17 20:26:04,697 CET DEBUG headers - >> Content-Type: application/x-gzip
+2016-12-17 20:26:04,697 CET DEBUG headers - >> Content-Length: 1221
+2016-12-17 20:26:04,698 CET DEBUG headers - >> Host: domino-trial-blobs.s3-external-1.amazonaws.com
+2016-12-17 20:26:04,698 CET DEBUG headers - >> Connection: Keep-Alive
+2016-12-17 20:26:04,698 CET DEBUG headers - >> User-Agent: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:04,698 CET DEBUG headers - >> Expect: 100-continue
+2016-12-17 20:26:04,809 CET DEBUG DefaultClientConnection - Receiving response: HTTP/1.1 100 Continue
+2016-12-17 20:26:04,809 CET DEBUG headers - << HTTP/1.1 100 Continue
+2016-12-17 20:26:04,813 CET DEBUG RepeatableRequestEntity - MD5 digest of data sent for '1e6beca509e4f61d81a57f766d035ff1119afd73' - B64:YK8lwtjLycrjM8h8IPIHwg== Hex:60af25c2d8cbc9cae333c87c20f207c2
+2016-12-17 20:26:05,021 CET DEBUG DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+2016-12-17 20:26:05,021 CET DEBUG headers - << HTTP/1.1 200 OK
+2016-12-17 20:26:05,021 CET DEBUG headers - << x-amz-id-2: Et3ZMJjWVNVZQ1I6KbNSJTycQC1UD25SzC+LL8emTSo/ntF+5KTXrfi6kW+dG5YKEKoahrbdRJA=
+2016-12-17 20:26:05,021 CET DEBUG headers - << x-amz-request-id: 7267697CBDAC7CC6
+2016-12-17 20:26:05,021 CET DEBUG headers - << Date: Sat, 17 Dec 2016 19:26:05 GMT
+2016-12-17 20:26:05,021 CET DEBUG headers - << x-amz-server-side-encryption: AES256
+2016-12-17 20:26:05,021 CET DEBUG headers - << ETag: "60af25c2d8cbc9cae333c87c20f207c2"
+2016-12-17 20:26:05,021 CET DEBUG headers - << Content-Length: 0
+2016-12-17 20:26:05,021 CET DEBUG headers - << Server: AmazonS3
+2016-12-17 20:26:05,021 CET DEBUG DefaultHttpClient - Connection can be kept alive indefinitely
+2016-12-17 20:26:05,021 CET DEBUG RestStorageService - Response for 'PUT'. Content-Type: , Headers: [x-amz-id-2: Et3ZMJjWVNVZQ1I6KbNSJTycQC1UD25SzC+LL8emTSo/ntF+5KTXrfi6kW+dG5YKEKoahrbdRJA=, x-amz-request-id: 7267697CBDAC7CC6, Date: Sat, 17 Dec 2016 19:26:05 GMT, x-amz-server-side-encryption: AES256, ETag: "60af25c2d8cbc9cae333c87c20f207c2", Content-Length: 0, Server: AmazonS3]
+2016-12-17 20:26:05,022 CET DEBUG RestStorageService - Response entity: org.apache.http.conn.BasicManagedEntity@4b2c3565
+2016-12-17 20:26:05,022 CET DEBUG RestStorageService - Entity length: 0
+2016-12-17 20:26:05,022 CET DEBUG RestStorageService - Received response code 200; matches one of expected set ([200])? true
+2016-12-17 20:26:05,022 CET DEBUG RestUtils$ThreadSafeConnManager - Released connection is reusable.
+2016-12-17 20:26:05,022 CET DEBUG ConnPoolByRoute - Releasing connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:05,023 CET DEBUG ConnPoolByRoute - Pooling connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]; keep alive indefinitely
+2016-12-17 20:26:05,023 CET DEBUG ConnPoolByRoute - Notifying no-one, there are no waiting threads
+2016-12-17 20:26:05,023 CET DEBUG ServiceUtils - Processing REST metadata items
+2016-12-17 20:26:05,023 CET DEBUG ServiceUtils - Ignoring metadata item: Server=AmazonS3
+2016-12-17 20:26:05,023 CET DEBUG ServiceUtils - Leaving header item unchanged: ETag="60af25c2d8cbc9cae333c87c20f207c2"
+2016-12-17 20:26:05,023 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-request-id=>request-id
+2016-12-17 20:26:05,023 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-id-2=>id-2
+2016-12-17 20:26:05,023 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-server-side-encryption=>server-side-encryption
+2016-12-17 20:26:05,023 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Length=0
+2016-12-17 20:26:05,023 CET DEBUG ServiceUtils - Parsing date string 'Sat, 17 Dec 2016 19:26:05 GMT' into Date object for key: Date
+2016-12-17 20:26:05,024 CET DEBUG ServiceUtils - Leaving header item unchanged: Date=Sat Dec 17 20:26:05 CET 2016
+2016-12-17 20:26:05,024 CET DEBUG RestStorageService - Object upload was automatically verified, the calculated MD5 hash value matched the ETag returned by S3: 1e6beca509e4f61d81a57f766d035ff1119afd73
+2016-12-17 20:26:05,025 CET DEBUG DefaultTransport - Issuing request to https://trial.dominodatalab.com/blobs/signedPutUrl/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51/6183?x=true (full request = ApacheHttpClientRequest(https://trial.dominodatalab.com/blobs/signedPutUrl/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51/6183?x=true,GET,Map(),Map(X-Domino-Api-Key -> [API key redacted]),1 minute,1 minute,true,EmptyBody,com.cerebro.domino.common.util.http.HttpService@352c1b98))
+2016-12-17 20:26:05,026 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:05,026 CET DEBUG RequestAddCookies - Cookie [version: 0][name: __cfduid][value: d81fba5d2d143bec8c60715723892546e1482002754][domain: dominodatalab.com][path: /][expiry: Sun Dec 17 20:25:54 CET 2017] match [(secure)trial.dominodatalab.com:443/blobs/signedPutUrl/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51/6183]
+2016-12-17 20:26:05,026 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:05,026 CET DEBUG PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:05,027 CET DEBUG PoolingHttpClientConnectionManager - Connection leased: [id: 10][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 1 of 10; total allocated: 1 of 30]
+2016-12-17 20:26:05,027 CET DEBUG MainClientExec - Opening connection {s}->https://trial.dominodatalab.com:443
+2016-12-17 20:26:05,027 CET DEBUG DefaultHttpClientConnectionOperator - Connecting to trial.dominodatalab.com/104.20.67.168:443
+2016-12-17 20:26:05,027 CET DEBUG SSLConnectionSocketFactory - Connecting socket to trial.dominodatalab.com/104.20.67.168:443 with timeout 60000
+2016-12-17 20:26:05,047 CET DEBUG SSLConnectionSocketFactory - Enabled protocols: [TLSv1, TLSv1.1, TLSv1.2]
+2016-12-17 20:26:05,047 CET DEBUG SSLConnectionSocketFactory - Enabled cipher suites:[TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_DSS_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDH_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_DSS_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_DSS_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_RSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_ECDSA_WITH_3DES_EDE_CBC_SHA, TLS_ECDH_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA, TLS_EMPTY_RENEGOTIATION_INFO_SCSV]
+2016-12-17 20:26:05,047 CET DEBUG SSLConnectionSocketFactory - Starting handshake
+2016-12-17 20:26:05,088 CET DEBUG SSLConnectionSocketFactory - Secure session established
+2016-12-17 20:26:05,088 CET DEBUG SSLConnectionSocketFactory -  negotiated protocol: TLSv1.2
+2016-12-17 20:26:05,088 CET DEBUG SSLConnectionSocketFactory -  negotiated cipher suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+2016-12-17 20:26:05,088 CET DEBUG SSLConnectionSocketFactory -  peer principal: CN=ssl369704.cloudflaressl.com, OU=PositiveSSL Multi-Domain, OU=Domain Control Validated
+2016-12-17 20:26:05,088 CET DEBUG SSLConnectionSocketFactory -  peer alternative names: [ssl369704.cloudflaressl.com, *.dominodatalab.com, dominodatalab.com]
+2016-12-17 20:26:05,089 CET DEBUG SSLConnectionSocketFactory -  issuer principal: CN=COMODO ECC Domain Validation Secure Server CA 2, O=COMODO CA Limited, L=Salford, ST=Greater Manchester, C=GB
+2016-12-17 20:26:05,089 CET DEBUG DefaultHttpClientConnectionOperator - Connection established 128.179.132.196:62339<->104.20.67.168:443
+2016-12-17 20:26:05,089 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-10: set socket timeout to 60000
+2016-12-17 20:26:05,089 CET DEBUG MainClientExec - Executing request POST /blobs/signedPutUrl/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51/6183?x=true HTTP/1.1
+2016-12-17 20:26:05,089 CET DEBUG MainClientExec - Target auth state: UNCHALLENGED
+2016-12-17 20:26:05,089 CET DEBUG MainClientExec - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:05,089 CET DEBUG headers - http-outgoing-10 >> POST /blobs/signedPutUrl/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51/6183?x=true HTTP/1.1
+2016-12-17 20:26:05,089 CET DEBUG headers - http-outgoing-10 >> X-Domino-Api-Key: xf1Ovhi9D9sBTY8bB6IAFrCBYCzGCeRE6c7zQPyTIcNdOvaGxWoyDkRBsiJRKZ6d
+2016-12-17 20:26:05,089 CET DEBUG headers - http-outgoing-10 >> Content-Length: 0
+2016-12-17 20:26:05,089 CET DEBUG headers - http-outgoing-10 >> Host: trial.dominodatalab.com
+2016-12-17 20:26:05,089 CET DEBUG headers - http-outgoing-10 >> Connection: Keep-Alive
+2016-12-17 20:26:05,090 CET DEBUG headers - http-outgoing-10 >> User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_101)
+2016-12-17 20:26:05,090 CET DEBUG headers - http-outgoing-10 >> Cookie: __cfduid=d81fba5d2d143bec8c60715723892546e1482002754
+2016-12-17 20:26:05,090 CET DEBUG headers - http-outgoing-10 >> Accept-Encoding: gzip,deflate
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << HTTP/1.1 200 OK
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << Date: Sat, 17 Dec 2016 19:26:05 GMT
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << Content-Type: text/plain; charset=utf-8
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << Transfer-Encoding: chunked
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << Connection: keep-alive
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << Play-Processing-Time: 1
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << Server: cloudflare-nginx
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << CF-RAY: 312cc3c32e23074f-AMS
+2016-12-17 20:26:05,452 CET DEBUG headers - http-outgoing-10 << Content-Encoding: gzip
+2016-12-17 20:26:05,453 CET DEBUG MainClientExec - Connection can be kept alive indefinitely
+2016-12-17 20:26:05,453 CET DEBUG DefaultManagedHttpClientConnection - http-outgoing-10: Close connection
+2016-12-17 20:26:05,454 CET DEBUG MainClientExec - Connection discarded
+2016-12-17 20:26:05,454 CET DEBUG PoolingHttpClientConnectionManager - Connection released: [id: 10][route: {s}->https://trial.dominodatalab.com:443][total kept alive: 0; route allocated: 0 of 10; total allocated: 0 of 30]
+2016-12-17 20:26:05,454 CET  INFO AnonymousS3SingleProjectBlobStore - Generated signed PUT url: https://domino-trial-blobs.s3-external-1.amazonaws.com/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002825&Signature=B%2B63t1jQH1JTOkzRO%2FUH38Ukg3w%3D
+2016-12-17 20:26:05,455 CET  INFO AnonymousS3SingleProjectBlobStore - Starting signed PUT request
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - s3service.https-only=true
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - storage-service.internal-error-retry-max=5
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - storage-service.apply-recommended-dns-caching-defaults=true
+2016-12-17 20:26:05,455 CET DEBUG StorageService - Setting recommended DNS caching defaults
+2016-12-17 20:26:05,455 CET DEBUG StorageService - Using DNS caching system settings: networkaddress.cache.ttl=300, networkaddress.cache.negative.ttl=1
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - http.connection-manager.factory-class-name=org.jets3t.service.utils.RestUtils$ConnManagerFactory
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - httpclient.connection-timeout-ms=60000
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - httpclient.socket-timeout-ms=60000
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - httpclient.stale-checking-enabled=true
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - httpclient.useragent=null
+2016-12-17 20:26:05,455 CET DEBUG RestUtils - Setting user agent string: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - http.protocol.expect-continue=true
+2016-12-17 20:26:05,455 CET DEBUG Jets3tProperties - httpclient.connection-manager-timeout=0
+2016-12-17 20:26:05,456 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:05,456 CET DEBUG Jets3tProperties - httpclient.proxy-autodetect=true
+2016-12-17 20:26:05,456 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:05,456 CET DEBUG PluginProxyUtil - About to attempt auto proxy detection under Java version:1.8.0_101-b13
+2016-12-17 20:26:05,456 CET DEBUG PluginProxyUtil - Sun Plugin reported java version not 1.3.X, 1.4.X, 1.5.X or 1.6.X - trying failover detection...
+2016-12-17 20:26:05,456 CET DEBUG PluginProxyUtil - Using failover proxy detection...
+2016-12-17 20:26:05,456 CET DEBUG PluginProxyUtil - Plugin Proxy Config List Property:null
+2016-12-17 20:26:05,456 CET DEBUG PluginProxyUtil - No configured plugin proxy list
+2016-12-17 20:26:05,456 CET DEBUG Jets3tProperties - s3service.default-storage-class=null
+2016-12-17 20:26:05,456 CET DEBUG Jets3tProperties - s3service.server-side-encryption=null
+2016-12-17 20:26:05,456 CET DEBUG Jets3tProperties - devpay.user-token=null
+2016-12-17 20:26:05,456 CET DEBUG Jets3tProperties - devpay.product-token=null
+2016-12-17 20:26:05,456 CET DEBUG Jets3tProperties - httpclient.requester-pays-buckets-enabled=false
+2016-12-17 20:26:05,457 CET DEBUG Jets3tProperties - storage-service.disable-live-md5=false
+2016-12-17 20:26:05,457 CET DEBUG Jets3tProperties - s3service.s3-endpoint=s3.amazonaws.com
+2016-12-17 20:26:05,457 CET DEBUG RepeatableRequestEntity - Setting maximal read-ahead mark limit for markable input stream com.cerebro.domino.common.sync.ConsoleProgressMonitoredInputStream assuming it doesn't use in-memory storage: 1882
+2016-12-17 20:26:05,457 CET DEBUG RepeatableRequestEntity - Setting maximal read-ahead mark limit for markable input stream java.io.ByteArrayInputStream assuming it doesn't use in-memory storage: 1882
+2016-12-17 20:26:05,457 CET DEBUG Jets3tProperties - httpclient.read-throttle=0
+2016-12-17 20:26:05,457 CET DEBUG RestStorageService - Performing PUT request for 'https://domino-trial-blobs.s3-external-1.amazonaws.com/6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002825&Signature=B%2B63t1jQH1JTOkzRO%2FUH38Ukg3w%3D', expecting response codes: [200]
+2016-12-17 20:26:05,457 CET DEBUG RestStorageService - Headers: [Content-Encoding: gzip, x-amz-meta-domino-original-blob-length: 6183, x-amz-server-side-encryption: AES256, Content-Type: application/x-gzip]
+2016-12-17 20:26:05,457 CET DEBUG Jets3tProperties - httpclient.retry-max=5
+2016-12-17 20:26:05,457 CET DEBUG RestStorageService - Service has no Credential and is un-authenticated, skipping authorization
+2016-12-17 20:26:05,460 CET DEBUG Jets3tProperties - httpclient.max-connections=20
+2016-12-17 20:26:05,460 CET DEBUG Jets3tProperties - httpclient.max-connections-per-host=0
+2016-12-17 20:26:05,460 CET DEBUG Jets3tProperties - httpclient.connection.ttl=-1
+2016-12-17 20:26:05,460 CET DEBUG RestUtils$ThreadSafeConnManager - Get connection: {s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443, timeout = 0
+2016-12-17 20:26:05,460 CET DEBUG ConnPoolByRoute - [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443] total kept alive: 0, total issued: 0, total allocated: 0 out of 20
+2016-12-17 20:26:05,460 CET DEBUG ConnPoolByRoute - No free connections [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:05,460 CET DEBUG ConnPoolByRoute - Available capacity: 20 out of 20 [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:05,460 CET DEBUG ConnPoolByRoute - Creating new connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443]
+2016-12-17 20:26:05,462 CET DEBUG DefaultClientConnectionOperator - Connecting to domino-trial-blobs.s3-external-1.amazonaws.com:443
+2016-12-17 20:26:05,966 CET DEBUG RequestAddCookies - CookieSpec selected: default
+2016-12-17 20:26:05,966 CET DEBUG RequestAuthCache - Auth cache not set in the context
+2016-12-17 20:26:05,966 CET DEBUG RequestTargetAuthentication - Target auth state: UNCHALLENGED
+2016-12-17 20:26:05,966 CET DEBUG RequestProxyAuthentication - Proxy auth state: UNCHALLENGED
+2016-12-17 20:26:05,966 CET DEBUG DefaultHttpClient - Attempt 1 to execute request
+2016-12-17 20:26:05,966 CET DEBUG DefaultClientConnection - Sending request: PUT /6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002825&Signature=B%2B63t1jQH1JTOkzRO%2FUH38Ukg3w%3D HTTP/1.1
+2016-12-17 20:26:05,967 CET DEBUG headers - >> PUT /6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51?x-amz-security-token=FQoDYXdzEBsaDMLexXNBqArn2XsoGyK3A5aLVcA3fjYKU2lFHuluGTHkUBhRgAMjgJ2Kqbvew4oRzAVZziBPqEta33M%2BPjRl2KZVuWWGK%2F4XR97jvzTnmvRGQrgS4OieN%2BJ9K8WurbPdg0RzLlBRiIUkfPJrfg21SfaTRlkPdmpoduToiF03l6NYXQIiypyyHlv0sgZHm7UE%2Fa6X3RMnTXjYzn0ylp6JLQ4lGLHZC5YJF00JmHbq%2F%2F0TpCZ06KPbz4ivWBwowP9yxJ5%2Bj2G90mXGnBaJfcQGuI92eZt0yxuZv18Wf9cKNqdSEvFZDFss8gTY1DH8FxqDQQRTrS3EZJCP0ia6ouQ1d%2BsNz3AWTLfZo%2FIZB2rkWmD1Qt9yLzEc5Fp0axxC%2Bwprdt6VRis9xn0UHTnp6dqkUkvTjQTtdvUYf4EL5FEYa23fowPWqMLUG35NU%2BH%2F%2FEGB7ozwJv%2BeHPQxtV3f%2B912ZRJAS4zErGRFh57H7d1bQ93wXix%2Fs%2BFX%2BNEGVeg1VKR3g4BBsWlXOveQTSizvEYbu1NTBNxZC61tK7oKlU%2BJF0pt3zY3u6DzlMC1kTkVJHkmpQTaYH5f0DxxooitTeqT4ESMXc0fUm0ol%2FbVwgU%3D&AWSAccessKeyId=ASIAJITLYR73GO2SIZXQ&Expires=1482002825&Signature=B%2B63t1jQH1JTOkzRO%2FUH38Ukg3w%3D HTTP/1.1
+2016-12-17 20:26:05,967 CET DEBUG headers - >> Content-Encoding: gzip
+2016-12-17 20:26:05,967 CET DEBUG headers - >> x-amz-meta-domino-original-blob-length: 6183
+2016-12-17 20:26:05,967 CET DEBUG headers - >> x-amz-server-side-encryption: AES256
+2016-12-17 20:26:05,967 CET DEBUG headers - >> Content-Type: application/x-gzip
+2016-12-17 20:26:05,968 CET DEBUG headers - >> Content-Length: 1882
+2016-12-17 20:26:05,968 CET DEBUG headers - >> Host: domino-trial-blobs.s3-external-1.amazonaws.com
+2016-12-17 20:26:05,968 CET DEBUG headers - >> Connection: Keep-Alive
+2016-12-17 20:26:05,968 CET DEBUG headers - >> User-Agent: JetS3t/0.9.4 (Mac OS X/10.12.3; x86_64; en; JVM 1.8.0_101)
+2016-12-17 20:26:05,968 CET DEBUG headers - >> Expect: 100-continue
+2016-12-17 20:26:06,093 CET DEBUG DefaultClientConnection - Receiving response: HTTP/1.1 100 Continue
+2016-12-17 20:26:06,093 CET DEBUG headers - << HTTP/1.1 100 Continue
+2016-12-17 20:26:06,095 CET DEBUG RepeatableRequestEntity - MD5 digest of data sent for '6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51' - B64:KCpGrOvwLWwNA1XCtBj4iA== Hex:282a46acebf02d6c0d0355c2b418f888
+2016-12-17 20:26:06,221 CET DEBUG DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+2016-12-17 20:26:06,221 CET DEBUG headers - << HTTP/1.1 200 OK
+2016-12-17 20:26:06,221 CET DEBUG headers - << x-amz-id-2: XwmjzFCzqi2VvpOEzE0sNx8E86uwUrKhcfEwMiLc3QvY1ICOMoN6oT3Zt0kPss2wqWmvqKyQstA=
+2016-12-17 20:26:06,221 CET DEBUG headers - << x-amz-request-id: 1BAEE34F02E0E531
+2016-12-17 20:26:06,221 CET DEBUG headers - << Date: Sat, 17 Dec 2016 19:26:07 GMT
+2016-12-17 20:26:06,221 CET DEBUG headers - << x-amz-server-side-encryption: AES256
+2016-12-17 20:26:06,221 CET DEBUG headers - << ETag: "282a46acebf02d6c0d0355c2b418f888"
+2016-12-17 20:26:06,221 CET DEBUG headers - << Content-Length: 0
+2016-12-17 20:26:06,221 CET DEBUG headers - << Server: AmazonS3
+2016-12-17 20:26:06,222 CET DEBUG DefaultHttpClient - Connection can be kept alive indefinitely
+2016-12-17 20:26:06,222 CET DEBUG RestStorageService - Response for 'PUT'. Content-Type: , Headers: [x-amz-id-2: XwmjzFCzqi2VvpOEzE0sNx8E86uwUrKhcfEwMiLc3QvY1ICOMoN6oT3Zt0kPss2wqWmvqKyQstA=, x-amz-request-id: 1BAEE34F02E0E531, Date: Sat, 17 Dec 2016 19:26:07 GMT, x-amz-server-side-encryption: AES256, ETag: "282a46acebf02d6c0d0355c2b418f888", Content-Length: 0, Server: AmazonS3]
+2016-12-17 20:26:06,222 CET DEBUG RestStorageService - Response entity: org.apache.http.conn.BasicManagedEntity@41e5db97
+2016-12-17 20:26:06,222 CET DEBUG RestStorageService - Entity length: 0
+2016-12-17 20:26:06,222 CET DEBUG RestStorageService - Received response code 200; matches one of expected set ([200])? true
+2016-12-17 20:26:06,222 CET DEBUG RestUtils$ThreadSafeConnManager - Released connection is reusable.
+2016-12-17 20:26:06,222 CET DEBUG ConnPoolByRoute - Releasing connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]
+2016-12-17 20:26:06,222 CET DEBUG ConnPoolByRoute - Pooling connection [{s}->https://domino-trial-blobs.s3-external-1.amazonaws.com:443][null]; keep alive indefinitely
+2016-12-17 20:26:06,222 CET DEBUG ConnPoolByRoute - Notifying no-one, there are no waiting threads
+2016-12-17 20:26:06,222 CET DEBUG ServiceUtils - Processing REST metadata items
+2016-12-17 20:26:06,222 CET DEBUG ServiceUtils - Ignoring metadata item: Server=AmazonS3
+2016-12-17 20:26:06,222 CET DEBUG ServiceUtils - Leaving header item unchanged: ETag="282a46acebf02d6c0d0355c2b418f888"
+2016-12-17 20:26:06,222 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-request-id=>request-id
+2016-12-17 20:26:06,222 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-id-2=>id-2
+2016-12-17 20:26:06,222 CET DEBUG ServiceUtils - Removed header prefix x-amz- from key: x-amz-server-side-encryption=>server-side-encryption
+2016-12-17 20:26:06,222 CET DEBUG ServiceUtils - Leaving HTTP header item unchanged: Content-Length=0
+2016-12-17 20:26:06,222 CET DEBUG ServiceUtils - Parsing date string 'Sat, 17 Dec 2016 19:26:07 GMT' into Date object for key: Date
+2016-12-17 20:26:06,223 CET DEBUG ServiceUtils - Leaving header item unchanged: Date=Sat Dec 17 20:26:07 CET 2016
+2016-12-17 20:26:06,223 CET DEBUG RestStorageService - Object upload was automatically verified, the calculated MD5 hash value matched the ETag returned by S3: 6f8a908e56f57b2dd8e4319e1a8ba8cf0504eb51
+2016-12-17 20:26:06,224 CET TRACE MultiThreadedBlobStoreSynchronizer - Finished batch-uploading 2 blobs of total size 11573 in 2261 ms
+2016-12-17 20:26:06,226 CET TRACE FileStructureRepoSynchronizer - Upload before push complete
+2016-12-17 20:26:06,234 CET TRACE FileStructureRepo - Starting push to origin: local/master = Some(AnyObjectId[615f2176b369bd11c4a279a0d89bfbbef0986e09]), origin/master = Some(AnyObjectId[476664db52bc140f74c1b2829ea04c93c5cb6456]).
+2016-12-17 20:26:07,643 CET DEBUG FileStructureRepo - Push result: [RemoteRefUpdate[remoteName=refs/heads/master, OK, (null)...615f2176b369bd11c4a279a0d89bfbbef0986e09, fastForward, srcRef=refs/heads/master, message=null]]
+2016-12-17 20:26:07,647 CET DEBUG FileStructureRepo - Push to origin complete: local/master = Some(AnyObjectId[615f2176b369bd11c4a279a0d89bfbbef0986e09]), origin/master = Some(AnyObjectId[615f2176b369bd11c4a279a0d89bfbbef0986e09]).
+2016-12-17 20:26:07,648 CET DEBUG FileStructureRepoSynchronizer - Push to origin result: Succeeded.
+2016-12-17 20:26:07,648 CET DEBUG FileSyncClient - Push result: Succeeded.
+2016-12-17 20:26:08,333 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:08,333 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:13,338 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:13,338 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:18,340 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:18,340 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:23,343 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:23,343 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:28,343 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:28,344 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:33,346 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:33,346 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:38,348 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:38,349 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:43,349 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:43,349 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:48,352 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:48,352 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
+2016-12-17 20:26:53,355 CET DEBUG PoolingHttpClientConnectionManager - Closing expired connections
+2016-12-17 20:26:53,358 CET DEBUG PoolingHttpClientConnectionManager - Closing connections idle longer than 30 SECONDS
