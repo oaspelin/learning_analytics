@@ -28,12 +28,12 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 		TotalNumberOfVideoEvents = float(NumberOfVideoPlay + \
 									NumberOfVideoSeek + \
 									NumberOfVideoDownload)
-
+		VideoUniquePerTotalVideoEvent=float(NumberOfVideoUnique/len(VideoEvents))
 		# is currently not adding any value, consider changing this derived feature
-		# VideoScore = 0.25 * NumberOfVideoUnique + \
-		# 1 * NumberOfVideoPlay + \
-		# 0.2 * NumberOfVideoSeek + \
-		# 0.25 * NumberOfVideoDownload
+		VideoScore = 0.25 * NumberOfVideoUnique + \
+		1 * NumberOfVideoPlay + \
+		0.2 * NumberOfVideoSeek + \
+		0.25 * NumberOfVideoDownload
 
 		VideoPlayScore = 0
 		VideoSeekScore = 0
@@ -54,8 +54,12 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 			'VideoSeekScore' : VideoSeekScore,
 			'VideoDownloadScore' : VideoDownloadScore,
 
-			'VideoEventCountScore' : float(len(VideoEvents))/(len(VideoEvents) + len(ForumEvents))
-			# 'VideoScore' : VideoScore,
+			'VideoEventCountScore' : float(len(VideoEvents))/(len(VideoEvents) + len(ForumEvents)),
+			'NumberOfVideoPlay' : NumberOfVideoPlay,
+			'NumberOfVideoSeek' : NumberOfVideoSeek,
+			'NumberOfVideoDownload' : NumberOfVideoDownload,
+			'VideoUniquePerTotalVideoEvent': VideoUniquePerTotalVideoEvent,
+			'VideoScore' : VideoScore
 		})
 
 	# Features for forum events
@@ -90,12 +94,12 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 									NumberOfThreadPostOn + \
 									NumberOfPostCommentOn)
 
-		# ForumScore = 1.5 * NumberOfThreadSubscribe + \
-		# 3 * NumberOfThreadLaunch + \
-		# 2 * NumberOfThreadPostOn + \
-		# 2 * NumberOfPostCommentOn + \
-		# 0.5 * NumberOfForumVotes + \
-		# 0.25 * NumberOfThreadViews
+		ForumScore = 1.5 * NumberOfThreadSubscribe + \
+		3 * NumberOfThreadLaunch + \
+		2 * NumberOfThreadPostOn + \
+		2 * NumberOfPostCommentOn + \
+		0.5 * NumberOfForumVote + \
+		0.25 * NumberOfThreadView
 
 		ThreadViewScore = 0
 		ThreadSubscribeScore = 0
@@ -122,9 +126,14 @@ def CalculateFeatures(VideoEvents=[], ForumEvents=[]):
 			'ThreadPostOnScore' : ThreadPostOnScore,
 			'PostCommentOnScore' : PostCommentOnScore,
 			'ForumVoteScore' : ForumVoteScore,
-
-			'ForumEventCountScore' : float(len(ForumEvents))/(len(VideoEvents) + len(ForumEvents))
-			# 'ForumScore' : ForumScore
+			'NumberOfThreadView' : NumberOfThreadView,
+			'NumberOfThreadSubscribe' : NumberOfThreadSubscribe,
+			'NumberOfThreadLaunch' : NumberOfThreadLaunch,
+			'NumberOfThreadPostOn' : NumberOfThreadPostOn,
+			'NumberOfPostCommentOn' : NumberOfPostCommentOn,
+			'NumberOfForumVote' : NumberOfForumVote,
+			'ForumEventCountScore' : float(len(ForumEvents))/(len(VideoEvents) + len(ForumEvents)),
+			'ForumScore' : ForumScore
 		})
 
 

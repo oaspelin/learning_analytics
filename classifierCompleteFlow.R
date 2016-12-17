@@ -3,9 +3,9 @@ library(dplyr)
 library(caret)
 library(corrplot)
 library(doMC)
-#======================================================================== 
+#========================================================================
 #         step 1: train classifier
-#======================================================================== 
+#========================================================================
 
 #------ read features extracted from train set, using your python script
 db=read.csv('OutputTable.csv', stringsAsFactors = F)
@@ -17,56 +17,96 @@ db=db[order(db$UserID,db$ProblemID,db$SubmissionNumber),]
 db= filter(db,SubmissionNumber>0)
 
 #---- remove cases when there is no video or forum activity between two submissions
-db= filter(db,NVideoAndForumEvents>0)  
+db= filter(db,NVideoAndForumEvents>0)
 db[is.na(db)]=0
 
 #----- make a catgorical variable, indicating if grade improved
 db$improved = factor(ifelse(db$GradeDiff>0 ,"Yes", "No"))
 table(db$improved)
 
+#----- custom R features
+db["VideoSinceLast"]<-NA
+db$VideoSinceLast<-(db$NVideoEvents/db$TimeSinceLast)
+
+db["ForumSinceLast"]<-NA
+db$ForumSinceLast<-(db$NForumEvents/db$TimeSinceLast)
+
+db["VideoPerSubmission"]<-NA
+db$VideoPerSubmission<-(db$NVideoEvents/db$SubmissionNumber)
+
+db["ForumPerSubmission"]<-NA
+db$ForumPerSubmission<-(db$NForumEvents/db$SubmissionNumber)
+
 set.seed(1234)
 
 fs=c(
-  'ProblemID',
   'SubmissionNumber',
   'TimeSinceLast',
-  'NVideoEvents',
-  'NForumEvents', 
-  'NVideoAndForumEvents',
-  'ThreadLaunchScore',
-  'VideoPlayScore',
-  'ThreadViewScore',
-  'VideoEventCountScore',
-  'AverageForumTimeDiffs',
-  'ThreadPostOnScore',
-  'ForumVoteScore',
-  'NumberOfVideoUnique',
+  'ProblemID',
+  # 'NVideoEvents',
+  # 'NForumEvents',
+  # 'NVideoAndForumEvents',
   'DurationOfVideoActivity',
-  'ThreadSubscribeScore',
-  'VideoDownloadScore',
-  'ForumEventCountScore',
-  'PostCommentOnScore',
   'AverageVideoTimeDiffs',
-  'VideoSeekScore'
+  # 'NumberOfVideoUnique',
+  'VideoPlayScore',
+  'VideoSeekScore',
+  'VideoDownloadScore',
+  'VideoEventCountScore',
+  # 'NumberOfVideoPlay',
+  # 'NumberOfVideoSeek',
+  # 'NumberOfVideoDownload',
+  # 'VideoScore',
+  #   'VideoUniquePerTotalVideoEvent',
+  'AverageForumTimeDiffs',
+  'ThreadViewScore',
+  'ThreadSubscribeScore',
+  'ThreadLaunchScore',
+  'ThreadPostOnScore',
+  'PostCommentOnScore',
+  'ForumVoteScore',
+  # 'NumberOfThreadView',
+  # 'NumberOfThreadSubscribe',
+  # 'NumberOfThreadLaunch',
+  # 'NumberOfThreadPostOn',
+  # 'NumberOfPostCommentOn',
+  # 'NumberOfForumVote',
+  #   'ForumEventCountScore',
+  'VideoSinceLast',
+  'ForumSinceLast',
+  'VideoPerSubmission',
+  'ForumPerSubmission'
+  # 'ForumScore'
 )
 
 registerDoMC(8)
 
 #============================================
-#============== TRAIN CONTROL =============== 
+#================ CORRELATION ===============
 #============================================
-ctrl <- trainControl(method = "cv",
-                     # number = 10,
-                     # repeats = 5,
+
+correlation_matrix <- cor(db[,fs])
+corrplot(correlation_matrix, method = "color")
+
+highlyCorrelated <- findCorrelation(correlation_matrix, cutoff=0.6)
+
+fs[highlyCorrelated]
+
+#============================================
+#============== TRAIN CONTROL ===============
+#============================================
+ctrl <- trainControl(method = "repeatedcv",
+                     number = 10,
+                     repeats = 10,
                      classProbs = TRUE,
                      # search = "random",
                      summaryFunction = twoClassSummary
-                     )
+)
 
 #============================================
 #========== RFE FEATURE SELECTION ===========
 #============================================
-filterCtrl <- rfeControl(functions=rfFuncs, method="cv", number=10)
+filterCtrl <- rfeControl(functions=caretFuncs, method="cv", number=2)
 
 rfWithFilter <- rfe(x=db[,fs],
                     y=db$improved,
@@ -79,8 +119,7 @@ rfWithFilter <- rfe(x=db[,fs],
 #============================================
 #=============== RANDOM FOREST ==============
 #============================================
-paramGrid <- expand.grid(mtry = c(1:5))
-# (max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))+1))
+paramGrid <- expand.grid(mtry = c(2:(max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))+1)))
 model<-train(x=db[,rfWithFilter$optVariables],
              y=db$improved,
              method = "rf",
@@ -97,55 +136,32 @@ plot(model); model
 paramGrid <- expand.grid(.decay = c(0.5, 0.4, 0.3, 0.2, 0.1, 0.001), .size = c(4:14))
 
 model<-train(x=db[,fs],
-          y=db$improved,
-          method="nnet",
-          metric ="ROC",
-          linout=FALSE, 
-          trace=FALSE,
-          preProcess = c("center","scale"),
-          trControl = ctrl,
-          tuneGrid = paramGrid
-          )
+             y=db$improved,
+             method="nnet",
+             metric ="ROC",
+             linout=FALSE,
+             trace=FALSE,
+             preProcess = c("center","scale"),
+             trControl = ctrl,
+             tuneGrid = paramGrid
+)
 plot(model);model
 
 #============================================
-#=============== glnet ======================
+#=============== SVM RBF ====================
 #============================================
-#find tunegrid
+paramGrid = data.frame(.C = c(.25, .5, 1),.sigma = .05)
+
 model <- train(x=db[,fs],
                y=db$improved,
-               method='glmnet',
-               metric = "ROC",
-               trControl=ctrl)
-model
-grid = expand.grid(.alpha=c(0.54,0.056),.lambda=seq(0.0001,0.014,by=0.00001))
-model <- train(x=db[,fs],
-               y=db$improved,
-               method='glmnet',
-               metric = "ROC",
-               tuneGrid = grid,
-               trControl=ctrl)
-model
-plot(model, metric='ROC')
+               method = "svmRadial",
+               tuneGrid = paramGrid,
+               trControl = ctrl,
+               preProc = c("center", "scale"))
 
-#============================================
-#================ CORRELATION ===============
-#============================================
-
-correlation_matrix<- cor(db[,fs])
-corrplot(correlation_matrix, method = "color")
-
-#----- check generalizability of your model on new data
-preds= predict(model, newdata=db.test);
-table(preds)
-# install.packages('AUC')
-library(AUC)
-ROC_curve= roc(preds, db.test$improved);  auc(ROC_curve)
-confusionMatrix(preds, db.test$improved)
-
-#======================================================================== 
+#========================================================================
 #         step 2.1: Use classifier to predict progress for test data
-#======================================================================== 
+#========================================================================
 
 testDb=read.csv('OutputTable_test.csv', stringsAsFactors = F)
 testDb$Grade=NULL; testDb$GradeDiff=NULL;
@@ -154,13 +170,13 @@ testDb[is.na(testDb)]=0
 #---- use trained model to predict progress for test data
 preds= predict(model, newdata=testDb);
 
-#======================================================================== 
+#========================================================================
 #         step 2.1: prepare submission file for kaggle
-#======================================================================== 
+#========================================================================
 
 cl.Results=testDb[,c('ProblemID', 'UserID', 'SubmissionNumber')]
 cl.Results$improved=preds
-levels(cl.Results$improved)=c(0,1) # 
+levels(cl.Results$improved)=c(0,1) #
 cl.Results$uniqRowID= paste0(cl.Results$UserID,'_', cl.Results$ProblemID,'_', cl.Results$SubmissionNumber)
 cl.Results=cl.Results[,c('uniqRowID','improved')]
 table(cl.Results$improved)
@@ -172,7 +188,5 @@ kaggleSubmission=merge(classifier_template,cl.Results )
 write.csv(kaggleSubmission,file='classifier_results.csv', row.names = F)
 
 
-#------- submit the resulting file (classifier_results.csv) to kaggle 
+#------- submit the resulting file (classifier_results.csv) to kaggle
 #------- report AUC in private score in your report
-
-
