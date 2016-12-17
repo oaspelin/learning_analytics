@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "CreateTable.py", line 3, in <module>
-    from termcolor import colored
-ImportError: No module named termcolor
-Failed with exit code: 1
