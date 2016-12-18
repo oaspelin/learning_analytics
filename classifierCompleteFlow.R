@@ -46,22 +46,22 @@ fs=c(
   # 'NVideoEvents',
   # 'NForumEvents',
   # 'NVideoAndForumEvents',
-  'DurationOfVideoActivity',
+  # 'DurationOfVideoActivity',
   'AverageVideoTimeDiffs',
   # 'NumberOfVideoUnique',
   'VideoPlayScore',
   'VideoSeekScore',
   'VideoDownloadScore',
-  'VideoEventCountScore',
+  # 'VideoEventCountScore',
   # 'NumberOfVideoPlay',
   # 'NumberOfVideoSeek',
   # 'NumberOfVideoDownload',
   # 'VideoScore',
-  #   'VideoUniquePerTotalVideoEvent',
+  # 'VideoUniquePerTotalVideoEvent',
   'AverageForumTimeDiffs',
   'ThreadViewScore',
   'ThreadSubscribeScore',
-  'ThreadLaunchScore',
+  # 'ThreadLaunchScore',
   'ThreadPostOnScore',
   'PostCommentOnScore',
   'ForumVoteScore',
@@ -82,10 +82,19 @@ fs=c(
 registerDoMC(8)
 
 #============================================
+#================ DATA SPLIT ================
+#============================================
+
+set.seed(1234)
+tr.index= sample(nrow(db), nrow(db)*0.7)
+db.train= db[tr.index,]
+db.test = db[-tr.index,]
+
+#============================================
 #================ CORRELATION ===============
 #============================================
 
-correlation_matrix <- cor(db[,fs])
+correlation_matrix <- cor(db.train[,fs])
 corrplot(correlation_matrix, method = "color")
 
 highlyCorrelated <- findCorrelation(correlation_matrix, cutoff=0.6)
@@ -108,8 +117,8 @@ ctrl <- trainControl(method = "repeatedcv",
 #============================================
 filterCtrl <- rfeControl(functions=caretFuncs, method="cv", number=2)
 
-rfWithFilter <- rfe(x=db[,fs],
-                    y=db$improved,
+rfWithFilter <- rfe(x=db.train[,fs],
+                    y=db.train$improved,
                     sizes=c(1:length(fs)),
                     method="rf",
                     rfeControl=filterCtrl)
@@ -119,9 +128,10 @@ rfWithFilter <- rfe(x=db[,fs],
 #============================================
 #=============== RANDOM FOREST ==============
 #============================================
-paramGrid <- expand.grid(mtry = c(2:(max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))+1)))
-model<-train(x=db[,rfWithFilter$optVariables],
-             y=db$improved,
+# (max(ceiling(0.3*length(fs)),floor(sqrt(length(fs))))+1))
+paramGrid <- expand.grid(mtry = c(6:12))
+model<-train(x=db.train[,rfWithFilter$optVariables],
+             y=db.train$improved,
              method = "rf",
              metric="ROC",
              trControl = ctrl,
@@ -132,11 +142,10 @@ plot(model); model
 #============================================
 #=============== NEURAL NETWORKS ============
 #============================================
-#find tunegrid
-paramGrid <- expand.grid(.decay = c(0.5, 0.4, 0.3, 0.2, 0.1, 0.001), .size = c(4:14))
+paramGrid <- expand.grid(.decay = c(0.5, 0.3, 0.1, 0.001), .size = c(6:14))
 
-model<-train(x=db[,fs],
-             y=db$improved,
+model<-train(x=db.train[,fs],
+             y=db.train$improved,
              method="nnet",
              metric ="ROC",
              linout=FALSE,
@@ -150,14 +159,37 @@ plot(model);model
 #============================================
 #=============== SVM RBF ====================
 #============================================
-paramGrid = data.frame(.C = c(.25, .5, 1),.sigma = .05)
 
-model <- train(x=db[,fs],
-               y=db$improved,
+model <- train(x=db.train[,fs],
+               y=db.train$improved,
                method = "svmRadial",
-               tuneGrid = paramGrid,
+               tuneLength = 13,
                trControl = ctrl,
+               metric="ROC",
                preProc = c("center", "scale"))
+
+paramGrid <- expand.grid(sigma = c(.01, .015, 0.2, 2.5, 3),
+                    C = c(0.75, 0.9, 1, 1.1, 1.25)
+)
+
+#Train and Tune the SVM
+model <- train(x=db.train[,fs],
+                  y= db.train$improved,
+                  method = "svmRadial",
+                  preProc = c("center","scale"),
+                  metric="ROC",
+                  tuneGrid = paramGrid,
+                  trControl=ctrl)
+
+#============================================
+#============== PREDICTABILITY ==============
+#============================================
+library(AUC)
+
+preds= predict(model, newdata=db.test[, fs]);
+table(preds)
+ROC_curve= roc(preds, db.test$improved);  auc(ROC_curve)
+
 
 #========================================================================
 #         step 2.1: Use classifier to predict progress for test data
@@ -165,10 +197,24 @@ model <- train(x=db[,fs],
 
 testDb=read.csv('OutputTable_test.csv', stringsAsFactors = F)
 testDb$Grade=NULL; testDb$GradeDiff=NULL;
+
+#----- custom R features
+testDb["VideoSinceLast"]<-NA
+testDb$VideoSinceLast<-(testDb$NVideoEvents/testDb$TimeSinceLast)
+
+testDb["ForumSinceLast"]<-NA
+testDb$ForumSinceLast<-(testDb$NForumEvents/testDb$TimeSinceLast)
+
+testDb["VideoPerSubmission"]<-NA
+testDb$VideoPerSubmission<-(testDb$NVideoEvents/testDb$SubmissionNumber)
+
+testDb["ForumPerSubmission"]<-NA
+testDb$ForumPerSubmission<-(testDb$NForumEvents/testDb$SubmissionNumber)
+
 testDb[is.na(testDb)]=0
 
 #---- use trained model to predict progress for test data
-preds= predict(model, newdata=testDb);
+preds= predict(model, newdata=testDb[,fs]);
 
 #========================================================================
 #         step 2.1: prepare submission file for kaggle
@@ -186,7 +232,6 @@ table(cl.Results$improved)
 classifier_template= read.csv('classifier_template.csv', stringsAsFactors = F)
 kaggleSubmission=merge(classifier_template,cl.Results )
 write.csv(kaggleSubmission,file='classifier_results.csv', row.names = F)
-
 
 #------- submit the resulting file (classifier_results.csv) to kaggle
 #------- report AUC in private score in your report
