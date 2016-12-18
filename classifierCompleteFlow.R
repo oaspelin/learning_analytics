@@ -26,16 +26,16 @@ table(db$improved)
 
 #----- custom R features
 db["VideoSinceLast"]<-NA
-db$VideoSinceLast<-(db$NVideoEvents/db$TimeSinceLast)
+db$VideoSinceLast<-(db$DurationOfVideoActivity/db$TimeSinceLast)
 
-db["ForumSinceLast"]<-NA
-db$ForumSinceLast<-(db$NForumEvents/db$TimeSinceLast)
-
-db["VideoPerSubmission"]<-NA
-db$VideoPerSubmission<-(db$NVideoEvents/db$SubmissionNumber)
-
-db["ForumPerSubmission"]<-NA
-db$ForumPerSubmission<-(db$NForumEvents/db$SubmissionNumber)
+# db["ForumSinceLast"]<-NA
+# db$ForumSinceLast<-(db$NForumEvents/db$TimeSinceLast)
+# 
+# db["VideoPerSubmission"]<-NA
+# db$VideoPerSubmission<-(db$NVideoEvents/db$SubmissionNumber)
+# 
+# db["ForumPerSubmission"]<-NA
+# db$ForumPerSubmission<-(db$NForumEvents/db$SubmissionNumber)
 
 set.seed(1234)
 
@@ -48,38 +48,42 @@ fs=c(
   # 'NVideoAndForumEvents',
   # 'DurationOfVideoActivity',
   'AverageVideoTimeDiffs',
+  'AverageForumTimeDiffs',
+  
+  'VideoSinceLast',
+  
   # 'NumberOfVideoUnique',
-  'VideoPlayScore',
-  'VideoSeekScore',
-  'VideoDownloadScore',
   # 'VideoEventCountScore',
   # 'NumberOfVideoPlay',
   # 'NumberOfVideoSeek',
   # 'NumberOfVideoDownload',
-  # 'VideoScore',
-  # 'VideoUniquePerTotalVideoEvent',
-  'AverageForumTimeDiffs',
-  'ThreadViewScore',
-  'ThreadSubscribeScore',
-  # 'ThreadLaunchScore',
-  'ThreadPostOnScore',
-  'PostCommentOnScore',
-  'ForumVoteScore',
+  # 'VideoUniquePerTotalNumberVideoEvent',
+
+  # 'NumberOfForumLoad',
   # 'NumberOfThreadView',
   # 'NumberOfThreadSubscribe',
   # 'NumberOfThreadLaunch',
   # 'NumberOfThreadPostOn',
   # 'NumberOfPostCommentOn',
   # 'NumberOfForumVote',
-  #   'ForumEventCountScore',
-  'VideoSinceLast',
-  'ForumSinceLast',
-  'VideoPerSubmission',
-  'ForumPerSubmission'
-  # 'ForumScore'
+  # 'ForumEventCountScore',
+  
+
+  'ThreadViewScore',
+  'ThreadSubscribeScore',
+  'ThreadLaunchScore',
+  'ThreadPostOnScore',
+  'PostCommentOnScore',
+  'ForumVoteScore',
+  'ForumLoadScore',
+  
+  'VideoUniqueScore',
+  'VideoPlayScore', 
+  'VideoSeekScore', 
+  'VideoDownloadScore' 
 )
 
-registerDoMC(8)
+# registerDoMC(8)
 
 #============================================
 #================ DATA SPLIT ================
@@ -200,16 +204,16 @@ testDb$Grade=NULL; testDb$GradeDiff=NULL;
 
 #----- custom R features
 testDb["VideoSinceLast"]<-NA
-testDb$VideoSinceLast<-(testDb$NVideoEvents/testDb$TimeSinceLast)
-
-testDb["ForumSinceLast"]<-NA
-testDb$ForumSinceLast<-(testDb$NForumEvents/testDb$TimeSinceLast)
-
-testDb["VideoPerSubmission"]<-NA
-testDb$VideoPerSubmission<-(testDb$NVideoEvents/testDb$SubmissionNumber)
-
-testDb["ForumPerSubmission"]<-NA
-testDb$ForumPerSubmission<-(testDb$NForumEvents/testDb$SubmissionNumber)
+testDb$VideoSinceLast<-(testDb$DurationOfVideoActivity/testDb$TimeSinceLast)
+# 
+# testDb["ForumSinceLast"]<-NA
+# testDb$ForumSinceLast<-(testDb$NForumEvents/testDb$TimeSinceLast)
+# 
+# testDb["VideoPerSubmission"]<-NA
+# testDb$VideoPerSubmission<-(testDb$NVideoEvents/testDb$SubmissionNumber)
+# 
+# testDb["ForumPerSubmission"]<-NA
+# testDb$ForumPerSubmission<-(testDb$NForumEvents/testDb$SubmissionNumber)
 
 testDb[is.na(testDb)]=0
 
